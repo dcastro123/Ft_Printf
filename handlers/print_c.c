@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_c.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/04/23 17:12:49 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/04/23 16:19:10 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/04/23 16:29:13 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main(void)
+void	print_c(unsigned int i)
 {
-	
-	char *str = "Hello World\n";
-	ft_printf("abdefg: %s %u", str, 65534);
-	return 0;
+	ft_putchar(i);
 }
