@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/04/23 17:12:49 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/04/24 20:16:05 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(void)
 {
 	
-	char *str = "Hello World\n";
-	ft_printf("abdefg: %s %u", str, 65534);
+	char *str = "Hello World";
+	ft_printf("abdefg: %o", 34);
 	return 0;
 }

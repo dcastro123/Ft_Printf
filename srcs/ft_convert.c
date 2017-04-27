@@ -1,56 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conv_eight.c                                    :+:      :+:    :+:   */
+/*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/23 17:15:05 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/04/23 18:14:17 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/04/26 18:10:32 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-static	unsigned int	calc_len(int nbr)
+static	unsigned int	calc_len(unsigned int nbr, int base)
 {
 	unsigned int len;
 
 	len = 0;
-	if (nbr < 0)
-	{
-		nbr *= -1;
-		len++;
-	}
-	while ((nbr / 8) != 0)
+	while ((nbr / base) != 0)
 	{
 		len++;
-		nbr /= 8;
+		nbr /= base;
 	}
-	a++;
+	len++;
 	return (len);
 }
 
-unsigned int			ft_convert_eight(unsigned int a)
+void					ft_convert(unsigned int a, int base)
 {
-	unsigned int	*oct;
+	unsigned int	*con;
 	unsigned int	i;
 	unsigned int	length;
 
-	length = calc_len(a) - 1;
-	if (!(oct = (int *)malloc(sizeof(int) * (calc_len(a) + 1))))
-		return (NULL);
-	oct[length + 1] = '\0';
-	if (a == 4294967295)
-		return (ft_strdup("4294967295"));
-	i = 0;
-	while (a > 0)
+	length = calc_len(a);
+	con = (unsigned int *)ft_memalloc(length);
+	i = length;
+	while ((int)i-- > 0)
 	{
-		oct[i] = a % 8;
-		i++;
-		a /= 8;
+		con[i] = a % base;
+		a /= base;
 	}
-	if (n >= 0 && n <= 8)
-		oct[i] = a;
-	return (oct);
+	while ((int)++i < length)
+		ft_putchar(con[i] + 48);
 }
