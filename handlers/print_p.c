@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/05/02 19:30:45 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/05/02 17:54:06 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/05/02 19:38:41 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main(void)
+void	print_p(unsigned long a)
 {
-	
-	int	*a;
-	int	b = 10;
-	size_t	c;
+	unsigned long	*i;
 
-	a = &b;
-	c = (size_t)a;
-	printf("%zd\n", c);
-	printf("%#zx\n", c);
-	printf("%p\n", a);
-	printf("%d\n", b);
-	ft_printf("%p", a);
-	return 0;
+	i = &a;
+	ft_convert((unsigned int)i, 16);
 }

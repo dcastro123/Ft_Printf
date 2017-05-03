@@ -6,11 +6,11 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 17:31:21 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/04/26 18:09:40 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/05/02 18:50:14 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {
@@ -25,14 +25,11 @@ int	ft_printf(const char *format, ...)
 	tmp = format;
 	while (*tmp != '\0')
 	{
-		printf("-----\n");
 		while (*tmp != '%')
 		{
 			ft_putchar(*tmp);
-			printf("\n");
 			tmp++;
 		}
-		printf("asdasdasd\n");
 		tmp++;
 		//code here later to iterate through and run multiple args
 		// arg_check(tmp, ...)
@@ -41,7 +38,6 @@ int	ft_printf(const char *format, ...)
 		{
 			s = va_arg(arg, char *);
 			print_s(s);
-			printf("----");
 			tmp++;
 		}
 		if (*tmp == 'd' || *tmp == 'i')
@@ -64,17 +60,23 @@ int	ft_printf(const char *format, ...)
 		}
 		if (*tmp == 'o')
 		{
-			printf("??????\n");
 			i = va_arg(arg, unsigned int);
-			printf("??????\n");
-			ft_conv_eight(i, 8);
+			ft_convert(i, 8);
 			printf("\n");
 			tmp++;
 		}
-		// if (*tmp == 'p')
-		// {
-			// i = va_arg(arg, void *);
-		// }
+		if (*tmp == 'x')
+		{
+			i = va_arg(arg, unsigned int);
+			ft_convert(i, 16);
+			tmp++;
+		}
+		 if (*tmp == 'p')
+		 {
+			 i = va_arg(arg, unsigned long);
+			 print_p(i);
+			 tmp++;
+		 }
 	}
 	va_end(arg);
 	return (1);

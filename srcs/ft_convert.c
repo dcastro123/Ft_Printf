@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/23 17:15:05 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/04/26 18:10:32 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/04/26 18:52:35 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void					ft_convert(unsigned int a, int base)
 	unsigned int	i;
 	unsigned int	length;
 
-	length = calc_len(a);
+	length = calc_len(a, base);
 	con = (unsigned int *)ft_memalloc(length);
 	i = length;
 	while ((int)i-- > 0)
