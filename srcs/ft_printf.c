@@ -15,13 +15,12 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list arg;
-	va_list arg_cpy;
 	const char	*tmp;
 	unsigned int i;
 	char	*s;
+	int		ret;
 
 	va_start(arg, format);
-	va_copy(arg_cpy, arg);
 	tmp = format;
 	while (*tmp != '\0')
 	{
