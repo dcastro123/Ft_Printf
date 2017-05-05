@@ -27,6 +27,8 @@ static	void	ft_putnstr(char *str, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (!str || len < 0)
+		return (0);
 	while (i < len)
 	{
 		write(1, &str[i], 1);

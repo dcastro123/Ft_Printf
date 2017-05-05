@@ -14,14 +14,15 @@
 
 int	ft_printf(const char *format, ...)
 {
-	va_list arg;
+	va_list args;
 	const char	*tmp;
 	unsigned int i;
 	char	*s;
 	int		ret;
 
-	va_start(arg, format);
+	va_start(args, format);
 	tmp = format;
+	ft_parse_format(args, format);
 	while (*tmp != '\0')
 	{
 		while (*tmp != '%')
@@ -30,53 +31,53 @@ int	ft_printf(const char *format, ...)
 			tmp++;
 		}
 		tmp++;
-		//code here later to iterate through and run multiple args
-		// arg_check(tmp, ...)
-		//right now only handles 1 arg after % sign
+		//code here later to iterate through and run multiple argss
+		// args_check(tmp, ...)
+		//right now only handles 1 args after % sign
 		if (*tmp == 's')
 		{
-			s = va_arg(arg, char *);
+			s = va_args(args, char *);
 			print_s(s);
 			tmp++;
 		}
 		if (*tmp == 'd' || *tmp == 'i')
 		{
-			i = va_arg(arg, int);
+			i = va_args(args, int);
 			print_d(i);
 			tmp++;
 		}
 		if (*tmp == 'c')
 		{
-			i = va_arg(arg, int);
+			i = va_args(args, int);
 			print_c(i);
 			tmp++;
 		}
 		if (*tmp == 'u')
 		{
-			i = va_arg(arg, unsigned int);
+			i = va_args(args, unsigned int);
 			print_u(i);
 			tmp++;
 		}
 		if (*tmp == 'o')
 		{
-			i = va_arg(arg, unsigned int);
+			i = va_args(args, unsigned int);
 			ft_convert(i, 8);
 			printf("\n");
 			tmp++;
 		}
 		if (*tmp == 'x')
 		{
-			i = va_arg(arg, unsigned int);
+			i = va_args(args, unsigned int);
 			ft_convert(i, 16);
 			tmp++;
 		}
 		 if (*tmp == 'p')
 		 {
-			 i = va_arg(arg, unsigned long);
+			 i = va_args(args, unsigned long);
 			 print_p(i);
 			 tmp++;
 		 }
 	}
-	va_end(arg);
+	va_end(args);
 	return (1);
 }
