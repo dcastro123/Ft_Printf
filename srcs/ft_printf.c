@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 17:31:21 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/05/02 18:50:14 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/05/09 20:35:26 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_printf(const char *format, ...)
 
 	va_start(args, format);
 	tmp = format;
-	ft_parse_format(args, format);
+	//ft_parse_format(args, format); //still need to implement this function
 	while (*tmp != '\0')
 	{
 		while (*tmp != '%')
