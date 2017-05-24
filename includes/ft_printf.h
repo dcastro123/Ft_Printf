@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/05/02 18:54:13 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/05/23 21:10:51 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,17 @@
 # include <stdarg.h>
 
 # define ABS(x)	(x < 0) ? -x : x
+
+typedef	struct		s_pformat
+{
+	char				*conv;
+	int					num_flags;
+	char				*arg_list;//?
+	struct s_pformat	*next;
+	int					format_size;
+	int					user_width;
+	int					user_precision;
+}					t_pformat;
 
 int					ft_printf(const char *format, ...);
 

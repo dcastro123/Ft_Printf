@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/02 17:54:06 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/05/03 18:21:36 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/05/23 20:30:18 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	print_p(unsigned long a)
 	unsigned long	*i;
 
 	i = &a;
-	ft_convert((unsigned int)&a, 16);
+	ft_convert((unsigned int)i, 16);
 }
