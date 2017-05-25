@@ -17,30 +17,36 @@ int	ft_printf(const char *format, ...)
 	va_list args;
 	va_list arg_cpy;
 	const char	*tmp;
-	unsigned int i;
-	char	*s;
-	int		ret;
+	size_t		ret;
 
 	va_start(args, format);
 	va_copy(arg_cpy, args);
 	tmp = format;
-	//ft_parse_format(args, format); //still need to implement this function
-	
+	ret = 0;
 	while (*tmp != '\0')
 	{
 		if (*tmp == '%')
 		{
 			tmp++;
 			if (*tmp == '%')
+			{
 				ft_putchar(*tmp);
+				ret++;
+			}
+			else
+			{
+				ret++;
+				ft_print_arg(args, )
+			}
 			tmp++;
 		}
-		tmp++;
-		//code here later to iterate through and run multiple argss
-		// args_check(tmp, ...)
-		
-		//right now only handles 1 args after % sign
+		else if (*tmp != '%')
+		{
+			ft_putchar(*tmp);
+			ret++;
+			tmp++;
+		}
 	}
 	va_end(args);
-	return (1);
+	return (ret);
 }

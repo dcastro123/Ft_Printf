@@ -24,18 +24,25 @@
 
 # define ABS(x)	(x < 0) ? -x : x
 
-typedef	struct		s_pformat
+// typedef	struct		s_store
+// {
+// 	char				*conv;
+// 	int					num_flags;
+// 	char				*arg_list;//?
+// 	struct s_pformat	*next;
+// 	int					format_size;
+// 	int					user_width;
+// 	int					user_precision;
+// }					t_store;
+
+typedef	struct 			s_output
 {
-	char				*conv;
-	int					num_flags;
-	char				*arg_list;//?
-	struct s_pformat	*next;
-	int					format_size;
-	int					user_width;
-	int					user_precision;
-}					t_pformat;
+	char			*str;
+	int				length;
+}
 
 int					ft_printf(const char *format, ...);
+int					ft_print_arg(va_list args, const char *tmp);
 
 void				print_s(char *str);
 void				print_d(int i);

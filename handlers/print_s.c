@@ -17,6 +17,8 @@ static	size_t	get_length(char *str)
 	size_t len;
 
 	len = 0;
+	if (!str)
+		return (0);
 	while (*str++)
 		len++;
 	return (len);
@@ -27,8 +29,6 @@ static	void	ft_putnstr(char *str, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (!str || len < 0)
-		return (0);
 	while (i < len)
 	{
 		write(1, &str[i], 1);
