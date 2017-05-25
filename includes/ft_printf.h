@@ -24,23 +24,35 @@
 
 # define ABS(x)	(x < 0) ? -x : x
 
-// typedef	struct		s_store
-// {
-// 	char				*conv;
-// 	int					num_flags;
-// 	char				*arg_list;//?
-// 	struct s_pformat	*next;
-// 	int					format_size;
-// 	int					user_width;
-// 	int					user_precision;
-// }					t_store;
+typedef	struct		s_store
+{
+	char				*conv;
+	int					num_flags;
+	char				*arg_list;//?
+	struct s_pformat	*next;
+	int					format_size;
+	int					user_width;
+	int					user_precision;
+}					t_store;
 
 typedef	struct 			s_output
 {
 	char			*str;
-	int				length;
+	size_t				length;
 }
 
+typedef	struct	s_flags
+{
+	
+	
+}
+
+typedef enum	s_modifiers
+{
+
+
+
+}
 int					ft_printf(const char *format, ...);
 int					ft_print_arg(va_list args, const char *tmp);
 
