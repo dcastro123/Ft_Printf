@@ -28,15 +28,15 @@
 #define IS_NFLAG(x)	((x == 45 || x == 46 || (x > 47 && x < 58) ? 1 : 0)
 #define IS_MOD(x)	((x > a && x < z) ? 1: 0)
 
-typedef	struct 	s_mods
+typedef	enum 	e_mods
 {
-	int hh;
-	int h;
-	int l;
-	int ll;
-	int j;
-	int z;
-}				t_mods;
+	hh;
+	h;
+	l;
+	ll;
+	j;
+	z;
+}				mods;
 
 typedef	struct 	s_args
 {
