@@ -12,18 +12,6 @@
 
 #include "ft_printf.h"
 
-void	init_flags(t_flags *flag)
-{
-	flag->space = 0;
-	flag->plus = 0;
-	flag->zero = 0;
-	flag->tag_x = 0;
-	flag->tag_X = 0;
-	flag->tag_o = 0;
-	flag->precision = 0;
-	flag->width = 0;
-}
-
 void	init_mods(t_mods *mod)
 {
 	mod->hh = 0;
