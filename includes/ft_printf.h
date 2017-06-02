@@ -48,8 +48,8 @@ typedef	struct 	s_args
 	int minus;
 	int tag;
 	int zero;
-	int precision;
-	int width;
+	unsigned int precision;
+	unsigned int width;
 	int asterisk;
 }				t_args;
 
