@@ -46,7 +46,7 @@ void	find_precision(const char *format, t_args *ar, int index, va_list *ap)
 	else if (format[index + 1] > '0' && format[index + 1] <= '9')
 		ar->precision = ft_atoi(format + index);
 	else if (format[index + 1] == '0')
-		ar->out = ft_strdup(""); //hmmmm maybe write a function to handle this?
+		ar->out = ft_strjoin(ar->out,""); //hmmmm maybe write a function to handle this?
 }
 
 void	more_parsing(const char *format, t_args *ar, int index)
@@ -82,8 +82,6 @@ void	check_flag(const char *format, t_args *ar, int index)
 		else
 			index++;
 	}
-
-
 }
 
 void	check_mod(const char *format, t_args *ar, int index)
