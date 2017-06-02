@@ -27,17 +27,6 @@
 #define IS_FLAG(x)	((x == 32 || x == 35 || x == 42 || x == 43) ? 1 : 0)
 #define IS_NFLAG(x)	((x == 45 || x == 46 || (x > 47 && x < 58) ? 1 : 0)
 #define IS_MOD(x)	((x > a && x < z) ? 1: 0)
-typedef	struct	s_flags
-{
-	int space;
-	int plus;
-	int minus;
-	int tag;
-	int zero;
-	int precision;
-	int width;
-	
-}				t_flags;
 
 typedef	struct 	s_mods
 {
@@ -51,10 +40,17 @@ typedef	struct 	s_mods
 
 typedef	struct 	s_args
 {
-	char *out;
+	char *str_out;
+	int out_length;
 	char conv;
-	t_mods mod;
-	t_flags flag;	
+	int space;
+	int plus;
+	int minus;
+	int tag;
+	int zero;
+	int precision;
+	int width;
+	int asterisk;
 }				t_args;
 
 int					ft_printf(const char *format, ...);
