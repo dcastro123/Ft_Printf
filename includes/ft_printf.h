@@ -32,9 +32,7 @@ typedef	struct	s_flags
 	int space;
 	int plus;
 	int minus;
-	int tag_x;
-	int tag_X;
-	int tag_o;
+	int tag;
 	int zero;
 	int precision;
 	int width;
