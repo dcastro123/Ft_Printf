@@ -12,21 +12,16 @@
 
 #include "ft_printf.h"
 
-void	init_mods(t_mods *mod)
-{
-	mod->hh = 0;
-	mod->h = 0;
-	mod->l = 0;
-	mod->ll = 0;
-	mod->j = 0;
-	mod->z = 0;
-}
-
 void	init_args(t_args *ar)
 {
-	init_flags(&ar->flag);
-	init_mods(&ar->mod);
-	if (!(ar->out = ft_memalloc(sizeof(t_args))))
-		return ;
-	ar->conv = 0;
+	ar.space = 0;
+ 	ar.plus = 0;
+ 	ar.zero = 0;
+ 	ar.tag_x = 0;
+ 	ar.tag_X = 0;
+ 	ar.tag_o = 0;
+ 	ar.precision = 0;
+ 	ar.width = 0;
+	ar.out = ft_strnew(0);
+	ar.conv = 0;
 }
