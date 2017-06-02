@@ -21,15 +21,19 @@ void	check_flag()
 		}
 		if (format[index] == '-')
 		{
-			ar->flag.minus = 1;
+			ar->minus = 1;
 		}
 		if (format[index] == '+')
 		{
-			ar->flag.plus = 1;
+			ar->plus = 1;
 		}
 		if (format[index] == '#')
 		{
-			ar->flag.tag = 1;
+			ar->tag = 1;
+		}
+		if (format[index] == '0')
+		{
+			ar->zero = 1;
 		       
 
 
