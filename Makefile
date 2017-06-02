@@ -14,7 +14,7 @@ NAME = libftprintf
 
 CMP  = gcc
 
-SRCS = srcs/main.c srcs/ft_printf.c srcs/init.c
+SRCS = srcs/main.c srcs/ft_printf.c helpers/arg_check.c helpers/ft_convert.c
 
 INCL = -I includes/ -L libft/ -lft
 

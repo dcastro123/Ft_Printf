@@ -30,6 +30,7 @@
 
 typedef	enum 	e_mods
 {
+	none;
 	hh;
 	h;
 	l;
@@ -59,13 +60,11 @@ int					check_flags();
 int					check_precision();
 int					check_width();
 int					check_mod();
-int					do_conv(va_list args, const char *tmp);
+void				get_args(const char *format, t_args *ar, int index);
 
 
 unsigned	int		ft_convert(unsigned int a, int base);
 
-void	init_flags(t_flags *flag);
-void	init_mods(t_mods *mod);
 void	init_args(t_args *ar);
 void	start_conversion(const char *format, t_args *ar);			
 #endif
