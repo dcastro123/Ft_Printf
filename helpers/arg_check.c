@@ -29,8 +29,7 @@ void	check_flag()
 		}
 		if (format[index] == '#')
 		{
-			index++;
-			if(format[index] == 
+			ar->flag.tag = 1;
 		       
 
 
