@@ -14,53 +14,67 @@
 # define FT_PRINTF_H
 
 # include <stdlib.h>
+# include <stdint.h>
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
 # include <sys/types.h>
-# include <sys/types.h>
 # include "../libft/libft.h"
 # include <stdarg.h>
-
-# define ABS(x)	(x < 0) ? -x : x
-
-typedef	struct		s_store
-{
-	char				*conv;
-	int					num_flags;
-	char				*arg_list;//?
-	struct s_pformat	*next;
-	int					format_size;
-	int					user_width;
-	int					user_precision;
-}					t_store;
-
-typedef	struct 			s_output
-{
-	char			*str;
-	size_t				length;
-}
+# include <limits.h>
+# include <wchar.h>
 
 typedef	struct	s_flags
 {
+	int space;
+	int plus;
+	int minus;
+	int tag_x;
+	int tag_X;
+	int tag_o;
+	int zero;
+	int precision;
+	int width;
 	
-	
-}
+}				t_flags;
 
-typedef enum	s_modifiers
+typedef	struct 	s_mods
 {
+	int hh;
+	int h;
+	int l;
+	int ll;
+	int j;
+	int z;
+}				t_mods;
+
+typedef	struct 	s_args
+{
+	int width;
+	int precision;
+	char *out;
+	char conv;
+	t_mods mod;
+	t_flags flag;
 
 
 
-}
+	
+}				t_args;
+
 int					ft_printf(const char *format, ...);
-int					ft_print_arg(va_list args, const char *tmp);
 
-void				print_s(char *str);
-void				print_d(int i);
-void				print_c(unsigned int i);
-void				print_u(unsigned int i);
-void				print_p(unsigned long a);
+int					check_flags();
+int					check_precision();
+int					check_width();
+int					check_mod();
+int					do_conv(va_list args, const char *tmp);
 
-void				ft_convert(unsigned int a, int base);
+
+unsigned	int		ft_convert(unsigned int a, int base);
+
+void	init_flags(t_flags *flag);
+void	init_mods(t_mods *mod);
+void	init_args(t_args *ar);
+void	start_conversion(const char *format, t_args *ar);			
 #endif

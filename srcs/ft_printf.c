@@ -12,41 +12,43 @@
 
 #include "ft_printf.h"
 
+void	start_conversion(const char *format, t_args *ar, int index)
+{
+	init_args(ar);
+	get_args(format, ar, index);
+}
+
 int	ft_printf(const char *format, ...)
 {
-	va_list args;
-	va_list arg_cpy;
-	const char	*tmp;
-	size_t		ret;
+	va_list		ap;
+	int			ret;
+	t_args		ar;
+	int			index;
 
-	va_start(args, format);
-	va_copy(arg_cpy, args);
-	tmp = format;
+	va_start(ap, format);
 	ret = 0;
-	while (*tmp != '\0')
+	index = 0;
+	while (format[index] != '\0')
 	{
-		if (*tmp == '%')
+		if (format[index] == '%' && format[index++] != '%')
 		{
-			tmp++;
-			if (*tmp == '%')
-			{
-				ft_putchar(*tmp);
-				ret++;
-			}
-			else
-			{
-				ret++;
-				ft_print_arg(args, )
-			}
-			tmp++;
+			start_conversion(format, &ar);
+			//check everything
+			//ret++;
 		}
-		else if (*tmp != '%')
+		else if (format[index] == '%' && format[index++] == '%')
 		{
-			ft_putchar(*tmp);
+			ft_putchar('%');
 			ret++;
-			tmp++;
+			index += 2;
 		}
+		else
+		{
+			ft_putchar(format[index]);
+			ret++;
+		}
+		index++;
 	}
-	va_end(args);
+	va_end(ap);
 	return (ret);
 }

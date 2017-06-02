@@ -1,21 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_p.c                                          :+:      :+:    :+:   */
+/*   arg_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/02 17:54:06 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/05/23 20:30:18 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/06/01 23:29:45 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	print_p(unsigned long a)
+void	check_flag()
 {
-	unsigned long	*i;
 
-	i = &a;
-	ft_convert((unsigned int)i, 16);
+
+
+
+}
+
+void	check_mod()
+{
+
+
+
+
+
+
+
+}
+
+void	get_args(const char *format, t_args *ar)
+{
+	//some variables here maybe?
+	check_flag();
+	check_mod();
+
+
+
+
+
+
+
+
 }

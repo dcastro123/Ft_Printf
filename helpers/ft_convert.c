@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_s.c                                          :+:      :+:    :+:   */
+/*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/21 18:01:19 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/05/02 17:25:47 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/04/23 17:15:05 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/04/26 18:52:35 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-static	size_t	get_length(char *str)
+static	unsigned int	calc_len(unsigned int nbr, int base)
 {
-	size_t len;
+	unsigned int len;
 
 	len = 0;
-	if (!str)
-		return (0);
-	while (*str++)
+	while ((nbr / base) != 0)
+	{
 		len++;
+		nbr /= base;
+	}
+	len++;
 	return (len);
 }
 
-static	void	ft_putnstr(char *str, size_t len)
+unsigned int					ft_convert(unsigned int a, int base)
 {
-	size_t	i;
+	unsigned int	*con;
+	unsigned int	i;
+	unsigned int	length;
 
-	i = 0;
-	while (i < len)
+	length = calc_len(a, base);
+	con = (unsigned int *)ft_memalloc(length);
+	i = length;
+	while ((int)i-- > 0)
 	{
-		write(1, &str[i], 1);
-		i++;
+		con[i] = a % base;
+		a /= base;
 	}
-}
-
-void	print_s(char *str)
-{
-	size_t length;
-
-	length = get_length(str);
-	ft_putnstr(str, length);
+	return (con);
 }
