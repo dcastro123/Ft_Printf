@@ -51,16 +51,10 @@ typedef	struct 	s_mods
 
 typedef	struct 	s_args
 {
-	int width;
-	int precision;
 	char *out;
 	char conv;
 	t_mods mod;
-	t_flags flag;
-
-
-
-	
+	t_flags flag;	
 }				t_args;
 
 int					ft_printf(const char *format, ...);
