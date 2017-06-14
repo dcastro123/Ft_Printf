@@ -41,5 +41,5 @@ unsigned int					ft_convert(unsigned int a, int base)
 		con[i] = a % base;
 		a /= base;
 	}
-	return (con);
+	return (*con);
 }

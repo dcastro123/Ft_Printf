@@ -6,13 +6,13 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/06/01 23:29:45 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/06/08 19:23:15 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	read_asterisk(const char *format, t_args *ar, int index, va_list *ap)
+void	parse_asterisk(const char *format, t_args *ar, int index, va_list *ap)
 {
 	int val;
 
@@ -33,7 +33,7 @@ void	read_asterisk(const char *format, t_args *ar, int index, va_list *ap)
 	}
 }
 
-void	find_precision(const char *format, t_args *ar, int index, va_list *ap)
+void	get_precision(const char *format, t_args *ar, int index, va_list *ap)
 {
 	int	ret_val;
 
@@ -46,7 +46,25 @@ void	find_precision(const char *format, t_args *ar, int index, va_list *ap)
 	else if (format[index + 1] > '0' && format[index + 1] <= '9')
 		ar->precision = ft_atoi(format + index);
 	else if (format[index + 1] == '0')
-		ar->out = ft_strjoin(ar->out,""); //hmmmm maybe write a function to handle this?
+		ar->str_out = ft_strjoin(ar->str_out, "");
+}
+
+void	check_mod(const char *format, t_args *ar, int index)
+{
+	int mods = 0;
+
+	if (format[index] == 'h' && format[index++] != 'h')
+		mods = h;
+	else if (format[index] == 'h' && format[index++] == 'h')
+		mods = hh;
+	else if (format[index] == 'l' && format[index++] != 'l')
+		mods = l;
+	else if (format[index] == 'l' && format[index++] == 'l')
+		mods = ll;
+	else if (format[index] == 'z')
+		mods = z;
+	else if (format[index] == 'j')
+		mods = j;
 }
 
 void	more_parsing(const char *format, t_args *ar, int index)
@@ -63,17 +81,16 @@ void	more_parsing(const char *format, t_args *ar, int index)
 		ar->zero = 1;
 }
 
-void	check_flag(const char *format, t_args *ar, int index)
+void	check_flags(const char *format, t_args *ar, int index, va_list *ap)
 {
-	while (IS_FLAG(format[index]) || IS_NFLAG(format[index]) || 
-		IS_MOD(format[index]))
+	while (IS_FLAG(format[index]) || IS_NFLAG(format[index]))
 	{
 		more_parsing(format, ar, index);
-		if (format[index] == '*')
-			read_asterisk(format, ar, index);
 		if (format[index] == '.')
-			find_precision(format, ar, index);
-		else if (format[index] >= '1' && <= '9')
+			get_precision(format, ar, index, ap);
+		if (format[index] == '*')
+			parse_asterisk(format, ar, index, ap);
+		else if (format[index] >= '1' && format[index] <= '9')
 		{
 			ar->width = ft_atoi(format + index);
 			while (format[index] >= '0' && format[index] <= '9')
@@ -82,36 +99,4 @@ void	check_flag(const char *format, t_args *ar, int index)
 		else
 			index++;
 	}
-}
-
-void	check_mod(const char *format, t_args *ar, int index)
-{
-	ar->mods = none;
-	if (format[index] == 'h' && format[index++] != 'h')
-		ar->mods = h;
-	else if (format[index] == 'h' && format[index++] == 'h')
-		ar->mods = hh;
-	else if (format[index] == 'l' && format[index++] != 'l')
-		ar->mods = l;
-	else if (format[index] == 'l' && format[index++] == 'l')
-		ar->mods = ll;
-	else if (format[index] == 'z')
-		ar->mods = z;
-	else if (format[index] == 'j')
-		ar->mods = j;
-}
-
-void	get_args(const char *format, t_args *ar, int index)
-{
-	//some variables here maybe?
-	check_flag();
-	check_type();
-
-
-
-
-
-
-
-
 }
