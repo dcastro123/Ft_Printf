@@ -51,20 +51,18 @@ void	get_precision(const char *format, t_args *ar, int index, va_list *ap)
 
 void	check_mod(const char *format, t_args *ar, int index)
 {
-	int mods = 0;
-
 	if (format[index] == 'h' && format[index++] != 'h')
-		mods = h;
+		ar->mods = h;
 	else if (format[index] == 'h' && format[index++] == 'h')
-		mods = hh;
+		ar->mods = hh;
 	else if (format[index] == 'l' && format[index++] != 'l')
-		mods = l;
+		ar->mods = l;
 	else if (format[index] == 'l' && format[index++] == 'l')
-		mods = ll;
+		ar->mods = ll;
 	else if (format[index] == 'z')
-		mods = z;
+		ar->mods = z;
 	else if (format[index] == 'j')
-		mods = j;
+		ar->mods = j;
 }
 
 void	more_parsing(const char *format, t_args *ar, int index)
@@ -83,7 +81,8 @@ void	more_parsing(const char *format, t_args *ar, int index)
 
 void	check_flags(const char *format, t_args *ar, int index, va_list *ap)
 {
-	while (IS_FLAG(format[index]) || IS_NFLAG(format[index]))
+	ar->mods = 0;
+	while (IS_FLAG(format[index]) || IS_NFLAG(format[index]) || IS_MOD(format[index]))
 	{
 		more_parsing(format, ar, index);
 		if (format[index] == '.')

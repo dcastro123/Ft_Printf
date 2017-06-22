@@ -26,7 +26,7 @@
 
 #define IS_FLAG(x)	((x == 32 || x == 35 || x == 42 || x == 43) ? 1 : 0)
 #define IS_NFLAG(x)	((x == 45 || x == 46 || (x > 47 && x < 58)) ? 1 : 0)
-#define IS_MOD(x)	((x > 'a' && x < 'z') ? 1: 0)
+#define IS_MOD(x)	((x > 'h' && x < 'z') ? 1: 0)
 
 typedef	enum 	e_mods
 {
@@ -37,21 +37,25 @@ typedef	enum 	e_mods
 	ll,
 	j,
 	z,
-}				mods;
+}				t_mods;
 
 typedef	struct 	s_args
 {
 	char *str_out;
 	int out_length;
 	char conv;
+	char *tab;
 	int space;
 	int plus;
 	int minus;
 	int tag;
 	int zero;
+	unsigned int unum;
+	int num;
 	unsigned int precision;
 	unsigned int width;
 	int asterisk;
+	t_mods	mods;
 }				t_args;
 
 int					ft_printf(const char *format, ...);
@@ -64,9 +68,17 @@ void				check_mod(const char *format, t_args *ar, int index);
 void				get_args(const char *format, t_args *ar, int index, va_list *ap);
 void				parse_asterisk(const char *format, t_args *ar, int index, va_list *ap);
 void				check_type(const char *format, t_args *ar, int index, va_list *ap);
-void				parse_string(const char *format, t_args *ar, int index, va_list *ap);
 
 
-unsigned int		ft_convert(unsigned int a, int base);
+void	check_str(t_args *ar);
+void	handle_char(t_args *ar);
+void	handle_rstr(t_args *ar);
 			
+
+void	check_int(t_args *ar);
+void	handle_int(t_args *ar);
+void	handle_oct(t_args *ar);
+void	handle_hex(t_args *ar);
+char	*ft_uitoa_base(int value, int base);
+char	*ft_itoa_base(int value, int base);
 #endif

@@ -14,7 +14,8 @@
 
 int	main(void)
 {
-	ft_printf("hello");
+	//printf("ok how do i use this %hhd\n", 's');
+	ft_printf("test>>> %c\n     %s\n", 't', "hello");
 	// int	*a;
 	// int	b = 10;
 	// size_t	c;

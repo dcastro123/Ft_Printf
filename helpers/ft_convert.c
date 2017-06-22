@@ -27,7 +27,7 @@ static	unsigned int	calc_len(unsigned int nbr, int base)
 	return (len);
 }
 
-unsigned int					ft_convert(unsigned int a, int base)
+unsigned int					*ft_convert(unsigned int a, int base)
 {
 	unsigned int	*con;
 	unsigned int	i;
@@ -41,5 +41,5 @@ unsigned int					ft_convert(unsigned int a, int base)
 		con[i] = a % base;
 		a /= base;
 	}
-	return (*con);
+	return (con);
 }
