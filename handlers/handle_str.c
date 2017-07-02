@@ -14,10 +14,10 @@
 
 void	check_str(t_args *ar)
 {
-	char tmp;
-	char *strtmp;
+	// char tmp;
+	// char *strtmp;
 	if (ar->conv == 'c')
-		handle_char(ar);
+		ft_putchar('c');
 	// else if (fmt[index] == 'C')
 	// 	handle_wchar(ar, ap);
 	else if (ar->conv == 's')
@@ -38,10 +38,12 @@ void	check_str(t_args *ar)
 
 void	handle_rstr(t_args *ar)
 {
-	printf("handle--rstr\n");
+	//printf("handle--rstr\n");
+	check_format(ar);
+//	printf("str before output: %s\n", ar->str_out);
 	if (ar->mods == none)
-		ft_putstr(ar->tab);
-	printf("done handle_rstr\n");
+		ft_putstr(ar->str_out);
+	//printf("done handle_rstr\n");
 
 
 
@@ -71,12 +73,12 @@ void	handle_rstr(t_args *ar)
 
 void	handle_char(t_args *ar)
 {
-	printf("--handlechar--\n");
+	//printf("--handlechar--\n");
 	if (ar->mods == none)
 		ft_putchar(ar->num);
 	//else if
 	//	printf("rip invalid for now\n");
-	printf("end handle char\n");
+	//printf("end handle char\n");
 
 
 

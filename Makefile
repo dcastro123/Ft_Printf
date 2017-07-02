@@ -17,6 +17,7 @@ CMP  = gcc
 SRCS = srcs/main.c srcs/ft_printf.c helpers/arg_check.c\
 		srcs/start_printf.c handlers/handle_str.c handlers/handle_int.c\
 		handlers/handle_more_int.c helpers/ft_uitoa_base.c helpers/ft_itoa_base.c\
+		helpers/format_out.c
 
 INCL = -I includes/ -L libft/ -lft
 

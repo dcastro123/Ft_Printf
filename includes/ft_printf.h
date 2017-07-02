@@ -27,6 +27,7 @@
 #define IS_FLAG(x)	((x == 32 || x == 35 || x == 42 || x == 43) ? 1 : 0)
 #define IS_NFLAG(x)	((x == 45 || x == 46 || (x > 47 && x < 58)) ? 1 : 0)
 #define IS_MOD(x)	((x > 'h' && x < 'z') ? 1: 0)
+#define IS_TRUE(x)  ((x == 1) ? 1 : 0)
 
 typedef	enum 	e_mods
 {
@@ -42,33 +43,35 @@ typedef	enum 	e_mods
 typedef	struct 	s_args
 {
 	char *str_out;
-	int out_length;
 	char conv;
 	char *tab;
+	int index;
 	int space;
 	int plus;
 	int minus;
 	int tag;
 	int zero;
-	unsigned int unum;
 	int num;
+	unsigned int unum;
 	unsigned int precision;
 	unsigned int width;
-	int asterisk;
 	t_mods	mods;
 }				t_args;
 
 int					ft_printf(const char *format, ...);
 void				init_args(t_args *ar);
-void				start_conversion(const char *format, t_args *ar, int index, va_list *ap);
+void				start_conversion(const char *format, t_args *ar, va_list *ap);
 
-void				check_flags(const char *format, t_args *ar, int index, va_list *ap);
-void				get_precision(const char *format, t_args *ar, int index, va_list *ap);
-void				check_mod(const char *format, t_args *ar, int index);
-void				get_args(const char *format, t_args *ar, int index, va_list *ap);
-void				parse_asterisk(const char *format, t_args *ar, int index, va_list *ap);
-void				check_type(const char *format, t_args *ar, int index, va_list *ap);
+void				check_flags(const char *format, t_args *ar, va_list *ap);
+void				get_precision(const char *format, t_args *ar, va_list *ap);
+void				check_mod(const char *format, t_args *ar);
+//void				get_args(const char *format, t_args *ar, va_list *ap);
+void				parse_asterisk(const char *format, t_args *ar, va_list *ap);
+void				check_type(const char *format, t_args *ar, va_list *ap);
 
+
+void	check_format(t_args *ar);
+void	format_ljust(t_args *ar, char *tmp, int length);
 
 void	check_str(t_args *ar);
 void	handle_char(t_args *ar);

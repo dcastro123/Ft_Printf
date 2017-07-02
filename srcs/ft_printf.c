@@ -17,31 +17,33 @@ int	ft_printf(const char *format, ...)
 	va_list		ap;
 	int			ret;
 	t_args		ar;
-	int			index;
 
 	va_start(ap, format);
 	ret = 0;
-	index = 0;
-	while (format[index] != '\0')
+	ar.index = 0;
+	while (format[ar.index] != '\0')
 	{
-		if (format[index] == '%' && format[index + 1] != '%')
+		if (format[ar.index] == '%' && format[ar.index + 1] != '%')
 		{
-			index++;
-			start_conversion(format, &ar, index, &ap);
+			// ar.index++;
+			start_conversion(format, &ar, &ap);
+			// ar.index++;
+	//		printf("index is [%d]: %c\n", ar.index, format[ar.index]);
 			ret++;
 		}
-		else if (format[index] == '%' && format[index + 1] == '%')
+		else if (format[ar.index] == '%' && format[ar.index + 1] == '%')
 		{
 			ft_putchar('%');
 			ret++;
-			index += 2;
+			ar.index += 2;
 		}
 		else
 		{
-			ft_putchar(format[index]);
+			ft_putchar(format[ar.index]);
+	//		ar.index++;
 			ret++;
 		}
-		index++;
+		ar.index++;
 	}
 	va_end(ap);
 	return (ret);

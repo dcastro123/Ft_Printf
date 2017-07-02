@@ -15,7 +15,17 @@
 int	main(void)
 {
 	//printf("ok how do i use this %hhd\n", 's');
-	ft_printf("test>>> %c\n     %s\n", 't', "hello");
+	int x = 345;
+	char *str = "hello";
+	//ft_printf("test>>> %s     %c\n", "hello", 'c');
+	//printf ("<%-d> only -d to see the difference\n", x);
+    //printf ("<%5d> is right-justified.\n", x);
+    //printf ("<%-+5d> The minus sign makes it left-justified.\n", x);
+    // printf ("%-s only -s expected output\n", str);
+    // ft_printf ("%-s only -s my printf output\n", str);
+    printf("'%-10s' -s and width expected output\n", str);
+    ft_printf("'%-10s' -s and width my output\n", str);
+    //printf ("'%10.3s' the output should be hel\n", str);
 	// int	*a;
 	// int	b = 10;
 	// size_t	c;

@@ -15,6 +15,7 @@
 void	init_args(t_args *ar)
 {
 	ar->space = 0;
+	ar->minus = 0;
  	ar->plus = 0;
  	ar->zero = 0;
  	ar->tag = 0;
@@ -25,34 +26,34 @@ void	init_args(t_args *ar)
 	ar->num = 0;
 	ar->unum = 0;
 }
-void	check_type(const char *format, t_args *ar, int index, va_list *ap)
+void	check_type(const char *format, t_args *ar, va_list *ap)
 {
-	if (format[index] == 'c' || format[index] == 'C')
+	if (format[ar->index] == 'c' || format[ar->index] == 'C')
 	{
-		ar->conv = format[index];
+		ar->conv = format[ar->index];
 		ar->num = va_arg(*ap, int);
 		check_str(ar);
 	}
-	else if (format[index] == 's' || format[index] == 'S')
+	else if (format[ar->index] == 's' || format[ar->index] == 'S')
 	{
-		ar->conv = format[index];
+		ar->conv = format[ar->index];
 		ar->tab = ft_strdup(va_arg(*ap, char*));
 		check_str(ar);
 	}
-	 else if (format[index] == 'd' || format[index] == 'i')
+	 else if (format[ar->index] == 'd' || format[ar->index] == 'i')
 	 {
 		 ar->num = va_arg(*ap, long long);
 		 check_int(ar);
 	 }
-	else if (format[index] == 'o' || format[index] == 'O')
+	else if (format[ar->index] == 'o' || format[ar->index] == 'O')
 	 {
-	 	ar->conv = format[index];
+	 	ar->conv = format[ar->index];
 	 	ar->unum = va_arg(*ap, unsigned int);
 	 	handle_oct(ar);
 	 }
-	 else if (format[index] == 'x' || format[index] == 'X')
+	 else if (format[ar->index] == 'x' || format[ar->index] == 'X')
 	 {
-	 	ar->conv = format[index];
+	 	ar->conv = format[ar->index];
 	 	ar->unum = va_arg(*ap, unsigned int);
 	 	handle_hex(ar);
 	 }
@@ -63,9 +64,12 @@ void	check_type(const char *format, t_args *ar, int index, va_list *ap)
 	// }
 }
 
-void	start_conversion(const char *format, t_args *ar, int index, va_list *ap)
+void	start_conversion(const char *format, t_args *ar, va_list *ap)
 {
+	ar->index++;
 	init_args(ar);
-	check_flags(format, ar, index, ap);
-	check_type(format, ar, index, ap);
+	check_flags(format, ar, ap);
+	// ar->index++;
+//	printf("index value before type check: [%d]: %c\n", ar->index, format[ar->index]);
+	check_type(format, ar, ap);
 }
