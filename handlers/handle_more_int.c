@@ -27,7 +27,7 @@
 void	handle_oct(t_args *ar)
 {
 	char *tmp;
-	if (ar->mods == none && ar->conv == 'o')
+	if (ar->mods == none)
 	{
 		tmp = ft_uitoa_base(ar->unum, 8);
 		ft_putstr(tmp);

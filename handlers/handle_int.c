@@ -33,9 +33,27 @@ void	check_int(t_args *ar)
 void	handle_int(t_args *ar)
 {
 	char *tmp;
+	int i;
 
+	i = 0;
 	tmp = ft_itoa_base(ar->num, 10);
-	ft_putstr(tmp);
+	if (ar->width > 0 && ar->minus == 0 && ar->precision == 0)
+	{
+		format_width(ar, tmp);
+		ft_putstr(tmp);
+	}
+	if (ar->plus == 1)
+	{
+		format_padding(ar);
+		ft_putstr(tmp);
+	}
+	else if (ar->space == 1 && ar->plus == 0)
+	{
+		format_space(ar, tmp);
+		ft_putstr(tmp);
+	}
+	//tmp = ft_itoa_base(ar->num, 10);
+	// ft_putstr(tmp);
 }
 
 // void	handle_usint()

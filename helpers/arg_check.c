@@ -69,6 +69,8 @@ void	more_parsing(const char *format, t_args *ar)
 {
 	if (IS_MOD(format[ar->index]))
 		check_mod(format, ar);
+	if (format[ar->index] == ' ')
+		ar->space = 1;
 	if (format[ar->index] == '-')
 		ar->minus = 1;
 	if (format[ar->index] == '+')

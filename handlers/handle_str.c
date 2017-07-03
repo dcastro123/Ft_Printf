@@ -41,8 +41,7 @@ void	handle_rstr(t_args *ar)
 	//printf("handle--rstr\n");
 	check_format(ar);
 //	printf("str before output: %s\n", ar->str_out);
-	if (ar->mods == none)
-		ft_putstr(ar->str_out);
+	ft_putstr(ar->str_out);
 	//printf("done handle_rstr\n");
 
 

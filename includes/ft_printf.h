@@ -65,19 +65,22 @@ void				start_conversion(const char *format, t_args *ar, va_list *ap);
 void				check_flags(const char *format, t_args *ar, va_list *ap);
 void				get_precision(const char *format, t_args *ar, va_list *ap);
 void				check_mod(const char *format, t_args *ar);
-//void				get_args(const char *format, t_args *ar, va_list *ap);
 void				parse_asterisk(const char *format, t_args *ar, va_list *ap);
 void				check_type(const char *format, t_args *ar, va_list *ap);
 
 
 void	check_format(t_args *ar);
-void	format_ljust(t_args *ar, char *tmp, int length);
+void	format_ljust(t_args *ar, char *tmp, unsigned int length);
+void	format_padding(t_args *ar);
+void	format_space(t_args *ar, char *tmp);
+void	format_width(t_args *ar, char *tmp);
 
 void	check_str(t_args *ar);
 void	handle_char(t_args *ar);
 void	handle_rstr(t_args *ar);
-			
 
+void	format_intpadding(t_args *ar, char *tmp);
+void	format_intljust(t_args *ar, char *tmp, unsigned int length);
 void	check_int(t_args *ar);
 void	handle_int(t_args *ar);
 void	handle_oct(t_args *ar);
