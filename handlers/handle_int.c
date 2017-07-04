@@ -42,7 +42,7 @@ void	handle_int(t_args *ar)
 		format_width(ar, tmp);
 		ft_putstr(tmp);
 	}
-	if (ar->plus == 1)
+	else if (ar->plus == 1)
 	{
 		format_padding(ar);
 		ft_putstr(tmp);
