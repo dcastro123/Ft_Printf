@@ -19,7 +19,7 @@
 # include <string.h>
 # include <stdio.h>
 # include <sys/types.h>
-# include "../libft/libft.h"
+# include "libft.h"
 # include <stdarg.h>
 # include <limits.h>
 # include <wchar.h>

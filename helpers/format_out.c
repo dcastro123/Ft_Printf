@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	check_format(t_args *ar)
 {
@@ -38,7 +38,7 @@ void	check_format(t_args *ar)
 
 void	format_ljust(t_args *ar, char *tmp, unsigned int length)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (ar->tab[i])
@@ -57,7 +57,7 @@ void	format_ljust(t_args *ar, char *tmp, unsigned int length)
 
 void	format_padding(t_args *ar)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	if (ar->num >= 0)
@@ -74,11 +74,9 @@ void	format_padding(t_args *ar)
 
 void	format_space(t_args *ar, char *tmp)
 {
-	int i;
-	int j;
+	unsigned int i;
 
 	i = 0;
-	j = 0;
 	if (ar->num > 0)
 		ft_putchar(' ');
 	if (ar->width > 0)
@@ -90,7 +88,7 @@ void	format_space(t_args *ar, char *tmp)
 
 void	format_width(t_args *ar, char *tmp)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	if (ft_strlen(tmp) > ar->width)

@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int	main(void)
 {
 	//printf("ok how do i use this %hhd\n", 's');
 	int x = 1000;
-	char *str = "hello";
+	//char *str = "hello";
 	//ft_printf("test>>> %s     %c\n", "hello", 'c');
 	//printf ("<%-d> only -d to see the difference\n", x);
     //printf ("<%5d> is right-justified.\n", x);
