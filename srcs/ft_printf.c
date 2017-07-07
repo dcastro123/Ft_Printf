@@ -37,10 +37,10 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			ft_putchar(format[ar.index]);
-			ar.index++;
+		//	ar.index++;
 			ret++;
 		}
-//		ar.index++;
+		ar.index++;
 	}
 	va_end(ap);
 	return (ret);
