@@ -52,6 +52,8 @@ void	handle_int(t_args *ar)
 		format_space(ar, tmp);
 		ft_putstr(tmp);
 	}
+	else
+		ft_putstr(tmp);
 	//tmp = ft_itoa_base(ar->num, 10);
 	// ft_putstr(tmp);
 }
