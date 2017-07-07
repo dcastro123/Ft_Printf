@@ -97,7 +97,6 @@ void	check_flags(const char *format, t_args *ar, va_list *ap)
 			while (format[ar->index] >= '0' && format[ar->index] <= '9')
 				ar->index++;
 		}
-		else
-			ar->index++;
+		ar->index++;
 	}
 }
