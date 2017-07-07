@@ -32,7 +32,7 @@ int	ft_printf(const char *format, ...)
 		{
 			ft_putchar('%');
 			ret++;
-			ar.index += 2;
+			ar.index++;
 		}
 		else
 		{
