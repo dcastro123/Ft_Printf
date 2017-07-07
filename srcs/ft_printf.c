@@ -23,7 +23,6 @@ int	ft_printf(const char *format, ...)
 	ar.index = 0;
 	while (format[ar.index] != '\0')
 	{
-		printf("format is here >>> %c <<<<<<<\n", format[ar.index]);
 		if (format[ar.index] == '%' && format[ar.index + 1] != '%')
 		{
 			// ar.index++;
@@ -44,7 +43,7 @@ int	ft_printf(const char *format, ...)
 	//		ar.index++;
 			ret++;
 		}
-		ar.index++;
+//		ar.index++;
 	}
 	va_end(ap);
 	return (ret);

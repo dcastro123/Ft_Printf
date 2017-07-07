@@ -93,9 +93,7 @@ void	check_flags(const char *format, t_args *ar, va_list *ap)
 			parse_asterisk(format, ar, ap);
 		else if (format[ar->index] >= '1' && format[ar->index] <= '9')
 		{
-//			printf("?????????????\n");
 			ar->width = ft_atoi(format + ar->index);
-//			printf("width value: %u\n", ar->width);
 			while (format[ar->index] >= '0' && format[ar->index] <= '9')
 				ar->index++;
 		}
