@@ -44,7 +44,7 @@ int	ft_printf(const char *format, ...)
 	//		ar.index++;
 			ret++;
 		}
-//		ar.index++;
+		ar.index++;
 	}
 	va_end(ap);
 	return (ret);
