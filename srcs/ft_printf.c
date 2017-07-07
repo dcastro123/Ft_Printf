@@ -28,7 +28,6 @@ int	ft_printf(const char *format, ...)
 			// ar.index++;
 			start_conversion(format, &ar, &ap);
 			// ar.index++;
-	//		printf("index is [%d]: %c\n", ar.index, format[ar.index]);
 			ret++;
 		}
 		else if (format[ar.index] == '%' && format[ar.index + 1] == '%')
@@ -40,7 +39,7 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			ft_putchar(format[ar.index]);
-	//		ar.index++;
+			ar.index++;
 			ret++;
 		}
 //		ar.index++;

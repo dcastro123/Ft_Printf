@@ -69,7 +69,5 @@ void	start_conversion(const char *format, t_args *ar, va_list *ap)
 	ar->index++;
 	init_args(ar);
 	check_flags(format, ar, ap);
-	// ar->index++;
-//	printf("index value before type check: [%d]: %c\n", ar->index, format[ar->index]);
 	check_type(format, ar, ap);
 }
