@@ -25,9 +25,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[ar.index] == '%' && format[ar.index + 1] != '%')
 		{
-			// ar.index++;
 			start_conversion(format, &ar, &ap);
-			// ar.index++;
 			ret++;
 		}
 		else if (format[ar.index] == '%' && format[ar.index + 1] == '%')
@@ -39,10 +37,9 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			ft_putchar(format[ar.index]);
-	//		ar.index++;
+			ar.index++;
 			ret++;
 		}
-//		ar.index++;
 	}
 	va_end(ap);
 	return (ret);
