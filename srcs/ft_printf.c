@@ -21,7 +21,6 @@ int	ft_printf(const char *format, ...)
 	va_start(ap, format);
 	ret = 0;
 	ar.index = 0;
-	printf("\n>>%s<<\n", format);
 	while (format[ar.index] != '\0')
 	{
 		printf("format is here >>> %c <<<<<<<\n", format[ar.index]);
