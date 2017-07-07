@@ -48,19 +48,19 @@ void	format_intpadding(t_args *ar, char *tmp)
 	}
 }
 
-void	format_space(t_args *ar, char *tmp)
-{
-	int i;
-	int j;
+// void	format_space(t_args *ar, char *tmp)
+// {
+// 	int i;
+// 	int j;
 
-	i = 0;
-	j = 0;
-	if (ar->num > 0)
-		ft_putchar(' ');
-	if (ar->width > 0)
-	{
-		while (++i < (ar->width - ft_strlen(tmp)))
-			ft_putchar('0');
-	}
-}
+// 	i = 0;
+// 	j = 0;
+// 	if (ar->num > 0)
+// 		ft_putchar(' ');
+// 	if (ar->width > 0)
+// 	{
+// 		while (++i < (ar->width - ft_strlen(tmp)))
+// 			ft_putchar('0');
+// 	}
+// }
 

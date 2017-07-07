@@ -17,7 +17,7 @@ void	check_str(t_args *ar)
 	// char tmp;
 	// char *strtmp;
 	if (ar->conv == 'c')
-		ft_putchar('c');
+		handle_char(ar);
 	// else if (fmt[index] == 'C')
 	// 	handle_wchar(ar, ap);
 	else if (ar->conv == 's')
