@@ -87,6 +87,20 @@ void	handle_hex(t_args *ar)
 
 }
 
+void	handle_ptr(t_args *ar)
+{
+	char *tmp;
+	char *tmp2[2];
+	char *tmp3;
+	unsigned long val;
+
+	tmp1 = "OX";
+	val = (unsigned long)ar->unum;
+	tmp = ft_ultoa_base(val, 16);
+	ar->str_out = ft_strjoin(tmp1, tmp);
+	ft_putstr(ar->str_out);
+
+}
 // void	handle_upperhex()
 // {
 

@@ -14,9 +14,10 @@ NAME = libftprintf.a
 
 CMP  = gcc -Wall -Werror -Wextra -c
 
-SRC =  srcs/ft_printf.c srcs/start_printf.c 
-HANDLER = handlers/handle_str.c handlers/handle_int.c handlers/handle_more_int.c
-HELPER = helpers/arg_check.c helpers/ft_uitoa_base.c helpers/ft_itoa_base.c helpers/format_out.c
+SRC =  		srcs/ft_printf.c srcs/start_printf.c 
+HANDLER = 	handlers/handle_str.c handlers/handle_int.c handlers/handle_more_int.c
+HELPER = 	helpers/arg_check.c helpers/ft_uitoa_base.c helpers/ft_itoa_base.c helpers/format_out.c\
+			helpers/ft_ultoa_base.c
 LIBFT =	libft/ft_atoi.c libft/ft_bzero.c libft/ft_isalnum.c\
 		libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c\
 	   	libft/ft_isprint.c libft/ft_memalloc.c libft/ft_memccpy.c\

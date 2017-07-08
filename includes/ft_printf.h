@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/06/13 18:19:02 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/07 17:00:22 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ void	handle_int(t_args *ar);
 void	handle_oct(t_args *ar);
 void	handle_hex(t_args *ar);
 char	*ft_uitoa_base(int value, int base);
+char	*ft_ultoa_base(int value, int base);
 char	*ft_itoa_base(int value, int base);
 #endif

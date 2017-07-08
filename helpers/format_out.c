@@ -34,6 +34,8 @@ void	check_format(t_args *ar)
 			printf("not yet\n");
 		}
 	}
+	else
+		ar->str_out = ft_strdup(ar->tab);
 }
 
 void	format_ljust(t_args *ar, char *tmp, unsigned int length)

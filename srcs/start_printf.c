@@ -57,11 +57,11 @@ void	check_type(const char *format, t_args *ar, va_list *ap)
 	 	ar->unum = va_arg(*ap, unsigned int);
 	 	handle_hex(ar);
 	 }
-	// else if (format[index] == 'p')
-	// {
-	// 	ar->num = va_arg(*ap, unsigned int);
-	// 	// handle_ptr(format, ap, ar);
-	// }
+	else if (format[index] == 'p')
+	{
+		ar->unum = va_arg(*ap, unsigned int);
+		handle_ptr(format, ap, ar);
+	}
 }
 
 void	start_conversion(const char *format, t_args *ar, va_list *ap)
