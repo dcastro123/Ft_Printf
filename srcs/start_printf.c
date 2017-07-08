@@ -57,10 +57,10 @@ void	check_type(const char *format, t_args *ar, va_list *ap)
 	 	ar->unum = va_arg(*ap, unsigned int);
 	 	handle_hex(ar);
 	 }
-	else if (format[index] == 'p')
+	else if (format[ar->index] == 'p')
 	{
 		ar->unum = va_arg(*ap, unsigned int);
-		handle_ptr(format, ap, ar);
+		handle_ptr(ar);
 	}
 }
 

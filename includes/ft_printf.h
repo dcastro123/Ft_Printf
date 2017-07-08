@@ -82,10 +82,11 @@ void	handle_rstr(t_args *ar);
 void	format_intpadding(t_args *ar, char *tmp);
 void	format_intljust(t_args *ar, char *tmp, unsigned int length);
 void	check_int(t_args *ar);
+void	handle_ptr(t_args *ar);
 void	handle_int(t_args *ar);
 void	handle_oct(t_args *ar);
 void	handle_hex(t_args *ar);
 char	*ft_uitoa_base(int value, int base);
-char	*ft_ultoa_base(int value, int base);
+char	*ft_ultoa_base(unsigned long value, int base);
 char	*ft_itoa_base(int value, int base);
 #endif

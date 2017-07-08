@@ -20,12 +20,12 @@ static unsigned long ft_intlen(unsigned long n, int base)
 	while (n != 0)
 	{
 		len++;
-		nbr /= base;
+		n /= base;
 	}
 	return (len);
 }
 
-char	*ft_uitoa_base(unsigned long value, int base)
+char	*ft_ultoa_base(unsigned long value, int base)
 {
 	char	*array;
 	unsigned long val;

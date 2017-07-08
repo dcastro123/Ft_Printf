@@ -90,14 +90,13 @@ void	handle_hex(t_args *ar)
 void	handle_ptr(t_args *ar)
 {
 	char *tmp;
-	char *tmp2[2];
-	char *tmp3;
+	char tmp2[2];
 	unsigned long val;
 
-	tmp1 = "OX";
+	ft_strcpy(tmp2, "0X");
 	val = (unsigned long)ar->unum;
 	tmp = ft_ultoa_base(val, 16);
-	ar->str_out = ft_strjoin(tmp1, tmp);
+	ar->str_out = ft_strjoin(tmp2, tmp);
 	ft_putstr(ar->str_out);
 
 }
