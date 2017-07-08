@@ -40,7 +40,10 @@ void	handle_rstr(t_args *ar)
 {
 	//printf("handle--rstr\n");
 	if (ar->minus == 1 || ar->plus == 1 || ar->width > 0)
+	{
+		printf("???????????????\n");
 		check_format(ar);
+	}
 //	printf("str before output: %s\n", ar->str_out);
 	else
 	{
