@@ -39,9 +39,14 @@ void	check_str(t_args *ar)
 void	handle_rstr(t_args *ar)
 {
 	//printf("handle--rstr\n");
-	check_format(ar);
+	if (ar->minus == 1 || ar->plus == 1 || ar->width > 0)
+		check_format(ar);
 //	printf("str before output: %s\n", ar->str_out);
-	ft_putstr(ar->str_out);
+	else
+	{
+		ar->str_out = ft_strdup(ar->tab);
+		ft_putstr(ar->str_out);
+	}
 	//printf("done handle_rstr\n");
 
 
