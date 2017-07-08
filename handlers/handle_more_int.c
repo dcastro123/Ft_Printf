@@ -34,32 +34,32 @@ void	handle_oct(t_args *ar)
 	}
 	// else if (ar->mods == ll)
 	// {
-	// 	tmp = ft_llotoa_base((long long)ar->conv, 8);
+	// 	tmp = ft_lltoa_base((long long)ar->conv, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == l)
 	// {
-	// 	tmp = ft_lotoa_base((long)ar->conv, 8);
+	// 	tmp = ft_ltoa_base((long)ar->conv, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == z)
 	// {
-	// 	tmp = ft_sotoa_base((size_t)ar->conv, 8);
+	// 	tmp = ft_stoa_base((size_t)ar->conv, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == h)
 	// {
-	// 	tmp = ft_hotoa_base((int)ar->conv, 8);
+	// 	tmp = ft_htoa_base((int)ar->conv, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == hh)
 	// {
-	// 	tmp = ft_hhotoa_base((int)ar->conv, 8);
+	// 	tmp = ft_hhtoa_base((int)ar->conv, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == j)
 	// {
-	// 	tmp = ft_jotoa_base((intmax_t)ar->conv, 8);
+	// 	tmp = ft_jtoa_base((intmax_t)ar->conv, 8);
 	// 	ft_putstr(tmp);
 	// }
 
@@ -89,15 +89,16 @@ void	handle_hex(t_args *ar)
 
 void	handle_ptr(t_args *ar)
 {
-	char *tmp;
-	char tmp2[2];
-	unsigned long val;
+	ft_putstr("hello");
+	// char *tmp;
+	// char tmp2[2];
+	// unsigned long val;
 
-	ft_strcpy(tmp2, "0X");
-	val = (unsigned long)ar->unum;
-	tmp = ft_ultoa_base(val, 16);
-	ar->str_out = ft_strjoin(tmp2, tmp);
-	ft_putstr(ar->str_out);
+	// ft_strcpy(tmp2, "0X");
+	// val = (unsigned long)ar->unum;
+	// tmp = ft_ultoa_base(val, 16);
+	// ar->str_out = ft_strjoin(tmp2, tmp);
+	// ft_putstr(ar->str_out);
 
 }
 // void	handle_upperhex()
