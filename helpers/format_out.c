@@ -21,7 +21,7 @@ void	check_format(t_args *ar)
 	// tmp = (char*)malloc(sizeof(char) * (out_length));
 	if (ft_strlen(ar->tab) > ar->width)
 		return (ft_putstr(ar->tab));
-	if (IS_TRUE(ar->minus) && (IS_TRUE(ar->zero) || (!(IS_TRUE(ar->zero)))))
+	if (IS_TRUE(ar->minus))
 	{
 		out_length = ar->width;
 		tmp = (char*)malloc(sizeof(char) * (out_length + 1));

@@ -14,7 +14,7 @@
 
 void	format_intljust(t_args *ar, char *tmp, unsigned int length)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (ar->tab[i])
@@ -33,9 +33,10 @@ void	format_intljust(t_args *ar, char *tmp, unsigned int length)
 
 void	format_intpadding(t_args *ar, char *tmp)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
+	tmp = NULL;
 	if (ar->num >= 0)
 			ft_putchar('+');
 	if (ar->width > 0 && ar->zero == 1)
