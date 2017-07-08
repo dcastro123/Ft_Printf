@@ -89,7 +89,7 @@ void	handle_hex(t_args *ar)
 
 void	handle_ptr(t_args *ar)
 {
-	ft_putstr("hello");
+	ft_putstr("hello\n");
 	// char *tmp;
 	// char tmp2[2];
 	// unsigned long val;

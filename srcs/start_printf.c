@@ -62,6 +62,8 @@ void	check_type(const char *format, t_args *ar, va_list *ap)
 		ar->unum = va_arg(*ap, unsigned int);
 		handle_ptr(ar);
 	}
+	else
+		ft_putstr("skip\n");
 }
 
 void	start_conversion(const char *format, t_args *ar, va_list *ap)
