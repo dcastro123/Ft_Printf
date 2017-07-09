@@ -34,32 +34,32 @@ void	handle_oct(t_args *ar)
 	}
 	// else if (ar->mods == ll)
 	// {
-	// 	tmp = ft_lltoa_base((long long)ar->conv, 8);
+	// 	tmp = ft_lltoa_base((long long)ar->unum, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == l)
 	// {
-	// 	tmp = ft_ltoa_base((long)ar->conv, 8);
+	// 	tmp = ft_ltoa_base((long)ar->unum, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == z)
 	// {
-	// 	tmp = ft_stoa_base((size_t)ar->conv, 8);
+	// 	tmp = ft_stoa_base((size_t)ar->unum, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == h)
 	// {
-	// 	tmp = ft_htoa_base((int)ar->conv, 8);
+	// 	tmp = ft_htoa_base((short)ar->unum, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == hh)
 	// {
-	// 	tmp = ft_hhtoa_base((int)ar->conv, 8);
+	// 	tmp = ft_hhtoa_base((char)ar->unum, 8);
 	// 	ft_putstr(tmp);
 	// }
 	// else if (ar->mods == j)
 	// {
-	// 	tmp = ft_jtoa_base((intmax_t)ar->conv, 8);
+	// 	tmp = ft_jtoa_base((intmax_t)ar->unum, 8);
 	// 	ft_putstr(tmp);
 	// }
 

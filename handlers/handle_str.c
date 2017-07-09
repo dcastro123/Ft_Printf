@@ -22,11 +22,12 @@ void	check_str(t_args *ar)
 	// 	handle_wchar(ar, ap);
 	else if (ar->conv == 's' && ar->mods == none)
 		handle_rstr(ar);
+	else if (ar->conv == 'S')
+		printf(" S feature not implemented yet\n");
+	else if (ar->conv == 'C')
+		printf("C feature not implemented yet\n");
 	else
-	{
-		printf("ar->conv : %c\n", ar->conv);
-		printf("feature not implemented yet\n");
-	}
+		printf("wtf is this\n");
 
 
 
