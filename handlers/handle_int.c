@@ -59,7 +59,7 @@ void	handle_int(t_args *ar)
 	}
 	else
 	{
-		if (ar->plus == 1)
+		if (ar->plus == 1 && ar->minus == 0)
 			ft_putchar('+');
 		ft_putstr(tmp);
 	}
