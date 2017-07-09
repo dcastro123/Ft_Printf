@@ -27,8 +27,8 @@ int	main(void)
     // ft_printf ("%-s only -s my printf output\n", str);
     // printf("'%-10s' -s and width expected output\n", str);
     // ft_printf("'%-10s'\n", str);
-	printf("real printf >>>>%-5d<<<<\n", 42);
-	ft_printf("my printf >>>>%-5d<<<<\n", 42);
+	printf("real printf >>>>%+i<<<<\n", -42);
+	ft_printf("my printf : %+i\n", -42);
     // printf(">>>>>>>>%d<<<<<<< >>>>>>>>>>>%s<<<<<<<< >>>>>>%p<<<<< real printf\n", b, str, y);
     // ft_printf(">>>>>%d<<<<<<<<<< >>>>>>>>%s<<<<<<<<<>>>>>>%p<<<<<< p my printf\n", b, str, y);
   //  printf("'% 011d' expected output\n", 10);

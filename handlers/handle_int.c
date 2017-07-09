@@ -39,7 +39,6 @@ void	handle_int(t_args *ar)
 	tmp = ft_itoa(ar->num);
 	if (ar->width > 0 && ar->minus == 0 && ar->precision == 0)
 	{
-		printf(">>>>>>>>\n");
 		format_intwidth(ar, tmp);
 	//	ft_putstr(tmp);
 	}
@@ -60,7 +59,7 @@ void	handle_int(t_args *ar)
 	}
 	else
 	{
-		if (ar->plus == 1 && ar->minus == 0)
+		if (ar->plus == 1 && ar->num >= 0)
 			ft_putchar('+');
 		ft_putstr(tmp);
 	}
