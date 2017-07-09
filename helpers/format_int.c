@@ -57,8 +57,6 @@ void	format_intwidth(t_args *ar, char *tmp)
 
 	i = 0;
 	j = 0;
-	if (ft_strlen(tmp) > ar->width)
-		return (ft_putstr(tmp));
 	if (ar->plus == 1)
 	{
 		ft_putchar('+');
@@ -67,6 +65,11 @@ void	format_intwidth(t_args *ar, char *tmp)
 	if (ar->zero == 1)
 	{
 		ft_putchar('0');
+		i++;
+	}
+	while (i < (ar->width - ft_strlen(tmp)))
+	{
+		ft_putchar(' ');
 		i++;
 	}
 	while (i < ar->width)

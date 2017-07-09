@@ -39,19 +39,18 @@ void	handle_int(t_args *ar)
 	tmp = ft_itoa(ar->num);
 	if (ar->width > 0 && ar->minus == 0 && ar->precision == 0)
 	{
-		printf("?????????\n");
+		if (ft_strlen(tmp) > ar->width)
+			return (ft_putstr(tmp));
 		format_intwidth(ar, tmp);
 	//	ft_putstr(tmp);
 	}
 	else if (ar->width > 0 && ar->zero == 1)
 	{
-		printf("!!!!!!!!!!\n");
 		format_intpadding(ar, tmp);
 		ft_putstr(tmp);
 	}
 	else if (ar->space == 1 && ar->plus == 0)
 	{
-				printf("<<<<<<<<<\n");
 		format_space(ar, tmp);
 		ft_putstr(tmp);
 	}
