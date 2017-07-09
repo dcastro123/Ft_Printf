@@ -34,7 +34,7 @@ char	*ft_ultoa_base(unsigned long value, int base)
 
 	val = value;
 	len = ft_intlen(val, base);
-	ft_strcpy(tab, "0123456789ABCDEF");
+	ft_strcpy(tab, "0123456789abcdef");
 	if (!(array = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	array[len--] = '\0';
