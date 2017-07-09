@@ -23,7 +23,10 @@ void	check_str(t_args *ar)
 	else if (ar->conv == 's' && ar->mods == none)
 		handle_rstr(ar);
 	else
+	{
+		printf("ar->conv : %c\n", ar->conv);
 		printf("feature not implemented yet\n");
+	}
 
 
 

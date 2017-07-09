@@ -89,17 +89,15 @@ void	handle_hex(t_args *ar)
 
 void	handle_ptr(t_args *ar)
 {
-	ft_putstr("hello");
-	ar->str_out = "goodbye";
-	// char *tmp;
-	// char tmp2[2];
-	// unsigned long val;
+	char *tmp;
+	char tmp2[2];
+	unsigned long val;
 
-	// ft_strcpy(tmp2, "0x");
-	// val = (unsigned long)ar->unum;
-	// tmp = ft_ultoa_base(val, 16);
-	// ar->str_out = ft_strjoin(tmp2, tmp);
-	// ft_putstr(ar->str_out);
+	ft_strcpy(tmp2, "0x");
+	val = (unsigned long)ar->unum;
+	tmp = ft_ultoa_base(val, 16);
+	ar->str_out = ft_strjoin(tmp2, tmp);
+	ft_putstr(ar->str_out);
 
 }
 // void	handle_upperhex()
