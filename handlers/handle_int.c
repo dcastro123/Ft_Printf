@@ -58,7 +58,11 @@ void	handle_int(t_args *ar)
 		ft_putstr(ar->str_out);
 	}
 	else
+	{
+		if (ar->plus == 1)
+			ft_putchar('+');
 		ft_putstr(tmp);
+	}
 	//tmp = ft_itoa_base(ar->num, 10);
 	// ft_putstr(tmp);
 }
