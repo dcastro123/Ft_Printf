@@ -67,17 +67,16 @@ void	check_mod(const char *format, t_args *ar)
 
 void	more_parsing(const char *format, t_args *ar)
 {
-	printf(">>>>>>>>>>>\n");
 	if (IS_MOD(format[ar->index]))
 		check_mod(format, ar);
 	if (format[ar->index] == ' ')
 		ar->space = 1;
 	if (format[ar->index] == '-')
+	{
 		ar->minus = 1;
+	}
 	if (format[ar->index] == '+')
 	{
-		printf("index is : %c\n", format[ar->index]);
-		printf("^^^^^^^^^\n");
 		ar->plus = 1;
 	}
 	if (format[ar->index] == '#')
@@ -85,7 +84,6 @@ void	more_parsing(const char *format, t_args *ar)
 	if (format[ar->index] == '0' && format[ar->index - 1] != '.')
 	{
 		ar->zero = 1;
-		printf("<<<<<<<<<<<<<<\n");
 	}
 }
 
@@ -101,11 +99,11 @@ void	check_flags(const char *format, t_args *ar, va_list *ap)
 			parse_asterisk(format, ar, ap);
 		else if (format[ar->index] >= '1' && format[ar->index] <= '9')
 		{
-			printf("width value being set: %c\n", format[ar->index]);
 			ar->width = ft_atoi(format + ar->index);
 			while (format[ar->index] >= '0' && format[ar->index] <= '9')
 				ar->index++;
 		}
-		ar->index++;
+		else
+			ar->index++;
 	}
 }

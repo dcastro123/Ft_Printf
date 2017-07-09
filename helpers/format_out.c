@@ -57,23 +57,6 @@ void	format_ljust(t_args *ar, char *tmp, unsigned int length)
 	}
 }
 
-void	format_padding(t_args *ar)
-{
-	unsigned int i;
-
-	i = 0;
-	if (ar->num >= 0)
-			ft_putchar('+');
-	if (ar->width > 0 && ar->zero == 1)
-	{
-		while (i < (ar->width / 2))
-		{
-			ft_putchar('0');
-			i++;
-		}
-	}
-}
-
 void	format_space(t_args *ar, char *tmp)
 {
 	unsigned int i;
@@ -123,7 +106,22 @@ void	format_width(t_args *ar, char *tmp)
 
 
 
+// void	format_padding(t_args *ar)
+// {
+// 	unsigned int i;
 
+// 	i = 0;
+// 	if (ar->num >= 0)
+// 			ft_putchar('+');
+// 	if (ar->width > 0 && ar->zero == 1)
+// 	{
+// 		while (i < (ar->width / 2))
+// 		{
+// 			ft_putchar('0');
+// 			i++;
+// 		}
+// 	}
+// }
 
 
 

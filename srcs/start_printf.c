@@ -28,7 +28,6 @@ void	init_args(t_args *ar)
 }
 void	check_type(const char *format, t_args *ar, va_list *ap)
 {
-	printf("?????????????????????????\n");
 	if (format[ar->index] == 'c' || format[ar->index] == 'C')
 	{
 		ar->conv = format[ar->index];
@@ -43,7 +42,6 @@ void	check_type(const char *format, t_args *ar, va_list *ap)
 	}
 	 else if (format[ar->index] == 'd' || format[ar->index] == 'i')
 	 {
-	 	printf("???????????\n");
 		 ar->num = va_arg(*ap, long long);
 		 check_int(ar);
 	 }
@@ -64,8 +62,6 @@ void	check_type(const char *format, t_args *ar, va_list *ap)
 		ar->unum = va_arg(*ap, unsigned int);
 		handle_ptr(ar);
 	}
-	else
-		ft_putstr("skip\n");
 }
 
 void	start_conversion(const char *format, t_args *ar, va_list *ap)

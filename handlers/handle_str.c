@@ -20,7 +20,7 @@ void	check_str(t_args *ar)
 		handle_char(ar);
 	// else if (fmt[index] == 'C')
 	// 	handle_wchar(ar, ap);
-	else if (ar->conv == 's')
+	else if (ar->conv == 's' && ar->mods == none)
 		handle_rstr(ar);
 	else
 		printf("feature not implemented yet\n");
@@ -39,10 +39,11 @@ void	check_str(t_args *ar)
 void	handle_rstr(t_args *ar)
 {
 	//printf("handle--rstr\n");
-	if (ar->minus == 1 || ar->plus == 1 || ar->width > 0)
+	if (ar->minus == 1 || ar->plus == 1 || ar->width > 0 || ar->space == 1
+		|| ar->zero == 1)
 	{
-		printf("???????????????\n");
 		check_format(ar);
+		ft_putstr(ar->str_out);
 	}
 //	printf("str before output: %s\n", ar->str_out);
 	else

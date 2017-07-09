@@ -36,7 +36,7 @@ void	handle_int(t_args *ar)
 	int i;
 
 	i = 0;
-	tmp = ft_itoa_base(ar->num, 10);
+	tmp = ft_itoa(ar->num);
 	if (ar->width > 0 && ar->minus == 0 && ar->precision == 0)
 	{
 		format_width(ar, tmp);
@@ -44,7 +44,7 @@ void	handle_int(t_args *ar)
 	}
 	else if (ar->plus == 1)
 	{
-		format_padding(ar);
+		format_intpadding(ar);
 		ft_putstr(tmp);
 	}
 	else if (ar->space == 1 && ar->plus == 0)
