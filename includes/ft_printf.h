@@ -55,6 +55,7 @@ typedef	struct 	s_args
 	unsigned int unum;
 	unsigned int precision;
 	unsigned int width;
+	unsigned long ulong;
 	t_mods	mods;
 }				t_args;
 

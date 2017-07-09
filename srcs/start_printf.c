@@ -25,6 +25,7 @@ void	init_args(t_args *ar)
 	ar->tab = NULL;
 	ar->num = 0;
 	ar->unum = 0;
+	ar->ulong = 0;
 }
 void	check_type(const char *format, t_args *ar, va_list *ap)
 {
@@ -59,7 +60,7 @@ void	check_type(const char *format, t_args *ar, va_list *ap)
 	 }
 	else if (format[ar->index] == 'p')
 	{
-		ar->unum = va_arg(*ap, unsigned int);
+		ar->ulong = va_arg(*ap, unsigned long);
 		handle_ptr(ar);
 	}
 }
