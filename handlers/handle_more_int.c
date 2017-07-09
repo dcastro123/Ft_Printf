@@ -96,6 +96,7 @@ void	handle_ptr(t_args *ar)
 	ft_strcpy(tmp2, "0x");
 	val = (unsigned long)ar->unum;
 	tmp = ft_ultoa_base(val, 16);
+	printf("tmp : %s\n", tmp);
 	ar->str_out = ft_strjoin(tmp2, tmp);
 	ft_putstr(ar->str_out);
 
