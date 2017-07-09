@@ -44,7 +44,7 @@ void	handle_int(t_args *ar)
 	}
 	else if (ar->plus == 1)
 	{
-		format_intpadding(ar);
+		format_intpadding(ar, tmp);
 		ft_putstr(tmp);
 	}
 	else if (ar->space == 1 && ar->plus == 0)
