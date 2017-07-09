@@ -36,7 +36,6 @@ void	format_intpadding(t_args *ar, char *tmp)
 	unsigned int i;
 
 	i = 0;
-	tmp = NULL;
 	if (ar->num >= 0)
 			ft_putchar('+');
 	if (ar->width > 0 && ar->zero == 1)
@@ -49,6 +48,32 @@ void	format_intpadding(t_args *ar, char *tmp)
 	}
 }
 
+void	format_intwidth(t_args *ar, char *tmp)
+{
+	unsigned int i;
+	unsigned int j;
+
+	i = 0;
+	j = 0;
+	if (ft_strlen(tmp) > ar->width)
+		return (ft_putstr(tmp));
+	if (ar->plus == 1)
+	{
+		ft_putchar('+');
+		i++;
+	}
+	if (ar->zero == 1)
+	{
+		ft_putchar('0');
+		i++;
+	}
+	while (i < ar->width)
+	{
+		ft_putchar(tmp[j]);
+		j++;
+		i++;
+	}
+}
 // void	format_space(t_args *ar, char *tmp)
 // {
 // 	int i;

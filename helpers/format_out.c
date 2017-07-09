@@ -85,6 +85,8 @@ void	format_width(t_args *ar, char *tmp)
 	}
 	if (ar->plus == 1)
 		ft_putchar('+');
+	if (ar->zero == 1)
+		ft_putchar('0');
 }
 
 
