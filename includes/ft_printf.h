@@ -82,7 +82,7 @@ void	handle_rstr(t_args *ar);
 
 void	format_intpadding(t_args *ar, char *tmp);
 void	format_intwidth(t_args *ar, char *tmp);
-void	format_intljust(t_args *ar, char *tmp, unsigned int length);
+void	format_intljust(t_args *ar, char *tmp);
 void	check_int(t_args *ar);
 void	handle_ptr(t_args *ar);
 void	handle_int(t_args *ar);

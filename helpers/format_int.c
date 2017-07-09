@@ -12,23 +12,25 @@
 
 #include "../includes/ft_printf.h"
 
-void	format_intljust(t_args *ar, char *tmp, unsigned int length)
+void	format_intljust(t_args *ar, char *tmp)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (ar->tab[i])
+	ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1));
+	while (tmp[i])
 	{
-		tmp[i] = ar->tab[i];
+		ar->str_out[i] = tmp[i];
 		i++;
 	}
 	if (ar->width > 0)
 	{
-		if (ft_strlen(ar->tab) > length)
-			return ;
-		while (i < length)
-			tmp[i++] = ' ';
+		if (ft_strlen(tmp) > ar->width)
+			return (ft_putstr(tmp));
+		while (i < ar->width)
+			ar->str_out[i++] = ' ';
 	}
+	ar->str_out[i] = '\0';
 }
 
 void	format_intpadding(t_args *ar, char *tmp)
@@ -40,7 +42,7 @@ void	format_intpadding(t_args *ar, char *tmp)
 			ft_putchar('+');
 	if (ar->width > 0 && ar->zero == 1)
 	{
-		while (i < (ar->width / 2))
+		while (i < (ar->width - ft_strlen(tmp)))
 		{
 			ft_putchar('0');
 			i++;

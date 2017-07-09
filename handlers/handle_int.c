@@ -42,7 +42,7 @@ void	handle_int(t_args *ar)
 		format_intwidth(ar, tmp);
 	//	ft_putstr(tmp);
 	}
-	else if (ar->plus == 1)
+	else if (ar->width > 0 && ar->zero == 1)
 	{
 		format_intpadding(ar, tmp);
 		ft_putstr(tmp);
@@ -51,6 +51,11 @@ void	handle_int(t_args *ar)
 	{
 		format_space(ar, tmp);
 		ft_putstr(tmp);
+	}
+	else if (ar->minus == 1)
+	{
+		format_intljust(ar, tmp);
+		ft_putstr(ar->str_out);
 	}
 	else
 		ft_putstr(tmp);
