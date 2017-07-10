@@ -41,10 +41,11 @@ void	check_type(const char *format, t_args *ar, va_list *ap)
 		ar->tab = ft_strdup(va_arg(*ap, char*));
 		check_str(ar);
 	}
-	 else if (format[ar->index] == 'd' || format[ar->index] == 'i')
+	 else if (format[ar->index] == 'd' || format[ar->index] == 'i' || format[ar->index == 'u'])
 	 {
-		 ar->num = va_arg(*ap, long long);
-		 check_int(ar);
+	 	ar->conv = format[ar->index];
+		ar->num = va_arg(*ap, long long);
+		check_int(ar);
 	 }
 	else if (format[ar->index] == 'o' || format[ar->index] == 'O')
 	 {

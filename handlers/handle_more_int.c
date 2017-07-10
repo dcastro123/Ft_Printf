@@ -77,12 +77,10 @@ void	handle_hex(t_args *ar)
 			tmp = ft_uitoa_base(ar->unum, 16);
 			ft_putstr(tmp);
 		}
-		else if ( ar->mods == none && ar->conv == 'X')
+		else if (ar->mods == none && ar->conv == 'X')
 		{
-			printf(">>>>>>>>\n");
 			tmp = ft_uitoa_capbase(ar->unum, 16);
 			ft_putstr(tmp);
-			printf("\n");
 		}
 		else if (ar->mods == hh)
 			printf("hh not implemented yet\n");

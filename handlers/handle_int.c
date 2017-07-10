@@ -14,8 +14,10 @@
 
 void	check_int(t_args *ar)
 {
-	if (ar->mods == none)
+	if ((ar->conv == 'd' || ar->conv == 'i') && ar->mods == none)
 		handle_int(ar);
+	else if (ar->conv == 'u' && ar->mods == none)
+		handle_usint(ar);
 	// else if (ar->mods == ll)
 	// 	handle_llnum(ar->conv);
 	// else if (ar->mods == h)
@@ -35,9 +37,7 @@ void	check_int(t_args *ar)
 void	handle_int(t_args *ar)
 {
 	char *tmp;
-	int i;
 
-	i = 0;
 	tmp = ft_itoa(ar->num);
 	if (ar->width > 0 && ar->minus == 0 && ar->precision == 0)
 	{
@@ -71,8 +71,11 @@ void	handle_int(t_args *ar)
 	// ft_putstr(tmp);
 }
 
-// void	handle_usint()
-// {
+void	handle_usint(t_args *ar)
+{
+	char *tmp;
+	tmp = ft_uitoa((unsigned int)ar->num);
+	ft_putstr(tmp);
 
 
 
@@ -82,7 +85,7 @@ void	handle_int(t_args *ar)
 
 
 
-// }
+}
 
 // void	handle_llnum()
 // {
