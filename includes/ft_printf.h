@@ -81,6 +81,7 @@ void	handle_char(t_args *ar);
 void	handle_rstr(t_args *ar);
 
 void	format_intpadding(t_args *ar, char *tmp);
+void	format_intspace(t_args *ar, char *tmp);
 void	format_intwidth(t_args *ar, char *tmp);
 void	format_intljust(t_args *ar, char *tmp);
 void	check_int(t_args *ar);
