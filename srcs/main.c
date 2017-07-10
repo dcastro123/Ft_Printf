@@ -29,7 +29,8 @@ int	main(void)
     // ft_printf("'%-10s'\n", str);
 	// printf("real printf >>>>|%-3d| |%3d| <<<<\n", 42, 42);
 	// ft_printf("my printf : |%-3d| |%3d|\n", 42, 42);
-	printf("% *.5i", 6, 42);
+	//printf("%lx", 4294967295);
+	ft_printf("%lx", 4294967295);
 	// ft_printf("%s hello %s %s %s %s", 42);
     // printf(">>>>>>>>%d<<<<<<< >>>>>>>>>>>%s<<<<<<<< >>>>>>%p<<<<< real printf\n", b, str, y);
     // ft_printf(">>>>>%d<<<<<<<<<< >>>>>>>>%s<<<<<<<<<>>>>>>%p<<<<<< p my printf\n", b, str, y);

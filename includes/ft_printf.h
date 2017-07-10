@@ -90,6 +90,7 @@ void	handle_oct(t_args *ar);
 void	handle_hex(t_args *ar);
 char    *ft_uitoa(unsigned int n);
 char	*ft_uitoa_base(int value, int base);
+char	*ft_uitoa_capbase(int value, int base);
 char	*ft_ultoa_base(unsigned long value, int base);
 char	*ft_itoa_base(int value, int base);
 #endif

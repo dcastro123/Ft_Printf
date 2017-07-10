@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
+/*   ft_uitoa_capbase.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/21 20:41:12 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/06/21 20:55:35 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/07/09 18:00:16 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/07/09 18:00:19 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static unsigned int	ft_intlen(int n, int base)
 	return (len);
 }
 
-char	*ft_uitoa_base(int value, int base)
+char	*ft_uitoa_capbase(int value, int base)
 {
 	char	*array;
 	unsigned int val;
@@ -36,7 +36,7 @@ char	*ft_uitoa_base(int value, int base)
 
 	val = (unsigned int)value;
 	len = ft_intlen(val, base);
-	ft_strcpy(tab, "0123456789abcdef");
+	ft_strcpy(tab, "0123456789ABCDEF");
 	if (!(array = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	array[len--] = '\0';
@@ -53,3 +53,4 @@ char	*ft_uitoa_base(int value, int base)
 	}
 	return (array);
 }
+
