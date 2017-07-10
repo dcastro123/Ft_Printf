@@ -74,7 +74,7 @@ void	handle_int(t_args *ar)
 void	handle_usint(t_args *ar)
 {
 	char *tmp;
-	tmp = ft_uitoa((unsigned int)ar->num);
+	tmp = ft_uitoa(ar->unum);
 	ft_putstr(tmp);
 
 
