@@ -20,6 +20,8 @@ void	check_int(t_args *ar)
 	// 	handle_llnum(ar->conv);
 	// else if (ar->mods == h)
 	// 	handle_short((short)ar->num);
+	// else if (ar->mods == l)
+	// 	handle_lnum((long) ar->num);
 	else
 		printf("still writing code for this part\n");
 

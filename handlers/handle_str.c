@@ -88,8 +88,8 @@ void	handle_char(t_args *ar)
 	//printf("--handlechar--\n");
 	if (ar->mods == none)
 		ft_putchar(ar->num);
-	//else if
-	//	printf("rip invalid for now\n");
+	else if (ar->mods == l)
+		printf("rip invalid for now\n");
 	//printf("end handle char\n");
 
 
