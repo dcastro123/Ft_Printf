@@ -20,8 +20,8 @@ int	main(void)
 	//  y = &b;
 	// char *str = "LYDI";
 	int x  = 42;
-	printf("real printf >>%0i<<\n", x);
-	ft_printf("my printf >>%0i<<\n", x);
+	// printf("real printf >>%0i<<\n", x);
+	// ft_printf("my printf >>%0i<<\n", x);
 	//ft_printf("test>>> %s     %c\n", "hello", 'c');
 	//printf ("<%-d> only -d to see the difference\n", x);
     //printf ("<%5d> is right-justified.\n", x);
