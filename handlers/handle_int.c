@@ -51,11 +51,11 @@ void	handle_int(t_args *ar)
 		format_intpadding(ar, tmp);
 		ft_putstr(tmp);
 	}
-	// else if (ar->space == 1 && ar->plus == 0)
-	// {
-	// 	format_space(ar, tmp);
-	// 	ft_putstr(tmp);
-	// }
+	else if (ar->space == 1 && ar->plus == 0)
+	{
+		format_space(ar, tmp);
+		ft_putstr(tmp);
+	}
 	else if (ar->minus == 1)
 	{
 		format_intljust(ar, tmp);
