@@ -82,20 +82,20 @@ void	handle_hex(t_args *ar)
 			tmp = ft_uitoa_capbase(ar->unum, 16);
 			ft_putstr(tmp);
 		}
-		else if (ar->mods == hh)
-			printf("hh not implemented yet\n");
-		else if (ar->mods == h)
-			printf("h not implemented yet\n");
-		else if (ar->mods == l)
-			printf("l not implemented yet\n");
-		else if (ar->mods == ll)
-			printf("ll not implemented yet\n");
-		else if (ar->mods == z)
-			printf("z nnot implemented yet\n");
-		else if (ar->mods == j)
-			printf("j not implemented yett\n");
-		else
-			printf("wtf are u trying to do\n");
+		// else if (ar->mods == hh)
+		// 	printf("hh not implemented yet\n");
+		// else if (ar->mods == h)
+		// 	printf("h not implemented yet\n");
+		// else if (ar->mods == l)
+		// 	printf("l not implemented yet\n");
+		// else if (ar->mods == ll)
+		// 	printf("ll not implemented yet\n");
+		// else if (ar->mods == z)
+		// 	printf("z nnot implemented yet\n");
+		// else if (ar->mods == j)
+		// 	printf("j not implemented yett\n");
+		// else
+		// 	printf("wtf are u trying to do\n");
 
 
 

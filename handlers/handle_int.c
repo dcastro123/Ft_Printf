@@ -15,9 +15,12 @@
 void	check_int(t_args *ar)
 {
 	if ((ar->conv == 'd' || ar->conv == 'i') && ar->mods == none)
+	{
+		printf("?????\n");
 		handle_int(ar);
-	else if (ar->conv == 'D' && (ar->mods == l))
-	 	handle_lnum(ar);
+	}
+	// else if (ar->conv == 'D' && (ar->mods == l))
+	//  	handle_lnum(ar);
 	// else if (ar->mods == ll)
 	// 	handle_llnum(ar->conv);
 	// else if (ar->mods == h)
@@ -37,7 +40,7 @@ void	handle_int(t_args *ar)
 	char *tmp;
 
 	tmp = ft_itoa(ar->num);
-	if (ar->width > 0 && ar->minus == 0 && ar->precision == 0)
+	if (ar->width > 0 && ar->minus == 0 && ar->pflag== 0)
 	{
 		if (ft_strlen(tmp) > ar->width)
 			return (ft_putstr(tmp));
@@ -65,7 +68,7 @@ void	handle_int(t_args *ar)
 			ft_putchar('+');
 		ft_putstr(tmp);
 	}
-	//tmp = ft_itoa_base(ar->num, 10);
+	//tmp = ft_itoa(ar->num);
 	// ft_putstr(tmp);
 }
 
