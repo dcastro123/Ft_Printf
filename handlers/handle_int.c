@@ -53,7 +53,7 @@ void	handle_int(t_args *ar)
 	}
 	else if (ar->space == 1 && ar->plus == 0)
 	{
-		format_space(ar, tmp);
+		format_intspace(ar, tmp);
 		ft_putstr(tmp);
 	}
 	else if (ar->minus == 1)
