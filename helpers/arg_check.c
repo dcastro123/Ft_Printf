@@ -35,12 +35,12 @@ void	parse_asterisk(const char *format, t_args *ar, va_list *ap)
 
 void	get_precision(const char *format, t_args *ar, va_list *ap)
 {
-	int	ret_val;
+	unsigned int	ret_val;
 
 	ret_val = 0;
 	if (format[ar->index + 1] == '*')
 	{
-		ret_val = va_arg(*ap, int);
+		ret_val = va_arg(*ap, unsigned int);
 		ar->precision = ret_val;
 	}
 	else if (format[ar->index + 1] > '0' && format[ar->index + 1] <= '9')
@@ -72,19 +72,13 @@ void	more_parsing(const char *format, t_args *ar)
 	if (format[ar->index] == ' ')
 		ar->space = 1;
 	if (format[ar->index] == '-')
-	{
 		ar->minus = 1;
-	}
 	if (format[ar->index] == '+')
-	{
 		ar->plus = 1;
-	}
 	if (format[ar->index] == '#')
 		ar->tag = 1;
 	if (format[ar->index] == '0' && format[ar->index - 1] != '.')
-	{
 		ar->zero = 1;
-	}
 }
 
 void	check_flags(const char *format, t_args *ar, va_list *ap)

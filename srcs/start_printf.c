@@ -29,7 +29,6 @@ void	init_args(t_args *ar)
 }
 void	check_type(const char *format, t_args *ar, va_list *ap)
 {
-	printf("%c\n", format[ar->index]);
 	if (format[ar->index] == 'c' || format[ar->index] == 'C')
 	{
 		ar->conv = format[ar->index];
