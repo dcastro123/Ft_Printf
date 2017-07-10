@@ -17,13 +17,10 @@ void	handle_rstr(t_args *ar)
 	int i;
 
 	i = -1;
-	printf("width value: %u\n", ar->width);
-	if (ar->zero == 0)
+	if (ar->zero == 1)
 		return (ft_putstr(""));
 	if (ar->minus == 1)
-	{
 		format_ljust(ar);
-	}
 	else
 	{
 		if (ar->width > 0)
@@ -31,7 +28,7 @@ void	handle_rstr(t_args *ar)
 			format_width(ar);
 			ft_putstr(ar->tab);
 		}
-		else if (ar->precision >= 0)
+		else if (ar->precision >= 0 && ar->pflag == 1)
 			format_precision(ar);
 		else
 			ft_putstr(ar->tab);

@@ -84,12 +84,14 @@ void	more_parsing(const char *format, t_args *ar)
 void	check_flags(const char *format, t_args *ar, va_list *ap)
 {
 	ar->mods = 0;
-	while (IS_FLAG(format[ar->index]) || IS_NFLAG(format[ar->index])
-		|| IS_MOD(format[ar->index]))
+	while (IS_FLAG(format[ar->index]) || IS_NFLAG(format[ar->index]))
 	{
 		more_parsing(format, ar);
 		if (format[ar->index] == '.')
+		{
+			ar->pflag = 1;
 			get_precision(format, ar, ap);
+		}
 		if (format[ar->index] == '*')
 			parse_asterisk(format, ar, ap);
 		else if (format[ar->index] >= '1' && format[ar->index] <= '9')

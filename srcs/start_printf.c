@@ -26,6 +26,7 @@ void	init_args(t_args *ar)
 	ar->num = 0;
 	ar->unum = 0;
 	ar->ulong = 0;
+	ar->pflag = 0;
 }
 void	check_type(const char *format, t_args *ar, va_list *ap)
 {

@@ -52,6 +52,7 @@ typedef	struct 	s_args
 	int tag;
 	int zero;
 	int num;
+	int pflag;
 	unsigned int unum;
 	int precision;
 	unsigned int width;

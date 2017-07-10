@@ -49,19 +49,15 @@ void	format_precision(t_args *ar)
 void	format_ljust(t_args *ar)
 {
 	unsigned int	i;
-	unsigned int 	out_length;
 
-	if (ar->width > 0)
-		out_length = ar->width;
-	else
-		out_length = ft_strlen(ar->tab);
 	i = 0;
-	if (ar->precision >= 0)
+	if (ar->precision >= 0 && ar->pflag == 1)
 		format_precision(ar);
-	while (ar->tab[i])
-		ft_putchar(ar->tab[i++]);
+	else
+	{
+		while (ar->tab[i])
+			ft_putchar(ar->tab[i++]);
+	}
 	if (ar->width > 0)
 		format_width(ar);
-	if (ar->precision >= 0)
-		format_precision(ar);
 }
