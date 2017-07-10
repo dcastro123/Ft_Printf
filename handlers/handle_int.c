@@ -15,10 +15,7 @@
 void	check_int(t_args *ar)
 {
 	if ((ar->conv == 'd' || ar->conv == 'i') && ar->mods == none)
-	{
-		printf("?????\n");
 		handle_int(ar);
-	}
 	// else if (ar->conv == 'D' && (ar->mods == l))
 	//  	handle_lnum(ar);
 	// else if (ar->mods == ll)

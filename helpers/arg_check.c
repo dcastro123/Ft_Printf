@@ -65,7 +65,6 @@ void	check_mod(const char *format, t_args *ar)
 
 void	more_parsing(const char *format, t_args *ar)
 {
-	ar->mods = 0;
 	if (IS_MOD(format[ar->index]))
 		check_mod(format, ar);
 	if (format[ar->index] == ' ')
@@ -82,6 +81,7 @@ void	more_parsing(const char *format, t_args *ar)
 
 void	check_flags(const char *format, t_args *ar, va_list *ap)
 {
+	ar->mods = 0;
 	while (IS_FLAG(format[ar->index]) || IS_NFLAG(format[ar->index]))
 	{
 		more_parsing(format, ar);
