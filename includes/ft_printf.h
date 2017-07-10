@@ -89,6 +89,8 @@ void	handle_int(t_args *ar);
 void	handle_oct(t_args *ar);
 void	handle_hex(t_args *ar);
 void	handle_usint(t_args *ar);
+void	handle_lnum(t_args *ar);
+char	*ft_ltoa(long n);
 char    *ft_uitoa(unsigned int n);
 char	*ft_uitoa_base(int value, int base);
 char	*ft_uitoa_capbase(int value, int base);

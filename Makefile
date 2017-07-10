@@ -15,9 +15,11 @@ NAME = libftprintf.a
 CMP  = gcc -Wall -Werror -Wextra -c
 
 SRC =  		srcs/ft_printf.c srcs/start_printf.c 
-HANDLER = 	handlers/handle_str.c handlers/handle_int.c handlers/handle_more_int.c
+HANDLER = 	handlers/handle_str.c handlers/handle_int.c handlers/handle_more_int.c\
+			handlers/handle_int_etc.c
 HELPER = 	helpers/arg_check.c helpers/ft_uitoa_base.c helpers/ft_itoa_base.c helpers/format_out.c\
-			helpers/format_int.c helpers/ft_ultoa_base.c helpers/ft_uitoa.c helpers/ft_uitoa_capbase.c
+			helpers/format_int.c helpers/ft_ultoa_base.c helpers/ft_uitoa.c helpers/ft_uitoa_capbase.c\
+			helpers/ft_ltoa.c
 LIBFT =	libft/ft_atoi.c libft/ft_bzero.c libft/ft_isalnum.c\
 		libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c\
 	   	libft/ft_isprint.c libft/ft_memalloc.c libft/ft_memccpy.c\
@@ -40,7 +42,8 @@ LIBFT =	libft/ft_atoi.c libft/ft_bzero.c libft/ft_isalnum.c\
 	   	libft/ft_lstadd.c libft/ft_lstiter.c libft/ft_lstmap.c\
 	   	libft/ft_wdlen.c libft/ft_range.c libft/ft_list_size.c
 
-OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o arg_check.o\
+OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o handle_int_etc.c\
+		arg_check.o\
 		ft_uitoa_base.o ft_itoa_base.o ft_ultoa_base.o format_out.o format_int.o\
 		ft_atoi.o ft_bzero.o ft_isalnum.o\
 		ft_isalpha.o ft_isascii.o ft_isdigit.o\
@@ -63,7 +66,7 @@ OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o a
 	   	ft_lstnew.o ft_lstdelone.o ft_lstdel.o\
 	   	ft_lstadd.o ft_lstiter.o ft_lstmap.o\
 	   	ft_wdlen.o ft_range.o ft_list_size.o\
-	   	ft_uitoa.o ft_uitoa_capbase.o
+	   	ft_uitoa.o ft_uitoa_capbase.o ft_ltoa.o\
 
 CMPSRCS = $(SRC) $(HANDLER) $(HELPER) $(LIBFT)
 INCL = -I includes/libft.h -I includes/ft_printf.h

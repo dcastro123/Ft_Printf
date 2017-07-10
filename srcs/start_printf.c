@@ -46,7 +46,8 @@ void	check_type(const char *format, t_args *ar, va_list *ap)
 		ar->unum = va_arg(*ap, unsigned int);
 		handle_usint(ar);
 	}
-	else if (format[ar->index] == 'd' || format[ar->index] == 'i')
+	else if (format[ar->index] == 'd' || format[ar->index] == 'i'
+		|| format[ar->index] == 'D')
 	{
 	 	ar->conv = format[ar->index];
 		ar->num = va_arg(*ap, long long);
