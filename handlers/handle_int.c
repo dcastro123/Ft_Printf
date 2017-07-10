@@ -37,14 +37,15 @@ void	handle_int(t_args *ar)
 	char *tmp;
 
 	tmp = ft_itoa(ar->num);
-	if (ar->width > 0 && ar->minus == 0 && ar->pflag== 0)
-	{
-		if (ft_strlen(tmp) > ar->width)
-			return (ft_putstr(tmp));
-		format_intwidth(ar, tmp);
-	//	ft_putstr(tmp);
-	}
-	else if (ar->width > 0 && ar->zero == 1)
+	// if (ar->width > 0 && ar->minus == 0 && ar->pflag== 0)
+	// {
+	// 	printf("$$$$$$$$$\n\n");
+	// 	if (ft_strlen(tmp) > ar->width)
+	// 		return (ft_putstr(tmp));
+	// 	format_intwidth(ar, tmp);
+	// //	ft_putstr(tmp);
+	// }
+	if (ar->zero == 1)
 	{
 		format_intpadding(ar, tmp);
 		ft_putstr(tmp);

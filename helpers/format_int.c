@@ -39,12 +39,15 @@ void	format_intpadding(t_args *ar, char *tmp)
 	unsigned int i;
 
 	i = 0;
-	if (ar->num >= 0)
+	if (ar->num >= 0 && ar->plus == 1)
 			ft_putchar('+');
-	while (i <= (ar->width - ft_strlen(tmp)))
+	if (ar->width > 0)
 	{
-		ft_putchar('0');
-		i++;
+		while (i < (ar->width - ft_strlen(tmp)))
+		{
+			ft_putchar('0');
+			i++;
+		}
 	}
 }
 
