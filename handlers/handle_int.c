@@ -71,11 +71,11 @@ void	handle_int(t_args *ar)
 	// ft_putstr(tmp);
 }
 
-// void	handle_usint(t_args *ar)
-// {
-// 	char *tmp;
-// 	tmp = ft_uitoa((unsigned int)ar->num);
-// 	ft_putstr(tmp);
+void	handle_usint(t_args *ar)
+{
+	char *tmp;
+	tmp = ft_uitoa((unsigned int)ar->num);
+	ft_putstr(tmp);
 
 
 
@@ -85,7 +85,7 @@ void	handle_int(t_args *ar)
 
 
 
-// }
+}
 
 // void	handle_llnum()
 // {
