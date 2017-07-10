@@ -35,18 +35,16 @@ void	parse_asterisk(const char *format, t_args *ar, va_list *ap)
 
 void	get_precision(const char *format, t_args *ar, va_list *ap)
 {
-	unsigned int	ret_val;
+	int	ret_val;
 
 	ret_val = 0;
 	if (format[ar->index + 1] == '*')
-	{
-		ret_val = va_arg(*ap, unsigned int);
-		ar->precision = ret_val;
-	}
+		ar->precision = va_arg(*ap, int);
 	else if (format[ar->index + 1] > '0' && format[ar->index + 1] <= '9')
-		ar->precision = ft_atoi(format + ar->index);
+		ar->precision = ft_atoi(format + (ar->index + 1));
 	else if (format[ar->index + 1] == '0')
 		ar->str_out = ft_strnew(1);
+	ar->index++;
 }
 
 void	check_mod(const char *format, t_args *ar)
@@ -67,6 +65,7 @@ void	check_mod(const char *format, t_args *ar)
 
 void	more_parsing(const char *format, t_args *ar)
 {
+	ar->mods = 0;
 	if (IS_MOD(format[ar->index]))
 		check_mod(format, ar);
 	if (format[ar->index] == ' ')
@@ -83,7 +82,6 @@ void	more_parsing(const char *format, t_args *ar)
 
 void	check_flags(const char *format, t_args *ar, va_list *ap)
 {
-	ar->mods = 0;
 	while (IS_FLAG(format[ar->index]) || IS_NFLAG(format[ar->index]))
 	{
 		more_parsing(format, ar);
@@ -91,10 +89,12 @@ void	check_flags(const char *format, t_args *ar, va_list *ap)
 		{
 			ar->pflag = 1;
 			get_precision(format, ar, ap);
+			while (ar->index >= '0' && ar->index <= '9')
+				ar->index++;
 		}
 		if (format[ar->index] == '*')
 			parse_asterisk(format, ar, ap);
-		else if (format[ar->index] >= '1' && format[ar->index] <= '9')
+		else if (format[ar->index] >= '1' && format[ar->index] <= '9' && ar->pflag == 0)
 		{
 			ar->width = ft_atoi(format + ar->index);
 			while (format[ar->index] >= '0' && format[ar->index] <= '9')

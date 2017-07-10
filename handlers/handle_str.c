@@ -14,9 +14,6 @@
 
 void	handle_rstr(t_args *ar)
 {
-	int i;
-
-	i = -1;
 	if (ar->zero == 1)
 		return (ft_putstr(""));
 	if (ar->minus == 1)
