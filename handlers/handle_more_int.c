@@ -79,7 +79,6 @@ void	handle_hex(t_args *ar)
 		}
 		else if (ar->mods == none && ar->conv == 'X')
 		{
-			printf("????????\n");
 			tmp = ft_uitoa_capbase(ar->unum, 16);
 			ft_putstr(tmp);
 		}
