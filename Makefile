@@ -63,7 +63,7 @@ OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o a
 	   	ft_lstnew.o ft_lstdelone.o ft_lstdel.o\
 	   	ft_lstadd.o ft_lstiter.o ft_lstmap.o\
 	   	ft_wdlen.o ft_range.o ft_list_size.o\
-	   	ft_uitoa.c
+	   	ft_uitoa.o
 
 CMPSRCS = $(SRC) $(HANDLER) $(HELPER) $(LIBFT)
 INCL = -I includes/libft.h -I includes/ft_printf.h
