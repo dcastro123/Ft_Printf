@@ -14,26 +14,25 @@
 
 void	handle_rstr(t_args *ar)
 {
-	ft_putstr("sorry not done yet\n");
-	// int i;
+	int i;
 
-	// i = -1;
-	// if (ar->zero == 1)
-	// 	return (ft_putstr(""));
-	// if (ar->minus == 1)
-	// 	format_ljust(ar);
-	// else
-	// {
-	// 	if (ar->width > 0)
-	// 	{
-	// 		format_width(ar);
-	// 		ft_putstr(ar->tab);
-	// 	}
-	// 	else if (ar->precision >= 0 && ar->pflag == 1)
-	// 		format_precision(ar);
-	// 	else
-	// 		ft_putstr(ar->tab);
-	// }
+	i = -1;
+	if (ar->zero == 1)
+		return (ft_putstr(""));
+	if (ar->minus == 1)
+		format_ljust(ar);
+	else
+	{
+		if (ar->width > 0)
+		{
+			format_width(ar);
+			ft_putstr(ar->tab);
+		}
+		else if (ar->precision >= 0 && ar->pflag == 1)
+			format_precision(ar);
+		else
+			ft_putstr(ar->tab);
+	}
 }
 
 void	handle_char(t_args *ar)
