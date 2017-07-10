@@ -17,10 +17,13 @@ void	handle_rstr(t_args *ar)
 	int i;
 
 	i = -1;
+	printf("width value: %u\n", ar->width);
 	if (ar->zero == 0)
 		return (ft_putstr(""));
 	if (ar->minus == 1)
+	{
 		format_ljust(ar);
+	}
 	else
 	{
 		if (ar->width > 0)
