@@ -42,7 +42,7 @@ LIBFT =	libft/ft_atoi.c libft/ft_bzero.c libft/ft_isalnum.c\
 	   	libft/ft_lstadd.c libft/ft_lstiter.c libft/ft_lstmap.c\
 	   	libft/ft_wdlen.c libft/ft_range.c libft/ft_list_size.c
 
-OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o handle_int_etc.c\
+OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o handle_int_etc.o\
 		arg_check.o\
 		ft_uitoa_base.o ft_itoa_base.o ft_ultoa_base.o format_out.o format_int.o\
 		ft_atoi.o ft_bzero.o ft_isalnum.o\
