@@ -16,7 +16,7 @@ void	check_int(t_args *ar)
 {
 	if ((ar->conv == 'd' || ar->conv == 'i') && ar->mods == none)
 		handle_int(ar);
-	else if (ar->conv == 'D' && (ar->mods == none || ar->mods == l))
+	else if (ar->conv == 'D' && (ar->mods == l))
 	 	handle_lnum(ar);
 	// else if (ar->mods == ll)
 	// 	handle_llnum(ar->conv);
@@ -51,11 +51,11 @@ void	handle_int(t_args *ar)
 		format_intpadding(ar, tmp);
 		ft_putstr(tmp);
 	}
-	else if (ar->space == 1 && ar->plus == 0)
-	{
-		format_space(ar, tmp);
-		ft_putstr(tmp);
-	}
+	// else if (ar->space == 1 && ar->plus == 0)
+	// {
+	// 	format_space(ar, tmp);
+	// 	ft_putstr(tmp);
+	// }
 	else if (ar->minus == 1)
 	{
 		format_intljust(ar, tmp);

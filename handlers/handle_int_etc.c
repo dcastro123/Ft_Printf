@@ -16,6 +16,6 @@ void	handle_lnum(t_args *ar)
 {
 	char *tmp;
 
-	tmp = ft_ltoa((long)ar->num);
+	tmp = ft_ltoa(ar->num);
 	ft_putstr(tmp);
 }

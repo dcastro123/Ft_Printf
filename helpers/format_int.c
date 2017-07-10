@@ -17,7 +17,8 @@ void	format_intljust(t_args *ar, char *tmp)
 	unsigned int	i;
 
 	i = 0;
-	ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1));
+	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
+		return ;
 	while (tmp[i])
 	{
 		ar->str_out[i] = tmp[i];
@@ -79,7 +80,7 @@ void	format_intwidth(t_args *ar, char *tmp)
 		i++;
 	}
 }
-// void	format_space(t_args *ar, char *tmp)
+// void	format_intspace(t_args *ar, char *tmp)
 // {
 // 	int i;
 // 	int j;

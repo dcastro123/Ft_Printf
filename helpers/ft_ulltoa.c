@@ -1,62 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ltoa.c                                          :+:      :+:    :+:   */
+/*   ft_ulltoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/09 19:45:19 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/09 19:45:21 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/07/09 23:34:39 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/07/09 23:34:50 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/ft_printf.h"
 
-static long	num_len(long nbr)
+static unsigned long long	num_len(unsigned long long nbr)
 {
-	long	i;
+	unsigned long long	i;
 
 	i = 0;
-	if (nbr < 0)
-	{
-		nbr *= -1;
-		i++;
-	}
-	while ((nbr / 10) != 0)
+	while (nbr > 9)
 	{
 		i++;
 		nbr /= 10;
 	}
-	i++;
 	return (i);
 }
 
-char		*ft_ltoa(long n)
+char		*ft_ulltoa(unsigned long long n)
 {
 	char	*str;
-	long		i;
+	int		i;
 
-	i = num_len(n) - 1;
+	i = num_len(n);
 	if (!(str = (char *)malloc(sizeof(char) * (num_len(n) + 1))))
 		return (NULL);
-	str[i + 1] = '\0';
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	else if (n == 4294959296)
-		return (ft_strdup("4294959296"));
-	if (n < 0)
-	{
-		str[0] = '-';
-		n *= -1;
-	}
+	str[i] = '\0';
 	while (n > 9)
 	{
 		str[i] = (n % 10) + '0';
 		i--;
 		n /= 10;
 	}
-	if (n >= 0 && n <= 9)
+	if (n > 0 && n <= 9)
 		str[i] = n + '0';
 	return (str);
 }

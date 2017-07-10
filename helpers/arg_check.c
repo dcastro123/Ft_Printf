@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/06/08 19:23:15 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/09 21:09:56 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,19 @@ void	get_precision(const char *format, t_args *ar, va_list *ap)
 	}
 	else if (format[ar->index + 1] > '0' && format[ar->index + 1] <= '9')
 		ar->precision = ft_atoi(format + ar->index);
-	// else if (format[ar->index + 1] == '0')
-	// 	ar->str_out = ft_strjoin(ar->str_out, "");
+	else if (format[ar->index + 1] == '0')
+		ar->str_out = ft_strnew(1);
 }
 
 void	check_mod(const char *format, t_args *ar)
 {
-	if (format[ar->index] == 'h' && format[ar->index++] != 'h')
+	if (format[ar->index] == 'h' && format[ar->index + 1] != 'h')
 		ar->mods = h;
-	else if (format[ar->index] == 'h' && format[ar->index++] == 'h')
+	else if (format[ar->index] == 'h' && format[ar->index + 1] == 'h')
 		ar->mods = hh;
-	else if (format[ar->index] == 'l' && format[ar->index++] != 'l')
+	else if (format[ar->index] == 'l' && format[ar->index + 1] != 'l')
 		ar->mods = l;
-	else if (format[ar->index] == 'l' && format[ar->index++] == 'l')
+	else if (format[ar->index] == 'l' && format[ar->index + 1] == 'l')
 		ar->mods = ll;
 	else if (format[ar->index] == 'z')
 		ar->mods = z;
@@ -84,7 +84,8 @@ void	more_parsing(const char *format, t_args *ar)
 void	check_flags(const char *format, t_args *ar, va_list *ap)
 {
 	ar->mods = 0;
-	while (IS_FLAG(format[ar->index]) || IS_NFLAG(format[ar->index]))
+	while (IS_FLAG(format[ar->index]) || IS_NFLAG(format[ar->index])
+		|| IS_MOD(format[ar->index]))
 	{
 		more_parsing(format, ar);
 		if (format[ar->index] == '.')
