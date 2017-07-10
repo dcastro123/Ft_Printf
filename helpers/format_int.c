@@ -41,7 +41,7 @@ void	format_intpadding(t_args *ar, char *tmp)
 	i = 0;
 	if (ar->num >= 0)
 			ft_putchar('+');
-	while (i= < (ar->width - ft_strlen(tmp)))
+	while (i <= (ar->width - ft_strlen(tmp)))
 	{
 		ft_putchar('0');
 		i++;
