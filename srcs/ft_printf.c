@@ -21,7 +21,7 @@ int	ft_printf(const char *format, ...)
 	va_start(ap, format);
 	ret = 0;
 	ar.index = 0;
-//	printf("format string: %s\n", format);
+	printf("format string: %s\n", format);
 	while (format[ar.index] != '\0')
 	{
 		if (format[ar.index] == '%' && format[ar.index + 1] != '%')
