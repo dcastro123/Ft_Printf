@@ -37,7 +37,7 @@ void	handle_int(t_args *ar)
 	char *tmp;
 
 	tmp = ft_itoa(ar->num);
-	printf("width: %u    precision: %d\n", ar->width, ar->precision);
+	// printf("width: %u    precision: %d\n", ar->width, ar->precision);
 	// if (ar->width > 0 && ar->minus == 0 && ar->pflag== 0)
 	// {
 	// 	printf("$$$$$$$$$\n\n");
