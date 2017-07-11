@@ -88,7 +88,10 @@ void	format_intspace(t_args *ar, char *tmp)
 	i = 0;
 	j = 0;
 	if (ar->num > 0)
+	{
+		i++;
 		ft_putchar(' ');
+	}
 	if (ar->width > 0)
 	{
 		while (i < (ar->width - ft_strlen(tmp)))
