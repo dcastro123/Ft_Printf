@@ -41,6 +41,7 @@ void	format_intpadding(t_args *ar, char *tmp)
 	i = 0;
 	if (ar->num >= 0 && ar->plus == 1)
 			ft_putchar('+');
+	ft_putchar('0');
 	if (ar->width > 0)
 	{
 		while (i < (ar->width - ft_strlen(tmp)))
@@ -82,7 +83,7 @@ void	format_intwidth(t_args *ar, char *tmp)
 }
 void	format_intspace(t_args *ar, char *tmp)
 {
-	int i;
+	unsigned int i;
 	int j;
 
 	i = 0;

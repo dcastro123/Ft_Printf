@@ -19,9 +19,11 @@ int	main(void)
 	//  int *y;
 	//  y = &b;
 	// char *str = "LYDI";
-	int x  = -42;
-	printf("'% 4i'\n", x);
-	ft_printf("'% 4i'\n", x);
+	int x  = 42;
+	printf("'%04.5i'\n", x);
+	ft_printf("'%04.5i'\n", x);
+	// printf("'%4.2%\n");
+	// ft_printf("%5%\n");
 	// printf("real printf >>%0i<<\n", x);
 	// ft_printf("my printf >>%0i<<\n", x);
 	//ft_printf("test>>> %s     %c\n", "hello", 'c');

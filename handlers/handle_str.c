@@ -34,15 +34,18 @@ void	handle_rstr(t_args *ar)
 
 void	handle_char(t_args *ar)
 {
-	int i;
+	unsigned int i;
 
-	i = -1;
+	i = 0;
 	if (ar->mods == none)
 	{
 		if (ar->width > 0)
 		{
-			while (++i < ar->width)
+			while (i < ar->width)
+			{
 				ft_putchar(' ');
+				i++;
+			}
 		}
 		ft_putchar(ar->num);
 	}

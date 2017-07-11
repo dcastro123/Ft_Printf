@@ -14,7 +14,7 @@
 
 void	format_width(t_args *ar)
 {
-	int i;
+	unsigned long i;
 
 	i = 0;
 	while (i < (ar->width - ft_strlen(ar->tab)))
@@ -26,12 +26,12 @@ void	format_width(t_args *ar)
 
 void	format_precision(t_args *ar)
 {
-	int i;
-	int j;
+	unsigned int i;
+	unsigned int j;
 
 	i = 0;
 	j = 0;
-	if (ar->precision == 0)
+	if ((unsigned int)ar->precision == 0)
 	{
 		while (i < ar->width)
 		{
@@ -39,7 +39,7 @@ void	format_precision(t_args *ar)
 			i++;
 		}
 	}
-	while (i < ar->precision)
+	while (i < (unsigned int)ar->precision)
 	{
 		ft_putchar(ar->tab[i]);
 		i++;
