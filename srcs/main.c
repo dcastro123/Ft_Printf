@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/05/02 19:30:45 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/11 22:51:12 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,14 @@ int	main(void)
 	//  y = &b;
 	// char *str = "LYDI";
 	int x  = 42;
-	printf("'%04.5i'\n", x);
-	ft_printf("'%04.5i'\n", x);
+	printf("'% 4.5i'\n", x);
+	//ft_printf("'% 4.5i'\n", x);
+	printf("'%4.3i'\n", x);
+//	ft_printf("'%04.5i'\n", x);
+	printf("'%04.3i'\n", x);
+//	ft_printf("'%04.3i'\n", x);
+	printf("'hello %04.2i'\n", x);
+//	ft_printf("'%04.2i'\n", x);
 	// printf("'%4.2%\n");
 	// ft_printf("%5%\n");
 	// printf("real printf >>%0i<<\n", x);

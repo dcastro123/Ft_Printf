@@ -41,15 +41,34 @@ void	format_intpadding(t_args *ar, char *tmp)
 	i = 0;
 	if (ar->num >= 0 && ar->plus == 1)
 			ft_putchar('+');
-	ft_putchar('0');
-	if (ar->width > 0)
+	// if (ar->width > 0 && ar->pflag == 0)
+	// {
+	// 	while (i < (ar->width - ft_strlen(tmp)))
+	// 	{
+	// 		ft_putchar('0');
+	// 		i++;
+	// 	}
+	// }
+	else if (ar->width > 0 && ar->pflag == 1)
 	{
-		while (i < (ar->width - ft_strlen(tmp)))
+		if (IS_TRUE(ar->space))
 		{
-			ft_putchar('0');
+			i++;
+			ft_putchar(' ');
+		}
+		if (ar->width > (unsigned int)ar->precision)
+		while (i < ar->width - ft_strlen(tmp))
+		{
+			i++;
+			ft_putchar(' ');
+		}
+		while (i < (unsigned int)ar->precision)
+		{
+			ft_putchar(tmp[i]);
 			i++;
 		}
 	}
+	ft_putstr(tmp);
 }
 
 void	format_intwidth(t_args *ar, char *tmp)
