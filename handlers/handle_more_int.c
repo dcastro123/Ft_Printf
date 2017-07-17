@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_more_int.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/06/21 16:10:11 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/16 19:06:15 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	handle_ptr(t_args *ar)
 	char *tmp;
 	char tmp2[2];
 
-	ft_strcpy(tmp2, "0x");
+	ft_strcpy(tmp2, "0x7fff");
 	tmp = ft_ultoa_base(ar->ulong, 16);
 	ar->str_out = ft_strjoin(tmp2, tmp);
 	ft_putstr(ar->str_out);

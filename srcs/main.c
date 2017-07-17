@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/11 22:51:12 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/16 18:22:34 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 	//ft_printf("'% 4.5i'\n", x);
 	printf("'%4.3i'\n", x);
 //	ft_printf("'%04.5i'\n", x);
-	printf("'%04.3i'\n", x);
+	printf("help: '%04.3i'\n", x);
 //	ft_printf("'%04.3i'\n", x);
 	printf("'hello %04.2i'\n", x);
 //	ft_printf("'%04.2i'\n", x);
