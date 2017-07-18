@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/06/21 16:03:30 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/17 17:05:44 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	handle_char(t_args *ar)
 
 void	check_str(t_args *ar)
 {
+	if (!ar->tab)
+		return (ft_putendl("(null)"));
 	if (ar->conv == 'c')
 		handle_char(ar);
 	else if (ar->conv == 's')
