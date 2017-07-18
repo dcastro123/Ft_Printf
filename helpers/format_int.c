@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/17 16:57:08 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/17 16:59:22 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	format_intpadding(t_args *ar, char *tmp)
 			i++;
 			ft_putchar(' ');
 		}
-		if (ar->width > (unsigned int)ar->precision)
 		while (i < ar->width - ft_strlen(tmp))
 		{
 			i++;
