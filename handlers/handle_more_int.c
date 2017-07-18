@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/17 17:03:14 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/17 17:03:50 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	handle_ptr(t_args *ar)
 	char *tmp;
 	char tmp2[2];
 
-	ft_strcpy(tmp2, "0x7");
+	ft_strcpy(tmp2, "0x");
 	tmp = ft_ultoa_base(ar->ulong, 16);
 	ar->str_out = ft_strjoin(tmp2, tmp);
 	ft_putstr(ar->str_out);
