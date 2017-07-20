@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/18 23:10:33 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 19:43:12 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,30 +39,23 @@ void	format_intpadding(t_args *ar, char *tmp)
 	unsigned int i;
 
 	i = 0;
+	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
+		return ;
 	if (ar->num >= 0 && ar->plus == 1)
-			ft_putchar('+');
-	if (ar->width > 0 && ar->pflag == 0)
+			ar->str_out[i] = '+';
+	i++;
+	if (ar->width > 0)
 	{
 		while (i < (ar->width - ft_strlen(tmp)))
 		{
-			ft_putchar('0');
+			ar->str_out[i] = '0';
 			i++;
 		}
 	}
-	else if (ar->width > 0)
-	{
-		if (IS_TRUE(ar->space))
-		{
-			i++;
-			ft_putchar(' ');
-		}
-		while (i < ar->width - ft_strlen(tmp))
-		{
-			i++;
-			ft_putchar(' ');
-		}
-	}
-	ft_putstr(tmp);
+	ar->str_out[i] = '\0';
+	ft_strcat(ar->str_out, tmp);
+	ft_putstr(ar->str_out);
+	ar->ret += ft_strlen(ar->str_out);
 }
 
 void	format_intwidth(t_args *ar, char *tmp)

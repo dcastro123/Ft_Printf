@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 18:16:12 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 19:43:57 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,10 @@ void	check_int(t_args *ar)
 void	handle_int(t_args *ar)
 {
 	char *tmp;
-
 	//check_mod(ar);
-
 	tmp = ft_itoa(ar->num);
 	// printf("width: %u    precision: %d\n", ar->width, ar->precision);
-	// if (ar->width > 0 && ar->minus == 0 && ar->pflag== 0)
-	// {
-	// 	printf("$$$$$$$$$\n\n");
-	// 	if (ft_strlen(tmp) > ar->width)
-	// 		return (ft_putstr(tmp));
-	// 	format_intwidth(ar, tmp);
-	// //	ft_putstr(tmp);
-	// }
-	if (ar->zero == 1 && ar->pflag == 0)
+	if (ar->zero == 1 && ar->pflag == 0 && ar->minus == 0)
 		format_intpadding(ar, tmp);
 	else if (ar->space == 1)
 	{
@@ -76,14 +66,12 @@ void	handle_int(t_args *ar)
 		format_intljust(ar, tmp);
 		ft_putstr(ar->str_out);
 	}
+	// else if (ar->pflag == 1)
+	// 	format_intprecision(ar, tmp);
 	else
 	{
-		if (ar->plus == 1 && ar->num >= 0)
-			ft_putchar('+');
-		ft_putstr(tmp);
+		ft_putstr("bye\n");
 	}
-	//tmp = ft_itoa(ar->num);
-	// ft_putstr(tmp);
 }
 
 void	handle_usint(t_args *ar)
