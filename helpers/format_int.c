@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 21:29:26 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 21:32:15 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	format_intwidth(t_args *ar, char *tmp)
 		ft_putchar(tmp[j]);
 		j++;
 		i++;
+		ar->ret++;
 	}
 }
 void	format_intspace(t_args *ar, char *tmp)

@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 20:58:52 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 21:36:40 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	check_str(t_args *ar)
 	else if (ar->conv == 'S')
 		printf(" S feature not implemented yet\n");
 	else if (ar->conv == 'C')
-		printf("C feature not implemented yet\n");
+		ft_putchar(ar->num);
 	else
 		printf("wtf is this\n");
 }
