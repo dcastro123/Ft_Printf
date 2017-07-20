@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 19:57:21 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 20:06:20 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	handle_int(t_args *ar)
 		format_intpadding(ar, tmp);
 	else if (ar->space == 1)
 	{
-		printf("<<<<<<<<<<\n");
 		format_intspace(ar, tmp);
 		ft_putstr(tmp);
 	}
@@ -69,7 +68,6 @@ void	handle_int(t_args *ar)
 	}
 	else
 	{
-		printf("^^^^^^^^^\n");
 		if (ar->plus == 1 && ar->num >= 0)
 			ft_putchar('+');
 		ft_putstr(tmp);
