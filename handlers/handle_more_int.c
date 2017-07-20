@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 20:55:58 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 20:56:35 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	handle_oct(t_args *ar)
 			ft_putstr("0");
 			ft_putstr(tmp);
 		}
-		ft_putstr(tmp);
+		else
+			ft_putstr(tmp);
 	}
 	// else if (ar->mods == ll)
 	// {
