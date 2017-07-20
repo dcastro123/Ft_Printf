@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 21:31:22 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 22:01:27 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,32 +55,31 @@ void	handle_int(t_args *ar)
 	tmp = ft_itoa(ar->num);
 	if (ar->zero == 1 && ar->minus == 0)
 	{
-		printf("????????\n");
 		format_intpadding(ar, tmp);
 	}
 	else if (ar->space == 1)
 	{
-		printf("><<<<<<<<<<\n");
 		format_intspace(ar, tmp);
 		ft_putstr(tmp);
 	}
 	else if (ar->minus == 1)
 	{
-		printf("<><><><><><>\n");
 		format_intljust(ar, tmp);
 		ft_putstr(ar->str_out);
 	}
 	else
 	{
 		if (ar->width > 0)
+		{
 			format_intwidth(ar, tmp);
-		else if (ar->plus == 1 && ar->num >= 0)
+			ft_putstr(ar->str_out);
+		}
+		else if (ar->plus == 1 && ar->num >= 0 && ar->width == 0)
+		{
 			ft_putchar('+');
-		else
 			ft_putstr(tmp);
+		}
 	}
-	// tmp = ft_itoa(ar->num);
-	// ft_putstr(tmp);
 }
 
 void	handle_usint(t_args *ar)
