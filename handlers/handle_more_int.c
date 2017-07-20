@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 20:56:35 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 20:57:30 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	handle_oct(t_args *ar)
 	if (ar->mods == none && ar->conv == 'o')
 	{
 		tmp = ft_uitoa_base(ar->unum, 8);
-		if (ar->tag == 1)
+		if (ar->tag == 1 && ar->unum > 0)
 		{
 			ft_putstr("0");
 			ft_putstr(tmp);
