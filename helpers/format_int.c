@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 23:17:27 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 23:21:26 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ void	format_intwidth(t_args *ar, char *tmp)
 		return ;
 	if (ar->plus == 1 && ar->num >= 0)
 		ft_putchar('+');
-	if (IS_TRUE(ar->space))
-		ft_putchar(' ');
+	// if (IS_TRUE(ar->space))
+	// 	ft_putchar(' ');
 	while (i < (ar->width - ft_strlen(tmp)))
 	{
 		ar->str_out[i] = ' ';
