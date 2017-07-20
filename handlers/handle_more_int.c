@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/17 17:03:50 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 20:53:42 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@
 void	handle_oct(t_args *ar)
 {
 	char *tmp;
+
 	if (ar->mods == none && ar->conv == 'o')
 	{
 		tmp = ft_uitoa_base(ar->unum, 8);
+		if (ar->tag == 1)
+			ft_strjoin("0", tmp);
 		ft_putstr(tmp);
 	}
 	// else if (ar->mods == ll)
@@ -72,15 +75,28 @@ void	handle_oct(t_args *ar)
 void	handle_hex(t_args *ar)
 {
 		char *tmp;
+
 		if (ar->mods == none && ar->conv == 'x')
 		{
 			tmp = ft_uitoa_base(ar->unum, 16);
-			ft_putstr(tmp);
+			if (ar->tag == 1)
+			{
+				ft_putstr("0x");
+				ft_putstr(tmp);
+			}
+			else
+				ft_putstr(tmp);
 		}
 		else if (ar->mods == none && ar->conv == 'X')
 		{
 			tmp = ft_uitoa_capbase(ar->unum, 16);
-			ft_putstr(tmp);
+			if (ar->tag == 1)
+			{
+				ft_putstr("0X");
+				ft_putstr(tmp);
+			}
+			else
+				ft_putstr(tmp);
 		}
 		// else if (ar->mods == hh)
 		// 	printf("hh not implemented yet\n");
@@ -107,12 +123,10 @@ void	handle_hex(t_args *ar)
 void	handle_ptr(t_args *ar)
 {
 	char *tmp;
-	char tmp2[2];
 
-	ft_strcpy(tmp2, "0x");
 	tmp = ft_ultoa_base(ar->ulong, 16);
-	ar->str_out = ft_strjoin(tmp2, tmp);
-	ft_putstr(ar->str_out);
+	ft_putstr("0x");
+	ft_putstr(tmp);
 
 }
 // void	handle_upperhex()
