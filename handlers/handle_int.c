@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 23:21:16 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 23:25:39 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	handle_int(t_args *ar)
 	char *tmp;
 
 	tmp = ft_itoa(ar->num);
+//	format_precwidth(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0)
 		format_intpadding(ar, tmp);
 	else if (ar->space == 1)

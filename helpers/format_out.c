@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 23:15:37 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 23:44:26 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,15 @@ void	format_ljust(t_args *ar)
 		format_width(ar);
 }
 
-static void do_prec(t_args *ar, char *tmp)
+static void do_precpad(t_args *ar, char *tmp)
 {
 	int i;
 	int j;
 
 	i = 0;
 	j = 0;
+	if (IS_TRUE(ar->space))
+		ft_putchar(' ');
 	if (ft_strlen(ar->str_out) > (size_t)ar->precision && ft_strlen(ar->str_out) > ar->width)
 	{
 		ar->str_out = ft_strdup(tmp);
@@ -94,6 +96,7 @@ static void do_prec(t_args *ar, char *tmp)
 		j++;
 	}
 }
+
 void	format_intprecision(t_args *ar, char *tmp)
 {
 	int i;
@@ -107,7 +110,7 @@ void	format_intprecision(t_args *ar, char *tmp)
 	else
 		ar->str_out = ft_memalloc((size_t)ar->width);
 	if (ar->precision > (int)ar->width)
-		do_prec(ar, tmp);
+		do_precpad(ar, tmp);
 	// else 
 	// {
 	// 	while ()

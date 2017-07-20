@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 23:10:16 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 23:26:14 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 	//printf("'% 4.5ld'\n", x);
 //	printf("'%04s", str);
 	//ft_printf("'% 4.5i'\n", x);
-	printf("'%4.2i'\n", x);
+	printf("'% 4.5i'\n", x);
 //	ft_printf("'%3i'\n", x);
 //	ft_printf("'%04.5i'\n", x);
 //	printf(" help: '%04.3li'\n", x);
