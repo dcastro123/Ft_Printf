@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 20:23:49 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 20:59:52 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	main(void)
 	//  int *y;
 	//  y = &b;
 //	char *str = "LYDI";
-	int x  = -42;
+	int x  = 42;
 	//printf("'% 4.5ld'\n", x);
 //	printf("'%04s", str);
 	//ft_printf("'% 4.5i'\n", x);
-	printf("'%#x'\n", x);
+	printf("'%04.2d'\n", x);
 	ft_printf("'%#x'\n", x);
 //	ft_printf("'%04.5i'\n", x);
 //	printf(" help: '%04.3li'\n", x);
