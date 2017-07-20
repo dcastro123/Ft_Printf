@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 23:18:01 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 23:18:24 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ void	handle_int(t_args *ar)
 	tmp = ft_itoa(ar->num);
 	if (ar->zero == 1 && ar->minus == 0)
 		format_intpadding(ar, tmp);
-	else if (ar->space == 1)
-	{
-		format_intspace(ar, tmp);
-		ft_putstr(tmp);
-	}
+	// else if (ar->space == 1)
+	// {
+	// 	format_intspace(ar, tmp);
+	// 	ft_putstr(tmp);
+	// }
 	else if (ar->minus == 1)
 	{
 		format_intljust(ar, tmp);
