@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 22:01:27 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 22:14:45 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,7 @@ void	handle_int(t_args *ar)
 	//check_mod(ar);
 	tmp = ft_itoa(ar->num);
 	if (ar->zero == 1 && ar->minus == 0)
-	{
 		format_intpadding(ar, tmp);
-	}
 	else if (ar->space == 1)
 	{
 		format_intspace(ar, tmp);
@@ -67,19 +65,10 @@ void	handle_int(t_args *ar)
 		format_intljust(ar, tmp);
 		ft_putstr(ar->str_out);
 	}
+	else if (ar->plus == 1)
+		format_plus(ar, tmp);
 	else
-	{
-		if (ar->width > 0)
-		{
-			format_intwidth(ar, tmp);
-			ft_putstr(ar->str_out);
-		}
-		else if (ar->plus == 1 && ar->num >= 0 && ar->width == 0)
-		{
-			ft_putchar('+');
-			ft_putstr(tmp);
-		}
-	}
+		ft_putstr(tmp);
 }
 
 void	handle_usint(t_args *ar)

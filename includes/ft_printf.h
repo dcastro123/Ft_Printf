@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 19:25:28 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 22:15:48 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,10 @@ void	check_str(t_args *ar);
 void	handle_char(t_args *ar);
 void	handle_rstr(t_args *ar);
 
+void	format_plus(t_args *ar, char *tmp);
 void	format_intpadding(t_args *ar, char *tmp);
 void	format_intspace(t_args *ar, char *tmp);
-void	format_intwidth(t_args *ar, char *tmp);
+// void	format_intwidth(t_args *ar, char *tmp);
 void	format_intljust(t_args *ar, char *tmp);
 void	check_int(t_args *ar);
 void	handle_ptr(t_args *ar);
@@ -92,6 +93,7 @@ void	handle_oct(t_args *ar);
 void	handle_hex(t_args *ar);
 void	handle_usint(t_args *ar);
 void	handle_lnum(t_args *ar);
+
 char	*ft_ltoa(long n);
 char	*ft_ulltoa(unsigned long long n);
 char    *ft_uitoa(unsigned int n);
