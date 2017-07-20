@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 19:43:57 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 19:45:36 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,9 @@ void	handle_int(t_args *ar)
 	// 	format_intprecision(ar, tmp);
 	else
 	{
-		ft_putstr("bye\n");
+		if (ar->plus == 1 && ar->num >= 0)
+			ft_putchar('+');
+		ft_putstr(tmp);
 	}
 }
 
