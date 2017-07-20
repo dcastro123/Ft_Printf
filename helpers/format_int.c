@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 19:43:12 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 19:49:28 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@ void	format_intpadding(t_args *ar, char *tmp)
 	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
 		return ;
 	if (ar->num >= 0 && ar->plus == 1)
+	{
 			ar->str_out[i] = '+';
-	i++;
+			i++;
+	}
 	if (ar->width > 0)
 	{
 		while (i < (ar->width - ft_strlen(tmp)))
