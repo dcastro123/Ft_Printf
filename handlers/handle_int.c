@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 22:14:45 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 22:19:02 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,11 @@ void	handle_int(t_args *ar)
 	}
 	else if (ar->plus == 1)
 		format_plus(ar, tmp);
-	else
-		ft_putstr(tmp);
+	else if (ar->width > 0)
+	{
+		format_intwidth(ar, tmp);
+		ft_putstr(ar->str_out);
+	}
 }
 
 void	handle_usint(t_args *ar)
