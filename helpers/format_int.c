@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 20:00:47 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 21:29:26 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ void	format_intpadding(t_args *ar, char *tmp)
 	i = 0;
 	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
 		return ;
+	// if (ar->pflag == 1)
+	// {
+	// 	ar->str_out = format_intprecision(ar, tmp);
+	// }
 	if (ar->num >= 0 && ar->plus == 1)
 	{
 			ar->str_out[i] = '+';
@@ -60,6 +64,21 @@ void	format_intpadding(t_args *ar, char *tmp)
 	ar->ret += ft_strlen(ar->str_out);
 }
 
+// void	format_intprecision(t_args *ar, char *tmp)
+// {
+// 	int i;
+
+// 	i = 0;
+
+
+
+
+
+
+
+
+// }
+
 void	format_intwidth(t_args *ar, char *tmp)
 {
 	unsigned int i;
@@ -67,16 +86,6 @@ void	format_intwidth(t_args *ar, char *tmp)
 
 	i = 0;
 	j = 0;
-	if (ar->plus == 1)
-	{
-		ft_putchar('+');
-		i++;
-	}
-	if (ar->zero == 1)
-	{
-		ft_putchar('0');
-		i++;
-	}
 	while (i < (ar->width - ft_strlen(tmp)))
 	{
 		ft_putchar(' ');
