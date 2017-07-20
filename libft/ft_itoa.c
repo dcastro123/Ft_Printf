@@ -6,13 +6,13 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/18 14:00:43 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 19:20:21 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 19:47:15 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static int	num_len(intmax_t n)
+static int	num_len(int n)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ static int	num_len(intmax_t n)
 	return (i);
 }
 
-char		*ft_itoa(intmax_t n)
+char		*ft_itoa(int n)
 {
 	char	*str;
 	int		i;
