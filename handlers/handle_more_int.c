@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 20:53:42 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 20:55:58 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	handle_oct(t_args *ar)
 	{
 		tmp = ft_uitoa_base(ar->unum, 8);
 		if (ar->tag == 1)
-			ft_strjoin("0", tmp);
+		{
+			ft_putstr("0");
+			ft_putstr(tmp);
+		}
 		ft_putstr(tmp);
 	}
 	// else if (ar->mods == ll)
