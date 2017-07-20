@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/17 18:21:19 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 18:39:14 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	check_str(t_args *ar)
 	if (ar->conv == 'c')
 		handle_char(ar);
 	else if (ar->conv == 's')
-		handle_rstr(ar);
+		printf("send help with strings pls ");
 	else if (ar->conv == 'S')
 		printf(" S feature not implemented yet\n");
 	else if (ar->conv == 'C')

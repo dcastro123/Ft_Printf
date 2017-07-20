@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/17 16:59:22 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/18 23:10:33 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	format_intpadding(t_args *ar, char *tmp)
 			i++;
 		}
 	}
-	else if (ar->width > 0 && ar->pflag == 1)
+	else if (ar->width > 0)
 	{
 		if (IS_TRUE(ar->space))
 		{
@@ -60,11 +60,6 @@ void	format_intpadding(t_args *ar, char *tmp)
 		{
 			i++;
 			ft_putchar(' ');
-		}
-		while (i < (unsigned int)ar->precision)
-		{
-			ft_putchar(tmp[i]);
-			i++;
 		}
 	}
 	ft_putstr(tmp);

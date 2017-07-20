@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   handle_int.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/06/21 16:13:15 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 18:16:12 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+
+
+
+// void	check_mod(t_args *ar)
+// {
+//  	if (ar->mods == l)
+//  		ar->str_out = ft_ltoa
+
+
+
+
+
+
+
+// }
 
 void	check_int(t_args *ar)
 {
@@ -36,6 +52,8 @@ void	handle_int(t_args *ar)
 {
 	char *tmp;
 
+	//check_mod(ar);
+
 	tmp = ft_itoa(ar->num);
 	// printf("width: %u    precision: %d\n", ar->width, ar->precision);
 	// if (ar->width > 0 && ar->minus == 0 && ar->pflag== 0)
@@ -46,7 +64,7 @@ void	handle_int(t_args *ar)
 	// 	format_intwidth(ar, tmp);
 	// //	ft_putstr(tmp);
 	// }
-	if (ar->zero == 1)
+	if (ar->zero == 1 && ar->pflag == 0)
 		format_intpadding(ar, tmp);
 	else if (ar->space == 1)
 	{
