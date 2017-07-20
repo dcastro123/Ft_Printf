@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 18:39:14 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 18:46:38 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	handle_rstr(t_args *ar)
 {
-		if (!ar->tab)
+	if (!ar->tab)
 		return (ft_putendl("(null)"));
 	if (ar->zero == 1)
 		return (ft_putstr(""));
