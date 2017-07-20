@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   format_out.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/02 14:26:58 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 23:10:10 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,3 +69,77 @@ void	format_ljust(t_args *ar)
 	if (ar->width > 0 && ar->pflag == 0)
 		format_width(ar);
 }
+
+static void do_prec(t_args *ar, char *tmp)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	if (ft_strlen(ar->str_out) > (size_t)ar->precision && ft_strlen(ar->str_out) > ar->width)
+	{
+		ar->str_out = ft_strdup(tmp);
+		return ;
+	}
+	while (i < (ar->precision - (int)ft_strlen(tmp)))
+	{
+		ar->str_out[i] = '0';
+		i++;
+	}
+	while ((size_t)j < ft_strlen(tmp))
+	{
+		ar->str_out[i] = tmp[j];
+		i++;
+		j++;
+	}
+}
+void	format_intprecision(t_args *ar, char *tmp)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	tmp = NULL;
+	if (ar->precision > (int)ar->width)
+		ar->str_out = ft_memalloc((size_t)ar->precision);
+	else
+		ar->str_out = ft_memalloc((size_t)ar->width);
+	if (ar->precision > (int)ar->width)
+		do_prec(ar, tmp);
+	// else 
+	// {
+	// 	while ()
+	// }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

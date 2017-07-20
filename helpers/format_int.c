@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 22:18:41 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/19 23:14:24 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,11 @@ void	format_intpadding(t_args *ar, char *tmp)
 	i = 0;
 	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
 		return ;
-	// if (ar->pflag == 1)
-	// {
-	// 	ar->str_out = format_intprecision(ar, tmp);
-	// }
+	if (ar->pflag == 1)
+	{
+		format_intprecision(ar, tmp);
+		return (ft_putstr(ar->str_out));
+	}
 	if (ar->num >= 0 && ar->plus == 1)
 	{
 			ar->str_out[i] = '+';
@@ -92,10 +93,17 @@ void	format_intwidth(t_args *ar, char *tmp)
 
 	i = 0;
 	j = 0;
+	if (ar->precision >= 0 && ar->pflag == 1)
+	{
+		format_intprecision(ar, tmp);
+		return (ft_putstr(ar->str_out));
+	}
 	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
 		return ;
 	if (ar->plus == 1 && ar->num >= 0)
 		ft_putchar('+');
+	if (IS_TRUE(ar->space))
+		ft_putchar(' ');
 	while (i < (ar->width - ft_strlen(tmp)))
 	{
 		ar->str_out[i] = ' ';
@@ -111,25 +119,4 @@ void	format_intwidth(t_args *ar, char *tmp)
 	ar->ret += ft_strlen(ar->str_out) > 0 ? ft_strlen(ar->str_out) : ft_strlen(tmp);
 }
 
-void	format_intspace(t_args *ar, char *tmp)
-{
-	unsigned int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	if (ar->num > 0)
-	{
-		i++;
-		ft_putchar(' ');
-	}
-	if (ar->width > 0)
-	{
-		while (i < (ar->width - ft_strlen(tmp)))
-		{
-			ft_putchar(' ');
-			i++;
-		}
-	}
-}
 
