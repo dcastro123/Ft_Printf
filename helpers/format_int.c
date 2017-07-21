@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/20 21:40:44 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/20 22:01:57 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,8 @@ void	format_intspace(t_args *ar, char *tmp)
 
 	i = 0;
 	j = 0;
-	if (ar->precision > 0)
-		format_intprecision(ar, tmp);
+	// if (ar->precision > 0)
+	// 	format_intprecision(ar, tmp);
 	if (ar->num > 0)
 	{
 		i++;

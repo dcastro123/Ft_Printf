@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 17:31:21 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 19:38:36 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/20 21:53:09 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,23 @@ int	ft_printf(const char *format, ...)
 	va_start(ap, format);
 	ar.ret = 0;
 	ar.index = 0;
-//	printf("format string: %s\n", format);
 	while (format[ar.index] != '\0')
 	{
 		if (format[ar.index] == '%' && format[ar.index + 1] != '%')
-		{
 			start_conversion(format, &ar, &ap);
-		//	ret++;
-		}
 		else if (format[ar.index] == '%' && format[ar.index + 1] == '%')
 		{
 			ft_putchar('%');
-		//	ret++;
+			ar->ret++;
 			ar.index++;
 		}
 		else
 		{
 			ft_putchar(format[ar.index]);
-		//	ar.index++;
-		//	ret++;
+			ar->ret++;
 		}
 		ar.index++;
 	}
 	va_end(ap);
-	return (1);
+	return (ar->ret);
 }
