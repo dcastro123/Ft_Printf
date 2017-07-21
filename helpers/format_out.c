@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 23:44:26 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/20 19:40:59 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	format_width(t_args *ar)
 	unsigned long i;
 
 	i = 0;
+	if (ft_strlen(ar->tab) > ar->width)
+		return (ft_putstr(ar->tab));
 	while (i < (ar->width - ft_strlen(ar->tab)))
 	{
 		ft_putchar(' ');
@@ -41,7 +43,7 @@ void	format_precision(t_args *ar)
 	}
 	while (i < (unsigned int)ar->precision)
 	{
-		ft_putchar(ar->tab[i]);
+		ft_putchar(ar->tab[j]);
 		i++;
 		j++;
 	}
@@ -58,7 +60,10 @@ void	format_ljust(t_args *ar)
 
 	i = 0;
 	if (ar->precision >= 0 && ar->pflag == 1 && ar->width > 0)
+	{
+		printf("^^^^^^^\n");
 		format_precision(ar);
+	}
 	else if (ar->width > 0 && ar->pflag == 0)
 		format_width(ar);
 	else
