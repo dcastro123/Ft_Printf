@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 17:31:21 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/20 21:53:09 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/20 22:02:55 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	ft_printf(const char *format, ...)
 		else if (format[ar.index] == '%' && format[ar.index + 1] == '%')
 		{
 			ft_putchar('%');
-			ar->ret++;
+			ar.ret++;
 			ar.index++;
 		}
 		else
 		{
 			ft_putchar(format[ar.index]);
-			ar->ret++;
+			ar.ret++;
 		}
 		ar.index++;
 	}
