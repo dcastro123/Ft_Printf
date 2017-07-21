@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 17:31:21 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/20 22:02:55 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/20 22:05:15 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	ft_printf(const char *format, ...)
 		ar.index++;
 	}
 	va_end(ap);
-	return (ar->ret);
+	return (ar.ret);
 }
