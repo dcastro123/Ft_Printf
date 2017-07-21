@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/20 19:40:59 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/20 21:32:10 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,7 @@ void	format_ljust(t_args *ar)
 
 	i = 0;
 	if (ar->precision >= 0 && ar->pflag == 1 && ar->width > 0)
-	{
-		printf("^^^^^^^\n");
 		format_precision(ar);
-	}
 	else if (ar->width > 0 && ar->pflag == 0)
 		format_width(ar);
 	else

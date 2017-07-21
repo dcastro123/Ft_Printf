@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 23:25:39 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/20 21:33:49 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,15 +82,6 @@ void	handle_usint(t_args *ar)
 	char *tmp;
 	tmp = ft_uitoa(ar->unum);
 	ft_putstr(tmp);
-
-
-
-
-
-
-
-
-
 }
 
 // void	handle_llnum()
