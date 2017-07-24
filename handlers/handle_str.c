@@ -6,34 +6,11 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/20 21:29:58 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/23 18:44:55 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-// static void	handle_null(t_args *ar)
-// {
-// 	char tmp[6];
-
-// 	ft_strcpy(tmp, "(null)");
-// 	ar->tab = ft_strdup(tmp);
-// 	if (ar->minus == 1)
-// 	{
-// 		printf("@@@@@@@@\n");
-// 		format_ljust(ar);
-// 	}
-// 	else if (ar->width > 0)
-// 	{
-// 		printf("&&&&&&&&\n");
-// 		if (ar->precision > 0)
-// 			format_precision(ar);
-// 		else
-// 			format_width(ar);
-// 	}
-// 	else
-// 		ft_putstr(tmp);
-// }
 
 void	handle_rstr(t_args *ar)
 {

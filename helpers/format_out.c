@@ -6,15 +6,15 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/20 21:32:10 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/23 19:26:24 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	format_width(t_args *ar)
+void			format_width(t_args *ar)
 {
-	unsigned long i;
+	unsigned long	i;
 
 	i = 0;
 	if (ft_strlen(ar->tab) > ar->width)
@@ -26,10 +26,10 @@ void	format_width(t_args *ar)
 	}
 }
 
-void	format_precision(t_args *ar)
+void			format_precision(t_args *ar)
 {
-	unsigned int i;
-	unsigned int j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	j = 0;
@@ -54,7 +54,7 @@ void	format_precision(t_args *ar)
 	}
 }
 
-void	format_ljust(t_args *ar)
+void			format_ljust(t_args *ar)
 {
 	unsigned int	i;
 
@@ -72,16 +72,17 @@ void	format_ljust(t_args *ar)
 		format_width(ar);
 }
 
-static void do_precpad(t_args *ar, char *tmp)
+static	void	do_precpad(t_args *ar, char *tmp)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
 	if (IS_TRUE(ar->space))
 		ft_putchar(' ');
-	if (ft_strlen(ar->str_out) > (size_t)ar->precision && ft_strlen(ar->str_out) > ar->width)
+	if (ft_strlen(ar->str_out) > (size_t)ar->precision &&\
+			ft_strlen(ar->str_out) > ar->width)
 	{
 		ar->str_out = ft_strdup(tmp);
 		return ;
@@ -99,10 +100,10 @@ static void do_precpad(t_args *ar, char *tmp)
 	}
 }
 
-void	format_intprecision(t_args *ar, char *tmp)
+void			format_intprecision(t_args *ar, char *tmp)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -113,38 +114,4 @@ void	format_intprecision(t_args *ar, char *tmp)
 		ar->str_out = ft_memalloc((size_t)ar->width);
 	if (ar->precision > (int)ar->width)
 		do_precpad(ar, tmp);
-	// else 
-	// {
-	// 	while ()
-	// }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

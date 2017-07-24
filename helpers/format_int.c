@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/20 22:01:57 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/23 19:43:33 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,8 @@ void	format_intpadding(t_args *ar, char *tmp)
 	i = 0;
 	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
 		return ;
-	// if (ar->pflag == 1)
-	// {
-	// 	format_intprecision(ar, tmp);
-	// 	return (ft_putstr(ar->str_out));
-	// }
 	if (ar->num >= 0 && ar->plus == 1)
-	{
-			ar->str_out[i] = '+';
-			i++;
-	}
+		ar->str_out[i++] = '+';
 	if (ar->width > 0)
 	{
 		while (i < (ar->width - ft_strlen(tmp)))
@@ -70,7 +62,7 @@ void	format_intpadding(t_args *ar, char *tmp)
 
 void	format_plus(t_args *ar, char *tmp)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	if (ar->width > ft_strlen(tmp))
@@ -88,16 +80,11 @@ void	format_plus(t_args *ar, char *tmp)
 
 void	format_intwidth(t_args *ar, char *tmp)
 {
-	unsigned int i;
-	unsigned int j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	j = 0;
-	// if (ar->precision >= 0 && ar->pflag == 1)
-	// {
-	// 	format_intprecision(ar, tmp);
-	// 	return (ft_putstr(ar->str_out));
-	// }
 	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
 		return ;
 	if (ar->plus == 1 && ar->num >= 0)
@@ -119,13 +106,11 @@ void	format_intwidth(t_args *ar, char *tmp)
 
 void	format_intspace(t_args *ar, char *tmp)
 {
-	unsigned int i;
-	int j;
+	unsigned int	i;
+	int				j;
 
 	i = 0;
 	j = 0;
-	// if (ar->precision > 0)
-	// 	format_intprecision(ar, tmp);
 	if (ar->num > 0)
 	{
 		i++;
@@ -140,4 +125,3 @@ void	format_intspace(t_args *ar, char *tmp)
 		}
 	}
 }
-

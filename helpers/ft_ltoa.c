@@ -6,10 +6,9 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 19:45:19 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/09 19:45:21 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/23 19:57:13 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/ft_printf.h"
 
@@ -35,7 +34,7 @@ static long	num_len(long nbr)
 char		*ft_ltoa(long n)
 {
 	char	*str;
-	long		i;
+	long	i;
 
 	i = num_len(n) - 1;
 	if (!(str = (char *)malloc(sizeof(char) * (num_len(n) + 1))))

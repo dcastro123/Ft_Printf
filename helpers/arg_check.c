@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/09 21:09:56 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/23 19:54:32 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ void	check_flags(const char *format, t_args *ar, va_list *ap)
 		}
 		if (format[ar->index] == '*')
 			parse_asterisk(format, ar, ap);
-		else if (format[ar->index] >= '1' && format[ar->index] <= '9' && ar->pflag == 0)
+		else if (format[ar->index] >= '1' && format[ar->index] <= '9'
+				&& ar->pflag == 0)
 		{
 			ar->width = ft_atoi(format + ar->index);
 			while (format[ar->index] >= '0' && format[ar->index] <= '9')

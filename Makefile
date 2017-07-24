@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 17:55:35 by dcastro-          #+#    #+#              #
-#    Updated: 2017/07/05 21:52:43 by dcastro-         ###   ########.fr        #
+#    Updated: 2017/07/20 22:10:13 by dcastro-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,15 +79,15 @@ ODIR = objs
 all : $(NAME)
 
 $(NAME) : 
-	$(CMP) $(CMPSRCS) $(INCL)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	@$(CMP) $(CMPSRCS) $(INCL)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
 clean : 
-	/bin/rm -rf $(OBJS)
+	@/bin/rm -rf $(OBJS)
 
 fclean : clean
-	/bin/rm -rf $(NAME)
+	@/bin/rm -rf $(NAME)
 
 re : fclean all
 

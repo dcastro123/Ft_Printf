@@ -6,16 +6,19 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:27:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/06/21 21:27:34 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/23 19:52:12 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	ft_intlen(int n, int base)
+static	int	ft_intlen(int n, int base)
 {
-	int	len = 0;
-	long nbr = (long)n;
+	int		len;
+	long	nbr;
+
+	len = 0;
+	nbr = (long)n;
 	if (nbr < 0 && base == 10)
 	{
 		len++;
@@ -31,16 +34,19 @@ static int	ft_intlen(int n, int base)
 	return (len);
 }
 
-char	*ft_itoa_base(int value, int base)
+char		*ft_itoa_base(int value, int base)
 {
 	char	*array;
-	long val = (long)value;
-	int	len = ft_intlen(val, base);
-	char tab[16] = "0123456789ABCDEF";
+	long	val;
+	int		len;
+	char	tab[16];
+
+	val = (long)value;
+	len = ft_intlen(val, base);
+	tab[16] = "0123456789ABCDEF";
 	if (!(array = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	array[len] = '\0';
-	len--;
+	array[len--] = '\0';
 	if (val == 0)
 	{
 		array[0] = '0';
@@ -51,7 +57,7 @@ char	*ft_itoa_base(int value, int base)
 		val *= -1;
 		array[0] = '-';
 	}
-	else if  (val < 0)
+	else if (val < 0)
 		val *= -1;
 	while (val > 0)
 	{

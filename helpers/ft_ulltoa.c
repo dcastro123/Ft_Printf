@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/09 23:34:39 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/09 23:34:50 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/23 19:22:14 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static unsigned long long	num_len(unsigned long long nbr)
 	return (i);
 }
 
-char		*ft_ulltoa(unsigned long long n)
+char						*ft_ulltoa(unsigned long long n)
 {
 	char	*str;
 	int		i;

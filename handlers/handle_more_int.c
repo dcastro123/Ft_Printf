@@ -6,15 +6,14 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/19 20:57:30 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/23 18:56:59 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-// void	handle_sizet()
+// static void check_mod()
 // {
-
 
 
 
@@ -28,7 +27,7 @@ void	handle_oct(t_args *ar)
 {
 	char *tmp;
 
-	if (ar->mods == none && ar->conv == 'o')
+	if (ar->mods == none)
 	{
 		tmp = ft_uitoa_base(ar->unum, 8);
 		if (ar->tag == 1 && ar->unum > 0)
@@ -69,11 +68,6 @@ void	handle_oct(t_args *ar)
 	// 	tmp = ft_jtoa_base((intmax_t)ar->unum, 8);
 	// 	ft_putstr(tmp);
 	// }
-
-
-
-
-
 }
 
 void	handle_hex(t_args *ar)
@@ -93,6 +87,7 @@ void	handle_hex(t_args *ar)
 		}
 		else if (ar->mods == none && ar->conv == 'X')
 		{
+		//	handle_upperhex(ar, tmp);
 			tmp = ft_uitoa_capbase(ar->unum, 16);
 			if (ar->tag == 1)
 			{
@@ -116,12 +111,6 @@ void	handle_hex(t_args *ar)
 		// 	printf("j not implemented yett\n");
 		// else
 		// 	printf("wtf are u trying to do\n");
-
-
-
-
-
-
 }
 
 void	handle_ptr(t_args *ar)
@@ -133,6 +122,7 @@ void	handle_ptr(t_args *ar)
 	ft_putstr(tmp);
 
 }
+
 // void	handle_upperhex()
 // {
 

@@ -6,7 +6,7 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 20:41:12 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/06/21 20:55:35 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/23 19:56:19 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static unsigned int	ft_intlen(int n, int base)
 {
 	unsigned int len;
-	unsigned int nbr; 
+	unsigned int nbr;
 
 	len = 0;
 	nbr = (unsigned int)n;
@@ -27,12 +27,12 @@ static unsigned int	ft_intlen(int n, int base)
 	return (len);
 }
 
-char	*ft_uitoa_base(int value, int base)
+char				*ft_uitoa_base(int value, int base)
 {
-	char	*array;
-	unsigned int val;
-	unsigned int len;
-	char tab[16];
+	char			*array;
+	unsigned int	val;
+	unsigned int	len;
+	char			tab[16];
 
 	val = (unsigned int)value;
 	len = ft_intlen(val, base);

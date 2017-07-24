@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/09 18:00:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/09 18:00:19 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/07/23 19:58:24 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/07/23 19:58:41 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static unsigned int	ft_intlen(int n, int base)
 {
-	unsigned int len;
-	unsigned int nbr; 
+	unsigned int	len;
+	unsigned int	nbr;
 
 	len = 0;
 	nbr = (unsigned int)n;
@@ -27,12 +27,12 @@ static unsigned int	ft_intlen(int n, int base)
 	return (len);
 }
 
-char	*ft_uitoa_capbase(int value, int base)
+char				*ft_uitoa_capbase(int value, int base)
 {
-	char	*array;
-	unsigned int val;
-	unsigned int len;
-	char tab[16];
+	char			*array;
+	unsigned int	val;
+	unsigned int	len;
+	char			tab[16];
 
 	val = (unsigned int)value;
 	len = ft_intlen(val, base);
@@ -53,4 +53,3 @@ char	*ft_uitoa_capbase(int value, int base)
 	}
 	return (array);
 }
-
