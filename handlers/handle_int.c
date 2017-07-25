@@ -6,46 +6,59 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/20 21:33:49 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/25 00:01:57 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-
-
-
-// void	check_mod(t_args *ar)
-// {
-//  	if (ar->mods == l)
-//  		ar->str_out = ft_ltoa
-
-
-
-
-
-
-
-// }
-
-void	check_int(t_args *ar)
+static void		format_prec2(t_args *ar, char *tmp)
 {
-	if ((ar->conv == 'd' || ar->conv == 'i') && ar->mods == none)
-		handle_int(ar);
-	// else if (ar->conv == 'D' && (ar->mods == l))
-	//  	handle_lnum(ar);
-	// else if (ar->mods == ll)
-	// 	handle_llnum(ar->conv);
-	// else if (ar->mods == h)
-	// 	handle_short((short)ar->num);
-	// else if (ar->mods == l)
-	// 	handle_lnum((long) ar->num);
+	int len;
+
+	len = (int)ft_strlen(tmp);
+	if (ar->precision < width)
+	{
+		ar->str_out = ft_memalloc(ar->width);
+		if (ar->precision > len)
+		{
+		}
+
+
+
+
+	}
+	else if (ar->precision == ar->width)
+	{
 
 
 
 
 
+	}
+}
 
+static	void	format_precwidth(t_args *ar, char *tmp)
+{
+	int j;
+	int len;
+
+	len = (int)ft_strlen(tmp);
+	j = -1;
+	if (ar->precision > ar->width)
+	{
+		if (ar->precision > len)
+		{
+			ar->str_out = ft_memalloc(ar->precision);
+			ft_memset(ar->str_out, '0', (ar->precision - len));
+			while (len > 0)
+				ar->str_out[len--] = tmp[++j];
+		}
+		else
+			ar->str_out = ft_strdup(tmp);
+	}
+	else if (ar->precision < ar->width || ar->precision == ar->width)
+		format_prec2(ar, tmp);
 }
 
 void	handle_int(t_args *ar)
@@ -53,7 +66,8 @@ void	handle_int(t_args *ar)
 	char *tmp;
 
 	tmp = ft_itoa(ar->num);
-//	format_precwidth(ar, tmp);
+	// if (ar->precision > 0)
+	// 	format_precwidth(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0)
 		format_intpadding(ar, tmp);
 	else if (ar->space == 1)
@@ -83,23 +97,3 @@ void	handle_usint(t_args *ar)
 	tmp = ft_uitoa(ar->unum);
 	ft_putstr(tmp);
 }
-
-// void	handle_llnum()
-// {
-
-
-
-
-
-
-
-// }
-
-// void	handle_short()
-// {
-
-
-
-
-
-// }

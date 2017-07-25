@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/23 19:43:33 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/24 23:44:43 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	format_intljust(t_args *ar, char *tmp)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
 	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
@@ -28,7 +28,7 @@ void	format_intljust(t_args *ar, char *tmp)
 	}
 	if (ar->width > 0)
 	{
-		if (ft_strlen(tmp) > ar->width)
+		if (ft_strlen(tmp) > (size_t)ar->width)
 			return (ft_putstr(tmp));
 		while (i < ar->width)
 			ar->str_out[i++] = ' ';
@@ -57,17 +57,16 @@ void	format_intpadding(t_args *ar, char *tmp)
 	ft_strcat(ar->str_out, tmp);
 	ft_putstr(ar->str_out);
 	ar->ret += ft_strlen(ar->str_out);
-	free(ar->str_out);
 }
 
 void	format_plus(t_args *ar, char *tmp)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	if (ar->width > ft_strlen(tmp))
+	if ((size_t)ar->width > ft_strlen(tmp))
 	{
-		while (i < (ar->width - ft_strlen(tmp)))
+		while (i < (int)(ar->width - ft_strlen(tmp)))
 		{
 			ft_putchar(' ');
 			i++;
@@ -80,16 +79,15 @@ void	format_plus(t_args *ar, char *tmp)
 
 void	format_intwidth(t_args *ar, char *tmp)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	if (!(ar->str_out = (char*)malloc(sizeof(char) * (ar->width + 1))))
-		return ;
+	ar->str_out = ft_memalloc(ar->width);
 	if (ar->plus == 1 && ar->num >= 0)
 		ft_putchar('+');
-	while (i < (ar->width - ft_strlen(tmp)))
+	while (i < (int)(ar->width - ft_strlen(tmp)))
 	{
 		ar->str_out[i] = ' ';
 		i++;

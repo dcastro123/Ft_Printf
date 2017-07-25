@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/08 17:34:59 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/23 18:48:11 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/24 23:50:00 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void			check_type(const char *format, t_args *ar, va_list *ap)
 	{
 		ar->conv = format[ar->index];
 		ar->num = va_arg(*ap, long);
-		check_int(ar);
+		handle_int(ar);
 	}
 	check_more_type(format, ar, ap);
 }

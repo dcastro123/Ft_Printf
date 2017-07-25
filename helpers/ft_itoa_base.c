@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:27:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/23 19:52:12 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/24 15:03:20 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,8 @@ char		*ft_itoa_base(int value, int base)
 
 	val = (long)value;
 	len = ft_intlen(val, base);
-	tab[16] = "0123456789ABCDEF";
-	if (!(array = (char*)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	array[len--] = '\0';
+	ft_strcpy(tab, "0123456789abcdef");
+	array = ft_memalloc(len);
 	if (val == 0)
 	{
 		array[0] = '0';
@@ -61,9 +59,8 @@ char		*ft_itoa_base(int value, int base)
 		val *= -1;
 	while (val > 0)
 	{
-		array[len] = tab[val % base];
+		array[len--] = tab[val % base];
 		val /= base;
-		len--;
 	}
 	return (array);
 }

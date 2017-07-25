@@ -6,7 +6,7 @@
 #    By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 17:55:35 by dcastro-          #+#    #+#              #
-#    Updated: 2017/07/20 22:10:13 by dcastro-         ###   ########.fr        #
+#    Updated: 2017/07/24 15:50:13 by dcastro-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME = libftprintf.a
 CMP  = gcc -Wall -Werror -Wextra -c
 
 SRC =  		srcs/ft_printf.c srcs/start_printf.c 
-HANDLER = 	handlers/handle_str.c handlers/handle_int.c handlers/handle_more_int.c\
-			handlers/handle_int_etc.c
+HANDLER = 	handlers/handle_str.c handlers/handle_int.c handlers/handle_more_int.c
+
 HELPER = 	helpers/arg_check.c helpers/ft_uitoa_base.c helpers/ft_itoa_base.c helpers/format_out.c\
 			helpers/format_int.c helpers/ft_ultoa_base.c helpers/ft_uitoa.c helpers/ft_uitoa_capbase.c\
 			helpers/ft_ltoa.c helpers/ft_ulltoa.c

@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/23 18:44:55 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/24 23:41:38 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	handle_rstr(t_args *ar)
 
 void	handle_char(t_args *ar)
 {
-	unsigned int i;
+	int i;
 
 	i = -1;
 	if (ar->width > 0)
