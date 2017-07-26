@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/24 23:41:13 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/25 23:09:46 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void	check_str(t_args *ar);
 void	handle_char(t_args *ar);
 void	handle_rstr(t_args *ar);
 
-void	format_plus(t_args *ar, char *tmp);
+// void	format_prec2(t_args *ar, char *tmp);
+// void	format_precwidth(t_args *ar, char *tmp);
 void	format_intpadding(t_args *ar, char *tmp);
 void	format_intprecision(t_args *ar, char *tmp);
 void	format_intspace(t_args *ar, char *tmp);
