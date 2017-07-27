@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/26 18:47:06 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/26 21:24:14 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	handle_rstr(t_args *ar);
 
 void	format_prec(t_args *ar, char *tmp);
 void	format_intpadding(t_args *ar, char *tmp);
-void	format_intwidth(t_args *ar);
+void	format_intwidth(t_args *ar, char *tmp);
 void	format_intljust(t_args *ar, char *tmp);
 void	handle_ptr(t_args *ar);
 void	handle_int(t_args *ar);

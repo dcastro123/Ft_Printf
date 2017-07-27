@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/26 19:14:53 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/26 21:25:53 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,17 @@ void	handle_int(t_args *ar)
 		format_intljust(ar, tmp);
 	else if (ar->width > 0)
 	{
-		format_intwidth(ar);
+		format_intwidth(ar, tmp);
 		ft_putstr(ar->str_out);
 	}
 	else
+	{
+		if (ar->space == 1 && ar->num >= 0)
+			ar->ret += write(1, " ", 1);
+		if (ar->plus == 1 && ar->num >= 0)
+			ar->ret += write(1, "+", 1);
 		ft_putstr(ar->str_out);
+	}
 }
 
 void	handle_usint(t_args *ar)
@@ -43,7 +49,7 @@ void	handle_usint(t_args *ar)
 		format_intljust(ar, tmp);
 	else if (ar->width > 0)
 	{
-		format_intwidth(ar);
+		format_intwidth(ar, tmp);
 		ft_putstr(ar->str_out);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/26 20:44:08 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/26 21:24:48 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,20 +93,23 @@ void	format_intpadding(t_args *ar, char *tmp)
 	ar->ret += ft_strlen(ar->str_out);
 }
 
-void	format_intwidth(t_args *ar)
+void	format_intwidth(t_args *ar, char *tmp)
 {
 	int	i;
 	int len;
 
 	i = -1;
 	len = (int)ft_strlen(ar->str_out);
-	if (len > ar->width)
+	if ((int)ft_strlen(tmp) > ar->width)
 	{
 		ar->ret += len;
 		return ;
 	}
 	if (ar->space == 1 && ar->plus == 0 && ar->num >= 0)
-		ar->ret += write(1, ' ', 1);
+	{
+		ft_putchar(' ');
+		ar->ret++;
+	}
 	if (ar->plus == 1 && ar->num >= 0)
 	{
 		ar->ret++;
