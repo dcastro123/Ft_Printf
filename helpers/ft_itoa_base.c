@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:27:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/24 15:03:20 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 14:39:48 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,7 @@ char		*ft_itoa_base(int value, int base)
 	ft_strcpy(tab, "0123456789abcdef");
 	array = ft_memalloc(len);
 	if (val == 0)
-	{
-		array[0] = '0';
-		return (array);
-	}
+		return (array = ft_strdup("0"));
 	if (val < 0 && (base == 10))
 	{
 		val *= -1;

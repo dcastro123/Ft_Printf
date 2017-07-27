@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/26 21:49:28 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 14:44:29 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,4 +130,3 @@ void	format_intwidth(t_args *ar, char *tmp)
 	}
 	ar->ret += len;
 }
-

@@ -6,15 +6,15 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/07 16:59:21 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/07 16:59:35 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 14:25:01 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static unsigned long ft_intlen(unsigned long n, int base)
+static unsigned long	ft_intlen(unsigned long n, int base)
 {
-	unsigned long len; 
+	unsigned long	len;
 
 	len = 0;
 	while (n != 0)
@@ -25,12 +25,12 @@ static unsigned long ft_intlen(unsigned long n, int base)
 	return (len);
 }
 
-char	*ft_ultoa_base(unsigned long value, int base)
+char					*ft_ultoa_base(unsigned long value, int base)
 {
-	char	*array;
-	unsigned long val;
-	unsigned long len;
-	char tab[16];
+	char			*array;
+	unsigned long	val;
+	unsigned long	len;
+	char			tab[16];
 
 	val = value;
 	len = ft_intlen(val, base);

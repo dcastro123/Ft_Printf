@@ -6,22 +6,11 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/26 20:50:18 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 14:23:29 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-// static void check_mod()
-// {
-
-
-
-
-
-
-
-// }
 
 static void	handle_upperhex(t_args *ar, char *tmp)
 {
@@ -37,7 +26,7 @@ static void	handle_upperhex(t_args *ar, char *tmp)
 		ft_putstr(tmp);
 }
 
-void	handle_oct(t_args *ar)
+void		handle_oct(t_args *ar)
 {
 	char *tmp;
 
@@ -54,7 +43,7 @@ void	handle_oct(t_args *ar)
 	}
 }
 
-void	handle_hex(t_args *ar)
+void		handle_hex(t_args *ar)
 {
 	char *tmp;
 
@@ -76,12 +65,11 @@ void	handle_hex(t_args *ar)
 	}
 }
 
-void	handle_ptr(t_args *ar)
+void		handle_ptr(t_args *ar)
 {
 	char *tmp;
 
 	tmp = ft_ultoa_base(ar->ulong, 16);
 	ft_putstr("0x");
 	ft_putstr(tmp);
-
 }
