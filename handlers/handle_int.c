@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/26 21:25:53 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 13:49:40 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	handle_int(t_args *ar)
 	char *tmp;
 
 	tmp = ft_itoa(ar->num);
+	printf("tmp is : '%s'\n", tmp);
 	format_prec(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0 && ar->pflag == 0)
 		format_intpadding(ar, tmp);
