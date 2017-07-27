@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/27 13:49:40 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 14:09:05 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	handle_int(t_args *ar)
 			ar->ret += write(1, " ", 1);
 		if (ar->plus == 1 && ar->num >= 0)
 			ar->ret += write(1, "+", 1);
-		ft_putstr(ar->str_out);
+		ft_putstr(tmp);
 	}
 }
 
