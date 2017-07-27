@@ -6,7 +6,7 @@
 #    By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 17:55:35 by dcastro-          #+#    #+#              #
-#    Updated: 2017/07/24 15:50:13 by dcastro-         ###   ########.fr        #
+#    Updated: 2017/07/26 18:56:24 by dcastro-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ LIBFT =	libft/ft_atoi.c libft/ft_bzero.c libft/ft_isalnum.c\
 	   	libft/ft_lstadd.c libft/ft_lstiter.c libft/ft_lstmap.c\
 	   	libft/ft_wdlen.c libft/ft_range.c libft/ft_list_size.c
 
-OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o handle_int_etc.o\
+OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o\
 		arg_check.o\
 		ft_uitoa_base.o ft_itoa_base.o ft_ultoa_base.o format_out.o format_int.o\
 		ft_atoi.o ft_bzero.o ft_isalnum.o\
