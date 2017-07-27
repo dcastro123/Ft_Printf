@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/24 18:08:17 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/26 19:00:05 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ static void	handle_upperhex(t_args *ar, char *tmp)
 	int i;
 
 	i = -1;
-	tmp = ft_uitoa_base(ar->unum, 16);
-	while(tmp[++i])
-		ft_toupper(tmp[i]);
+	tmp = ft_uitoa_capbase(ar->unum, 16);
 	if (ar->tag == 1)
 	{
 		ft_putstr("0X");
@@ -73,10 +71,7 @@ void	handle_hex(t_args *ar)
 			ft_putstr(tmp);
 	}
 	else if (ar->mods == none && ar->conv == 'X')
-	{
-		tmp = ft_uitoa_base(ar->unum, 16);
 		handle_upperhex(ar, tmp);
-	}
 }
 
 void	handle_ptr(t_args *ar)
