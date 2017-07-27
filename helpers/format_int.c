@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/26 21:32:56 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/26 21:49:28 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,28 @@ void	format_prec(t_args *ar, char *tmp)
 void	format_intljust(t_args *ar, char *tmp)
 {
 	int	i;
+	int j;
 	int len;
 
-	i = -1;
-	len = (int)ft_strlen(tmp);
+	i = 0;
+	j = -1;
+	len = (int)ft_strlen(ar->str_out);
 	if (ar->plus == 1 && ar->num >= 0)
 	{
 		ft_putchar('+');
 		ar->ret++;
 		i++;
 	}
-	while (ar->str_out[++i])
-		ft_putchar(ar->str_out[i]);
+	while (ar->str_out[++j])
+		ft_putchar(ar->str_out[j]);
 	if (ar->width > 0)
 	{
-		i = -1;
-		if (len > ar->width)
+		if ((int)ft_strlen(tmp) > ar->width)
+		{
+			ar->ret += (int)ft_strlen(tmp);
 			return ;
-		while (++i < ar->width)
+		}
+		while (i++ < ar->width - len)
 		{
 			ft_putchar(' ');
 			ar->ret++;
@@ -102,7 +106,7 @@ void	format_intwidth(t_args *ar, char *tmp)
 	len = (int)ft_strlen(ar->str_out);
 	if ((int)ft_strlen(tmp) > ar->width)
 	{
-		ar->ret += len;
+		ar->ret += (int)ft_strlen(tmp);
 		return ;
 	}
 	if (ar->space == 1 && ar->plus == 0 && ar->num >= 0)
