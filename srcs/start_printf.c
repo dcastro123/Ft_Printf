@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/08 17:34:59 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/24 23:50:00 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/26 19:14:17 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,16 @@ static	void	check_more_type(const char *format, t_args *ar, va_list *ap)
 		ar->unum = va_arg(*ap, unsigned int);
 		handle_hex(ar);
 	}
-	else if (format[ar->index] == 'p')
+	else if (format[ar->index] == 'u')
 	{
-		ar->ulong = va_arg(*ap, unsigned long);
-		handle_ptr(ar);
+		ar->unum = va_arg(*ap, unsigned int);
+		handle_usint(ar);
+	}
+	else if (format[ar->index] == 'd' || format[ar->index] == 'i')
+	{
+		ar->conv = format[ar->index];
+		ar->num = va_arg(*ap, long);
+		handle_int(ar);
 	}
 }
 
@@ -64,16 +70,10 @@ void			check_type(const char *format, t_args *ar, va_list *ap)
 		ar->tab = ft_strdup(va_arg(*ap, char*));
 		check_str(ar);
 	}
-	else if (format[ar->index] == 'u')
+	else if (format[ar->index] == 'p')
 	{
-		ar->unum = va_arg(*ap, unsigned int);
-		handle_usint(ar);
-	}
-	else if (format[ar->index] == 'd' || format[ar->index] == 'i')
-	{
-		ar->conv = format[ar->index];
-		ar->num = va_arg(*ap, long);
-		handle_int(ar);
+		ar->ulong = va_arg(*ap, unsigned long);
+		handle_ptr(ar);
 	}
 	check_more_type(format, ar, ap);
 }

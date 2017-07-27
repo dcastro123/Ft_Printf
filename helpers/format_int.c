@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/26 18:46:28 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/26 20:44:08 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,8 @@ void	format_intwidth(t_args *ar)
 		ar->ret += len;
 		return ;
 	}
+	if (ar->space == 1 && ar->plus == 0 && ar->num >= 0)
+		ar->ret += write(1, ' ', 1);
 	if (ar->plus == 1 && ar->num >= 0)
 	{
 		ar->ret++;
@@ -117,7 +119,6 @@ void	format_intwidth(t_args *ar)
 		{
 			ft_putchar(' ');
 			ar->ret++;
-			// i++;
 		}
 	}
 	ar->ret += len;
