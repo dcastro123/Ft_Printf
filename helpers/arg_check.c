@@ -6,32 +6,32 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 22:49:07 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 22:51:38 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-// void	parse_asterisk(const char *format, t_args *ar, va_list *ap)
-// {
-// 	int val;
+void	parse_asterisk(const char *format, t_args *ar, va_list *ap)
+{
+	int val;
 
-// 	if (format[ar->index - 1] == '.')
-// 	{
-// 		val = va_arg(*ap, int);
-// 		ar->precision = val;
-// 	}
-// 	else if (format[ar->index + 1] == '.')
-// 	{
-// 		val = va_arg(*ap, int);
-// 		ar->width = val;
-// 	}
-// 	else
-// 	{
-// 		val = va_arg(*ap, int);
-// 		ar->width = val;
-// 	}
-// }
+	if (format[ar->index - 1] == '.')
+	{
+		val = va_arg(*ap, int);
+		ar->precision = val;
+	}
+	else if (format[ar->index + 1] == '.')
+	{
+		val = va_arg(*ap, int);
+		ar->width = val;
+	}
+	else
+	{
+		val = va_arg(*ap, int);
+		ar->width = val;
+	}
+}
 
 void	get_precision(const char *format, t_args *ar, va_list *ap)
 {
@@ -47,7 +47,6 @@ void	get_precision(const char *format, t_args *ar, va_list *ap)
 	}
 	else
 		ar->precision = 0;
-	printf("ar->precision: %d\n", ar->precision);
 }
 
 void	check_mod(const char *format, t_args *ar)
@@ -95,8 +94,8 @@ void	check_flags(const char *format, t_args *ar, va_list *ap)
 			while (ar->index >= '0' && ar->index <= '9')
 				ar->index++;
 		}
-		// if (format[ar->index] == '*')
-		// 	ar->ret += 0;
+		if (format[ar->index] == '*')
+			parse_asterisk(format, ar, ap);
 		else if (format[ar->index] >= '1' && format[ar->index] <= '9'
 				&& ar->pflag == 0)
 		{
