@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 22:44:15 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 22:49:07 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	get_precision(const char *format, t_args *ar, va_list *ap)
 	}
 	else
 		ar->precision = 0;
+	printf("ar->precision: %d\n", ar->precision);
 }
 
 void	check_mod(const char *format, t_args *ar)
