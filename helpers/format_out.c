@@ -6,68 +6,83 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/24 23:57:51 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 22:39:09 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void			format_width(t_args *ar)
+void			format_str(t_args *ar)
 {
-	unsigned long	i;
+	char *tmp;
+	int len;
+	int i;
 
-	i = 0;
-	if (ft_strlen(ar->tab) > (size_t)ar->width)
-		return (ft_putstr(ar->tab));
-	while (i < (ar->width - ft_strlen(ar->tab)))
+	len = (int)ft_strlen(ar->tab);
+	tmp = ft_strdup(ar->tab);
+	i = -1;
+	if (ar->precision == 0)
+		return ;
+	else if (ar->precision < len)
 	{
-		ft_putchar(' ');
-		i++;
+		tmp = ft_memalloc(ar->precision);
+		while (++i < ar->precision)
+			tmp[i] = ar->tab[i];
+		free(ar->tab);
+		ar->tab = ft_strdup(tmp);
 	}
+	else
+		ar->tab = ar->tab;
 }
 
-void			format_precision(t_args *ar)
+void			print_str(t_args *ar)
 {
 	int	i;
-	int	j;
+	int len;
 
-	i = 0;
-	j = 0;
+	i = -1;
+	len = (int)ft_strlen(ar->tab);
 	if (ar->precision == 0)
+		while (++i < ar->width)
+			ar->ret += write(1, " ", 1);
+	else if (ar->width > len)
 	{
-		while (i < ar->width)
-		{
+		while (++i < ar->width - len)
 			ft_putchar(' ');
-			i++;
-		}
+		ft_putstr(ar->tab);
+		ar->ret += ft_strlen(ar->tab) + ar->width;
 	}
-	while (i < ar->precision)
+	else
 	{
-		ft_putchar(ar->tab[j]);
-		i++;
-		j++;
-	}
-	while (j < ar->width)
-	{
-		ft_putchar(' ');
-		j++;
+		ft_putstr(ar->tab);
+		ar->ret += ft_strlen(ar->tab);
 	}
 }
 
-void			format_ljust(t_args *ar)
+void			print_ljust(t_args *ar)
 {
-	unsigned int	i;
+	int i;
+	int len;
 
-	i = 0;
-	if (ar->precision >= 0 && ar->pflag == 1 && ar->width > 0)
-		format_precision(ar);
-	else if (ar->width > 0 && ar->pflag == 0)
-		format_width(ar);
+	i = -1;
+	len = (int)ft_strlen(ar->tab);
+	if (ar->width > 0)
+	{
+		if (ar->width < len)
+			while (len-- > 0)
+				ft_putchar(ar->tab[++i]);
+		else
+		{
+			while (ar->tab[++i])
+				ft_putchar(ar->tab[i]);
+			while (i++ < ar->width)
+				ft_putchar(' ');
+		}
+		ar->ret += ft_strlen(ar->tab) + ar->width;
+	}
 	else
 	{
-		while (ar->tab[i])
-			ft_putchar(ar->tab[i++]);
+		ft_putstr(ar->tab);
+		ar->ret += ft_strlen(ar->tab);
 	}
-	if (ar->width > 0 && ar->pflag == 0)
-		format_width(ar);
 }

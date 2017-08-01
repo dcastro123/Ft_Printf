@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/27 15:29:05 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 22:39:24 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,11 @@ void	handle_rstr(t_args *ar)
 {
 	if (ar->tab == NULL)
 		return (ft_putstr("(null)"));
-	if (ar->zero == 1)
-		return (ft_putstr(""));
+	format_str(ar);
 	if (ar->minus == 1)
-		format_ljust(ar);
+		print_ljust(ar);
 	else
-	{
-		if (ar->width > 0)
-		{
-			format_width(ar);
-			ft_putstr(ar->tab);
-		}
-		else if (ar->precision >= 0 && ar->pflag == 1)
-			format_precision(ar);
-		else
-			ft_putstr(ar->tab);
-	}
+		print_str(ar);
 }
 
 void	handle_char(t_args *ar)

@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 17:19:43 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 22:39:42 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,33 +53,34 @@ int	main(void)
 	// ft_printf("my ft_printf test with zero and prec > arg and prec = width:   '%04.4i'\n", x);
 	// ft_printf("my ft_printf test with zero and prec > arg and prec < width:   '%04.3i'\n", x);
 	// ft_printf("my ft_printf test with zero and prec = arg and prec < width:   '%04.2i'\n", x);	
-	printf("|%*s|\n", 5, "Hello world!");
-	// printf("|%6.1s|\n", "Hello world!");
-	// printf("|%.2s|\n", "Hello world!");
-	// printf("|%.3s|\n", "Hello world!");
-	// printf("|%.4s|\n", "Hello world!");
-	// printf("|%.5s|\n", "Hello world!");
-	// printf("|%.6s|\n", "Hello world!");
-	// printf("|%.7s|\n", "Hello world!");
-	// printf("|%.8s|\n", "Hello world!");
-	// printf("|%.9s|\n", "Hello world!");
-	// printf("|%6.10s|\n", "Hello world!");
-	// printf("|%-6.11s|\n", "Hello world!");
-	// printf("|%6.12s|\n", "Hello world!");
+	// printf("|%4.5s|\n", "abc");
+	printf("|%5.s|\n", "Hello world!");
+	printf("|%6.1s|\n", "Hello world!");
+	printf("|%.2s|\n", "Hello world!");
+	printf("|%.3s|\n", "Hello world!");
+	printf("|%.4s|\n", "Hello world!");
+	printf("|%.5s|\n", "Hello world!");
+	printf("|%.6s|\n", "Hello world!");
+	printf("|%.7s|\n", "Hello world!");
+	printf("|%.8s|\n", "Hello world!");
+	printf("|%.9s|\n", "Hello world!");
+	printf("|%6.10s|\n", "Hello world!");
+	printf("|%-6.11s|\n", "Hello world!");
+	printf("|%6.12s|\n", "Hello world!");
 	printf("---------------------------\n\n");
-	ft_printf("|%*s|\n", 5, "Hello world!");
-	// ft_printf("|%6.1s|\n", "Hello world!");
-	// ft_printf("|%.2s|\n", "Hello world!");
-	// ft_printf("|%.3s|\n", "Hello world!");
-	// ft_printf("|%.4s|\n", "Hello world!");
-	// ft_printf("|%.5s|\n", "Hello world!");
-	// ft_printf("|%.6s|\n", "Hello world!");
-	// ft_printf("|%.7s|\n", "Hello world!");
-	// ft_printf("|%.8s|\n", "Hello world!");
-	// ft_printf("|%.9s|\n", "Hello world!");
-	// ft_printf("|%6.10s|\n", "Hello world!");
-	// ft_printf("|%-6.11s|\n", "Hello world!");
-	// ft_printf("|%6.12s|\n", "Hello world!");
+	ft_printf("|%5.s|\n", "Hello world!");
+	ft_printf("|%6.1s|\n", "Hello world!");
+	ft_printf("|%.2s|\n", "Hello world!");
+	ft_printf("|%.3s|\n", "Hello world!");
+	ft_printf("|%.4s|\n", "Hello world!");
+	ft_printf("|%.5s|\n", "Hello world!");
+	ft_printf("|%.6s|\n", "Hello world!");
+	ft_printf("|%.7s|\n", "Hello world!");
+	ft_printf("|%.8s|\n", "Hello world!");
+	ft_printf("|%.9s|\n", "Hello world!");
+	ft_printf("|%6.10s|\n", "Hello world!");
+	ft_printf("|%-6.11s|\n", "Hello world!");
+	ft_printf("|%6.12s|\n", "Hello world!");
 
 	return 0;
 }

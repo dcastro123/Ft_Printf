@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/27 15:26:55 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 21:40:58 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	format_prec(t_args *ar, char *tmp)
 	else if (ar->precision > len)
 	{
 		ar->str_out = ft_memalloc(ar->precision);
-		ar->str_out[ar->precision] = '\0';
 		while (++i < (ar->precision - len))
 			ar->str_out[i] = '0';
 		while (i < ar->precision)
