@@ -6,11 +6,12 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:40:26 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/19 15:38:39 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 15:04:36 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned const char	*temp;

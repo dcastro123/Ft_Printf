@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/27 14:44:29 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 15:26:55 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,8 @@ void	format_intljust(t_args *ar, char *tmp)
 			return ;
 		}
 		while (i++ < ar->width - len)
-		{
 			ft_putchar(' ');
-			ar->ret++;
-		}
+		ar->ret += i;
 	}
 	ar->ret += ft_strlen(ar->str_out);
 }
@@ -76,9 +74,10 @@ void	format_intljust(t_args *ar, char *tmp)
 void	format_intpadding(t_args *ar, char *tmp)
 {
 	int i;
+	int	len;
 
 	i = -1;
-	int len = (int)ft_strlen(tmp);
+	len = (int)ft_strlen(tmp);
 	if (ar->num >= 0 && ar->plus == 1)
 	{
 		ft_putchar('+');
@@ -123,10 +122,8 @@ void	format_intwidth(t_args *ar, char *tmp)
 	if (ar->width > ar->precision)
 	{
 		while (++i < ar->width - len)
-		{
 			ft_putchar(' ');
-			ar->ret++;
-		}
+		ar->ret += i;
 	}
 	ar->ret += len;
 }

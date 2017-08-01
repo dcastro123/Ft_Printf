@@ -6,11 +6,12 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 13:40:12 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/02/11 20:50:23 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 15:05:02 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 int		ft_strequ(char const *s1, char const *s2)
 {
 	if (!s1 && !s2)

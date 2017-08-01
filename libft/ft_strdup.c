@@ -6,11 +6,12 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 16:54:57 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/20 19:01:19 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 15:04:53 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 char			*ft_strdup(const char *s1)
 {
 	size_t	i;

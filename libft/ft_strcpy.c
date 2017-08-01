@@ -6,11 +6,12 @@
 /*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 11:45:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/01/19 15:18:07 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/27 15:04:46 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
+
 char			*ft_strcpy(char *dest, char *src)
 {
 	int i;
