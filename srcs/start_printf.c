@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/08 17:34:59 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 22:38:44 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 22:46:57 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void			check_type(const char *format, t_args *ar, va_list *ap)
 	{
 		ar->conv = format[ar->index];
 		ar->tab = ft_strdup(va_arg(*ap, char*));
+		printf("ar->tab: %s\n", ar->tab);
 		check_str(ar);
 	}
 	else if (format[ar->index] == 'p')
