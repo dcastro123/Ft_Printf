@@ -3,35 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   arg_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/23 19:54:32 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 17:22:10 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	parse_asterisk(const char *format, t_args *ar, va_list *ap)
-{
-	int val;
+// void	parse_asterisk(const char *format, t_args *ar, va_list *ap)
+// {
+// 	int val;
 
-	if (format[ar->index - 1] == '.')
-	{
-		val = va_arg(*ap, int);
-		ar->precision = val;
-	}
-	else if (format[ar->index + 1] == '.')
-	{
-		val = va_arg(*ap, int);
-		ar->width = val;
-	}
-	else
-	{
-		val = va_arg(*ap, int);
-		ar->width = val;
-	}
-}
+// 	if (format[ar->index - 1] == '.')
+// 	{
+// 		val = va_arg(*ap, int);
+// 		ar->precision = val;
+// 	}
+// 	else if (format[ar->index + 1] == '.')
+// 	{
+// 		val = va_arg(*ap, int);
+// 		ar->width = val;
+// 	}
+// 	else
+// 	{
+// 		val = va_arg(*ap, int);
+// 		ar->width = val;
+// 		printf("val is : %d\n", val);
+// 	}
+// }
 
 void	get_precision(const char *format, t_args *ar, va_list *ap)
 {
@@ -93,7 +94,7 @@ void	check_flags(const char *format, t_args *ar, va_list *ap)
 				ar->index++;
 		}
 		if (format[ar->index] == '*')
-			parse_asterisk(format, ar, ap);
+			break ;
 		else if (format[ar->index] >= '1' && format[ar->index] <= '9'
 				&& ar->pflag == 0)
 		{

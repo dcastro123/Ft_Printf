@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/27 14:20:48 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 17:24:13 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void				start_conversion(const char *format, t_args *ar,
 void				check_flags(const char *format, t_args *ar, va_list *ap);
 void				get_precision(const char *format, t_args *ar, va_list *ap);
 void				check_mod(const char *format, t_args *ar);
-void				parse_asterisk(const char *format, t_args *ar, va_list *ap);
+// void				parse_asterisk(const char *format, t_args *ar, va_list *ap);
 void				check_type(const char *format, t_args *ar, va_list *ap);
 
 void				format_minus(t_args *ar);
