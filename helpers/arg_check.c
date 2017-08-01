@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 22:42:29 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 22:44:15 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ void	check_flags(const char *format, t_args *ar, va_list *ap)
 			while (ar->index >= '0' && ar->index <= '9')
 				ar->index++;
 		}
-		if (format[ar->index] == '*')
-			ar->ret += 0;
+		// if (format[ar->index] == '*')
+		// 	ar->ret += 0;
 		else if (format[ar->index] >= '1' && format[ar->index] <= '9'
 				&& ar->pflag == 0)
 		{
