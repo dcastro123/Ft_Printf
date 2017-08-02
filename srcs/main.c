@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/01 17:40:31 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/01 20:44:56 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(void)
 	// ft_printf("my ft_printf test with zero and prec > arg and prec < width:   '%04.3i'\n", x);
 	// ft_printf("my ft_printf test with zero and prec = arg and prec < width:   '%04.2i'\n", x);	
 	// printf("|%4.5s|\n", "abc");
-	printf("|%6.0s|\n", "Hello World!");
+	printf("|%s|\n", "Ceci n'est toujours pas un exercice !!");
 	printf("|%5.s|\n", "Hello world!");
 	printf("|%6.1s|\n", "Hello world!");
 	printf("|%.2s|\n", "Hello world!");
@@ -69,7 +69,7 @@ int	main(void)
 	printf("|%-6.11s|\n", "Hello world!");
 	printf("|%6.12s|\n", "Hello world!");
 	printf("---------------------------\n");
-	ft_printf("|%6.0s|\n", "hello world!");
+	ft_printf("|%s|\n", "Ceci n'est toujours pas un exercice !!");
 	ft_printf("|%5.s|\n", "Hello world!");
 	ft_printf("|%6.1s|\n", "Hello world!");
 	ft_printf("|%.2s|\n", "Hello world!");

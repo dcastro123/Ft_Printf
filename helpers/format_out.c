@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/01 17:41:53 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/01 20:44:38 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void			format_str(t_args *ar)
 	len = (int)ft_strlen(ar->tab);
 	tmp = NULL;
 	i = -1;
-	if (ar->precision == 0)
+	if (ar->precision == 0 && ar->pflag == 1)
 		return ;
-	else if (ar->precision < len)
+	else if (ar->precision > 0 && ar->precision < len)
 	{
 		tmp = ft_memalloc(ar->precision);
 		tmp[ar->precision] =  '\0';
@@ -33,7 +33,7 @@ void			format_str(t_args *ar)
 		ar->tab = ft_strdup(tmp);
 	}
 	else
-		ar->tab = ar->tab;
+		return ;
 }
 
 void			print_str(t_args *ar)
@@ -43,7 +43,7 @@ void			print_str(t_args *ar)
 
 	i = -1;
 	len = (int)ft_strlen(ar->tab);
-	if (ar->precision == 0)
+	if (ar->precision == 0 && ar->pflag == 1)
 		while (++i < ar->width)
 			ar->ret += write(1, " ", 1);
 	else if (ar->width > len)
@@ -70,8 +70,7 @@ void			print_ljust(t_args *ar)
 	if (ar->width > 0)
 	{
 		if (ar->width < len)
-			while (len-- > 0)
-				ft_putchar(ar->tab[++i]);
+			ft_putstr(ar->tab);
 		else
 		{
 			while (ar->tab[++i])
