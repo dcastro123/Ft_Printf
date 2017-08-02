@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ulltoa.c                                        :+:      :+:    :+:   */
+/*   ft_ultoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/02 15:44:20 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 15:45:19 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/07/09 23:34:39 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/08/02 15:44:11 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static unsigned long long	num_len(unsigned long long nbr)
+static unsigned long	num_len(unsigned long nbr)
 {
-	unsigned long long	i;
+	unsigned long	i;
 
 	i = 0;
 	while (nbr > 9)
@@ -25,7 +25,7 @@ static unsigned long long	num_len(unsigned long long nbr)
 	return (i);
 }
 
-char						*ft_ulltoa(unsigned long long n)
+char						*ft_ultoa(unsigned long n)
 {
 	char	*str;
 	int		i;
