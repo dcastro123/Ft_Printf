@@ -6,49 +6,49 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 15:40:31 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 16:42:07 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static char	*check_imod(t_args *ar)
-{
-	char *tmp;
+// static char	*check_imod(t_args *ar)
+// {
+// 	char *tmp;
 
-	tmp = NULL;
-	if (ar->mods == hh)
-		tmp = ft_itoa((char)ar->num);
-	else if (ar->mods == h)
-		tmp = ft_itoa((short)ar->num);
-	else if (ar->mods == l)
-		tmp = ft_ltoa((long)ar->num);
-	else
-		tmp = ft_itoa(ar->num);
-	return (tmp);
-}
+// 	tmp = NULL;
+// 	if (ar->mods == hh)
+// 		tmp = ft_itoa((char)ar->num);
+// 	else if (ar->mods == h)
+// 		tmp = ft_itoa((short)ar->num);
+// 	else if (ar->mods == l)
+// 		tmp = ft_ltoa((long)ar->num);
+// 	else
+// 		tmp = ft_itoa(ar->num);
+// 	return (tmp);
+// }
 
-static char	*check_umod(t_args *ar)
-{
-	char *tmp;
+// static char	*check_umod(t_args *ar)
+// {
+// 	char *tmp;
 
-	tmp = NULL;
-	if (ar->mods == hh)
-		tmp = ft_ulltoa((unsigned char)ar->num);
-	else if (ar->mods == h)
-		tmp = ft_ulltoa((unsigned short)ar->num);
-	else if (ar->mods == l)
-		tmp = ft_ultoa((long)ar->num);
-	else
-		tmp = ft_uitoa(ar->num);
-	return (tmp);
-}
+// 	tmp = NULL;
+// 	if (ar->mods == hh)
+// 		tmp = ft_ulltoa((unsigned char)ar->num);
+// 	else if (ar->mods == h)
+// 		tmp = ft_ulltoa((unsigned short)ar->num);
+// 	else if (ar->mods == l)
+// 		tmp = ft_ultoa((long)ar->num);
+// 	else
+// 		tmp = ft_uitoa(ar->num);
+// 	return (tmp);
+// }
 
 void	handle_int(t_args *ar)
 {
 	char *tmp;
 
-	tmp = check_imod(ar);
+	tmp = ft_itoa(ar->num);
 	format_prec(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0 && ar->pflag == 0)
 		format_intpadding(ar, tmp);
@@ -73,7 +73,7 @@ void	handle_usint(t_args *ar)
 {
 	char *tmp;
 
-	tmp = check_umod(ar->unum);
+	tmp = ft_uitoa(ar->unum);
 	format_prec(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0 && ar->pflag == 0)
 		format_intpadding(ar, tmp);
