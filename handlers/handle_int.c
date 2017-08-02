@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 15:30:44 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 15:33:47 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ static char	*check_imod(t_args *ar)
 		tmp = ft_itoa((short)ar->num);
 	else if (ar->mods == l)
 		tmp = ft_ltoa((long)ar->num);
+	else
+		tmp = ft_itoa(ar->num);
 	return (tmp);
 }
 void	handle_int(t_args *ar)
