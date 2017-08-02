@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 17:31:21 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 22:52:09 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 16:34:49 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_printf(const char *format, ...)
 	va_start(ap, format);
 	ar.ret = 0;
 	ar.index = 0;
+	printf("format string: |%s|\n", format);
 	while (format[ar.index] != '\0')
 	{
 		if (format[ar.index] == '%' && format[ar.index + 1] != '%')

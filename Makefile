@@ -6,7 +6,7 @@
 #    By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 17:55:35 by dcastro-          #+#    #+#              #
-#    Updated: 2017/08/01 17:21:25 by dcastro-         ###   ########.fr        #
+#    Updated: 2017/08/02 15:41:40 by dcastro-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ HANDLER = 	handlers/handle_str.c handlers/handle_int.c handlers/handle_more_int.
 
 HELPER = 	helpers/arg_check.c helpers/ft_uitoa_base.c helpers/ft_itoa_base.c helpers/format_out.c\
 			helpers/format_int.c helpers/ft_ultoa_base.c helpers/ft_uitoa.c helpers/ft_uitoa_capbase.c\
-			helpers/ft_ltoa.c helpers/ft_ulltoa.c
+			helpers/ft_ltoa.c helpers/ft_ulltoa.c helpers/ft_ultoa.c
 LIBFT =	libft/ft_atoi.c libft/ft_bzero.c libft/ft_isalnum.c\
 		libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c\
 	   	libft/ft_isprint.c libft/ft_memalloc.c libft/ft_memccpy.c\
@@ -66,7 +66,7 @@ OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o\
 	   	ft_lstnew.o ft_lstdelone.o ft_lstdel.o\
 	   	ft_lstadd.o ft_lstiter.o ft_lstmap.o\
 	   	ft_wdlen.o ft_range.o ft_list_size.o\
-	   	ft_uitoa.o ft_uitoa_capbase.o ft_ltoa.o ft_ulltoa.o\
+	   	ft_uitoa.o ft_uitoa_capbase.o ft_ltoa.o ft_ulltoa.o ft_ultoa.o\
 
 CMPSRCS = $(SRC) $(HANDLER) $(HELPER) $(LIBFT)
 INCL = -I includes/libft.h -I includes/ft_printf.h
