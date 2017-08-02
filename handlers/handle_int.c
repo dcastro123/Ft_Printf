@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 16:42:07 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 16:44:12 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	handle_int(t_args *ar)
 			ar->ret += write(1, "+", 1);
 		ft_putstr(tmp);
 	}
+	// free(tmp);
 }
 
 void	handle_usint(t_args *ar)
@@ -86,4 +87,5 @@ void	handle_usint(t_args *ar)
 	}
 	else
 		ft_putstr(tmp);
+	// free(tmp);
 }
