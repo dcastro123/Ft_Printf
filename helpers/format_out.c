@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 22:39:09 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/07/31 22:57:23 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void			format_str(t_args *ar)
 	int i;
 
 	len = (int)ft_strlen(ar->tab);
-	tmp = ft_strdup(ar->tab);
+	tmp = NULL;
 	i = -1;
 	if (ar->precision == 0)
 		return ;
@@ -32,7 +32,7 @@ void			format_str(t_args *ar)
 		ar->tab = ft_strdup(tmp);
 	}
 	else
-		ar->tab = ar->tab;
+		ar->tab = ft_strdup(ar->tab);
 }
 
 void			print_str(t_args *ar)
