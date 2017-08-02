@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/08 17:34:59 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 22:52:16 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/01 20:48:54 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static	void	check_more_type(const char *format, t_args *ar, va_list *ap)
 
 void			check_type(const char *format, t_args *ar, va_list *ap)
 {
+	check_more_type(format, ar, ap);
 	if (format[ar->index] == 'c' || format[ar->index] == 'C')
 	{
 		ar->conv = format[ar->index];
@@ -75,7 +76,6 @@ void			check_type(const char *format, t_args *ar, va_list *ap)
 		ar->ulong = va_arg(*ap, unsigned long);
 		handle_ptr(ar);
 	}
-	check_more_type(format, ar, ap);
 }
 
 void			start_conversion(const char *format, t_args *ar, va_list *ap)
