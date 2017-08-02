@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 22:57:23 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/01 17:41:53 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@ void			format_str(t_args *ar)
 	else if (ar->precision < len)
 	{
 		tmp = ft_memalloc(ar->precision);
+		tmp[ar->precision] =  '\0';
 		while (++i < ar->precision)
 			tmp[i] = ar->tab[i];
 		free(ar->tab);
 		ar->tab = ft_strdup(tmp);
 	}
 	else
-		ar->tab = ft_strdup(ar->tab);
+		ar->tab = ar->tab;
 }
 
 void			print_str(t_args *ar)

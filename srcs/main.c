@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/01 17:30:06 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/01 17:40:31 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main(void)
 	printf("|%.6s|\n", "Hello world!");
 	printf("|%.7s|\n", "Hello world!");
 	printf("|%.8s|\n", "Hello world!");
-	printf("|%.9s|\n", "Hello world!");
+	printf("9.|%.9s|\n", "Hello world!");
 	printf("|%6.10s|\n", "Hello world!");
 	printf("|%-6.11s|\n", "Hello world!");
 	printf("|%6.12s|\n", "Hello world!");
@@ -79,7 +79,7 @@ int	main(void)
 	ft_printf("|%.6s|\n", "Hello world!");
 	ft_printf("|%.7s|\n", "Hello world!");
 	ft_printf("|%.8s|\n", "Hello world!");
-	ft_printf("|%.9s|\n", "Hello world!");
+	ft_printf("9.|%.9s|\n", "Hello world!");
 	ft_printf("|%6.10s|\n", "Hello world!");
 	ft_printf("|%-6.11s|\n", "Hello world!");
 	ft_printf("|%6.12s|\n", "Hello world!");

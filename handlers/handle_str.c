@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 22:53:08 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/01 17:38:08 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,13 @@ void	handle_char(t_args *ar)
 		while (++i < ar->width)
 			ft_putchar(' ');
 		ft_putchar(ar->num);
+		ar->ret += i + 1;
 	}
 	else
+	{
+		ar->ret++;
 		ft_putchar(ar->num);
+	}
 }
 
 void	check_str(t_args *ar)
