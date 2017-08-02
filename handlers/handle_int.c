@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/01 17:24:55 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/01 17:36:06 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	handle_int(t_args *ar)
 {
 	char *tmp;
-	tmp = (ar->conv == 'D') ? ft_ltoa((long)ar->num) : ft_itoa((long)ar->num);
+
+	tmp = (ar->conv == 'd' && ar->mods == l) ? ft_ltoa((long)ar->num) : ft_itoa((long)ar->num);
 	format_prec(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0 && ar->pflag == 0)
 		format_intpadding(ar, tmp);
