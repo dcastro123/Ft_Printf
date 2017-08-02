@@ -6,32 +6,32 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/01 20:46:14 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/01 20:46:56 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-// void	parse_asterisk(const char *format, t_args *ar, va_list *ap)
-// {
-// 	int val;
+void	parse_asterisk(const char *format, t_args *ar, va_list *ap)
+{
+	int val;
 
-// 	if (format[ar->index - 1] == '.')
-// 	{
-// 		val = va_arg(*ap, int);
-// 		ar->precision = val;
-// 	}
-// 	else if (format[ar->index + 1] == '.')
-// 	{
-// 		val = va_arg(*ap, int);
-// 		ar->width = val;
-// 	}
-// 	else
-// 	{
-// 		val = va_arg(*ap, int);
-// 		ar->width = val;
-// 	}
-// }
+	if (format[ar->index - 1] == '.')
+	{
+		val = va_arg(*ap, int);
+		ar->precision = val;
+	}
+	else if (format[ar->index + 1] == '.')
+	{
+		val = va_arg(*ap, int);
+		ar->width = val;
+	}
+	else
+	{
+		val = va_arg(*ap, int);
+		ar->width = val;
+	}
+}
 
 void	get_precision(const char *format, t_args *ar, va_list *ap)
 {
@@ -94,6 +94,8 @@ void	check_flags(const char *format, t_args *ar, va_list *ap)
 			while (ar->index >= '0' && ar->index <= '9')
 				ar->index++;
 		}
+		if (format[ar->index] == '*')
+			exit(1);
 		else if (format[ar->index] >= '1' && format[ar->index] <= '9'
 				&& ar->pflag == 0)
 		{
