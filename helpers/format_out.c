@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/26 15:46:53 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/01 20:44:38 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 19:37:20 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void			format_str(t_args *ar)
 {
-	char *tmp;
-	int len;
-	int i;
+	char	*tmp;
+	int		len;
+	int		i;
 
 	len = (int)ft_strlen(ar->tab);
 	tmp = NULL;
@@ -26,7 +26,7 @@ void			format_str(t_args *ar)
 	else if (ar->precision > 0 && ar->precision < len)
 	{
 		tmp = ft_memalloc(ar->precision);
-		tmp[ar->precision] =  '\0';
+		tmp[ar->precision] = '\0';
 		while (++i < ar->precision)
 			tmp[i] = ar->tab[i];
 		free(ar->tab);

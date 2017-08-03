@@ -1,46 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultoa.c                                         :+:      :+:    :+:   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/09 23:34:39 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 15:44:11 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/07/27 14:30:29 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/08/02 19:27:14 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
-static unsigned long	num_len(unsigned long nbr)
+static unsigned int	num_len(unsigned int nbr)
 {
-	unsigned long	i;
+	unsigned int	i;
 
 	i = 0;
-	while (nbr > 9)
+	while ((nbr / 10) != 0)
 	{
 		i++;
 		nbr /= 10;
 	}
+	i++;
 	return (i);
 }
 
-char						*ft_ultoa(unsigned long n)
+char				*ft_uitoa(unsigned int n)
 {
-	char	*str;
-	int		i;
+	char			*str;
+	unsigned int	i;
 
-	i = num_len(n);
+	i = num_len(n) - 1;
 	if (!(str = (char *)malloc(sizeof(char) * (num_len(n) + 1))))
 		return (NULL);
-	str[i] = '\0';
+	str[i + 1] = '\0';
 	while (n > 9)
 	{
 		str[i] = (n % 10) + '0';
 		i--;
 		n /= 10;
 	}
-	if (n > 0 && n <= 9)
+	if (n <= 9)
 		str[i] = n + '0';
 	return (str);
 }

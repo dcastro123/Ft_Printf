@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultoa_base.c                                    :+:      :+:    :+:   */
+/*   ft_uitoa_capbase.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/07 16:59:21 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/27 14:25:01 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/07/23 19:58:24 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/08/02 19:29:52 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
-static unsigned long	ft_intlen(unsigned long n, int base)
+static unsigned int	ft_intlen(int n, int base)
 {
-	unsigned long	len;
+	unsigned int	len;
+	unsigned int	nbr;
 
 	len = 0;
-	while (n != 0)
+	nbr = (unsigned int)n;
+	while (nbr != 0)
 	{
 		len++;
-		n /= base;
+		nbr /= base;
 	}
 	return (len);
 }
 
-char					*ft_ultoa_base(unsigned long value, int base)
+char				*ft_uitoa_capbase(int value, int base)
 {
 	char			*array;
-	unsigned long	val;
-	unsigned long	len;
+	unsigned int	val;
+	unsigned int	len;
 	char			tab[16];
 
-	val = value;
+	val = (unsigned int)value;
 	len = ft_intlen(val, base);
-	ft_strcpy(tab, "0123456789abcdef");
+	ft_strcpy(tab, "0123456789ABCDEF");
 	if (!(array = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	array[len--] = '\0';

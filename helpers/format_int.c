@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/02 20:56:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/31 21:40:58 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 19:41:49 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,16 @@ void	format_prec(t_args *ar, char *tmp)
 void	format_intljust(t_args *ar, char *tmp)
 {
 	int	i;
-	int j;
 	int len;
 
 	i = 0;
-	j = -1;
 	len = (int)ft_strlen(ar->str_out);
 	if (ar->plus == 1 && ar->num >= 0)
 	{
-		ft_putchar('+');
-		ar->ret++;
+		ar->ret += write(1, '+', 1);
 		i++;
 	}
-	while (ar->str_out[++j])
-		ft_putchar(ar->str_out[j]);
+	ft_putstr(ar->str_out);
 	if (ar->width > 0)
 	{
 		if ((int)ft_strlen(tmp) > ar->width)
@@ -114,15 +110,11 @@ void	format_intwidth(t_args *ar, char *tmp)
 	}
 	if (ar->plus == 1 && ar->num >= 0)
 	{
-		ar->ret++;
+		ar->ret += write(1, '+', 1);
 		i++;
-		ft_putchar('+');
 	}
 	if (ar->width > ar->precision)
-	{
 		while (++i < ar->width - len)
-			ft_putchar(' ');
-		ar->ret += i;
-	}
+			ar->ret += write(1, ' ', 1);
 	ar->ret += len;
 }

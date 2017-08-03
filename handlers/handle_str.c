@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:16 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/01 20:44:43 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 19:34:44 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	check_str(t_args *ar)
 	else if (ar->conv == 's')
 		handle_rstr(ar);
 	else if (ar->conv == 'S')
-		ft_putstr(" S feature not implemented yet\n");
+		ft_putstr("");
 	else if (ar->conv == 'C')
 		ft_putchar(ar->num);
 }

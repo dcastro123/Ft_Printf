@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 15:37:41 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 19:33:56 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void				check_type(const char *format, t_args *ar, va_list *ap);
 void				print_ljust(t_args *ar);
 void				format_str(t_args *ar);
 void				print_str(t_args *ar);
-
 void				check_str(t_args *ar);
 void				handle_char(t_args *ar);
 void				handle_rstr(t_args *ar);
@@ -88,13 +87,4 @@ void				handle_int(t_args *ar);
 void				handle_oct(t_args *ar);
 void				handle_hex(t_args *ar);
 void				handle_usint(t_args *ar);
-
-char 				*ft_ltoa(long n);
-char 				*ft_ultoa(unsigned long n);
-char				*ft_ulltoa(unsigned long long n);
-char				*ft_uitoa(unsigned int n);
-char				*ft_uitoa_base(int value, int base);
-char				*ft_uitoa_capbase(int value, int base);
-char				*ft_ultoa_base(unsigned long value, int base);
-char				*ft_itoa_base(int value, int base);
 #endif

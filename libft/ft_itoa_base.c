@@ -6,11 +6,11 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 21:27:27 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/27 14:39:48 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 19:27:07 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
 static	int	ft_intlen(int n, int base)
 {

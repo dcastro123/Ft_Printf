@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa_capbase.c                                 :+:      :+:    :+:   */
+/*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcastro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/23 19:58:24 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/23 19:58:41 by dcastro-         ###   ########.fr       */
+/*   Created: 2017/06/21 20:41:12 by dcastro-          #+#    #+#             */
+/*   Updated: 2017/08/02 19:29:46 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
 static unsigned int	ft_intlen(int n, int base)
 {
-	unsigned int	len;
-	unsigned int	nbr;
+	unsigned int len;
+	unsigned int nbr;
 
 	len = 0;
 	nbr = (unsigned int)n;
@@ -27,7 +27,7 @@ static unsigned int	ft_intlen(int n, int base)
 	return (len);
 }
 
-char				*ft_uitoa_capbase(int value, int base)
+char				*ft_uitoa_base(int value, int base)
 {
 	char			*array;
 	unsigned int	val;
@@ -36,7 +36,7 @@ char				*ft_uitoa_capbase(int value, int base)
 
 	val = (unsigned int)value;
 	len = ft_intlen(val, base);
-	ft_strcpy(tab, "0123456789ABCDEF");
+	ft_strcpy(tab, "0123456789abcdef");
 	if (!(array = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	array[len--] = '\0';
