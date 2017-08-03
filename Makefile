@@ -6,7 +6,7 @@
 #    By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/18 17:55:35 by dcastro-          #+#    #+#              #
-#    Updated: 2017/08/02 19:43:08 by dcastro-         ###   ########.fr        #
+#    Updated: 2017/08/02 19:44:15 by dcastro-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ OBJS = 	ft_printf.o start_printf.o handle_str.o handle_int.o handle_more_int.o\
 	   	ft_lstnew.o ft_lstdelone.o ft_lstdel.o\
 	   	ft_lstadd.o ft_lstiter.o ft_lstmap.o\
 	   	ft_wdlen.o ft_range.o ft_list_size.o\
-	   	ft_uitoa.o ft_uitoa_capbase.o ft_ltoa.o\
+	   	ft_uitoa.o ft_uitoa_capbase.o\
 
 CMPSRCS = $(SRC) $(HANDLER) $(HELPER) $(LIBFT)
 INCL = -I includes/libft.h -I includes/ft_printf.h
