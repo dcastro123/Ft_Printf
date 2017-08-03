@@ -6,43 +6,11 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 16:44:12 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 17:09:05 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-// static char	*check_imod(t_args *ar)
-// {
-// 	char *tmp;
-
-// 	tmp = NULL;
-// 	if (ar->mods == hh)
-// 		tmp = ft_itoa((char)ar->num);
-// 	else if (ar->mods == h)
-// 		tmp = ft_itoa((short)ar->num);
-// 	else if (ar->mods == l)
-// 		tmp = ft_ltoa((long)ar->num);
-// 	else
-// 		tmp = ft_itoa(ar->num);
-// 	return (tmp);
-// }
-
-// static char	*check_umod(t_args *ar)
-// {
-// 	char *tmp;
-
-// 	tmp = NULL;
-// 	if (ar->mods == hh)
-// 		tmp = ft_ulltoa((unsigned char)ar->num);
-// 	else if (ar->mods == h)
-// 		tmp = ft_ulltoa((unsigned short)ar->num);
-// 	else if (ar->mods == l)
-// 		tmp = ft_ultoa((long)ar->num);
-// 	else
-// 		tmp = ft_uitoa(ar->num);
-// 	return (tmp);
-// }
 
 void	handle_int(t_args *ar)
 {
@@ -67,7 +35,6 @@ void	handle_int(t_args *ar)
 			ar->ret += write(1, "+", 1);
 		ft_putstr(tmp);
 	}
-	// free(tmp);
 }
 
 void	handle_usint(t_args *ar)
@@ -87,5 +54,4 @@ void	handle_usint(t_args *ar)
 	}
 	else
 		ft_putstr(tmp);
-	// free(tmp);
 }
