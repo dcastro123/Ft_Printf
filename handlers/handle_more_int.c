@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 16:08:13 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/07/27 14:23:29 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 19:43:26 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 static void	handle_upperhex(t_args *ar, char *tmp)
 {
-	int i;
-
-	i = -1;
 	if (ar->tag == 1)
 	{
 		ft_putstr("0X");
