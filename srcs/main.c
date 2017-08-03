@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 19:04:22 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/01 20:44:56 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/02 17:12:12 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	main(void)
 	printf("|%-6.11s|\n", "Hello world!");
 	printf("|%6.12s|\n", "Hello world!");
 	printf("---------------------------\n");
-	ft_printf("|%s|\n", "Ceci n'est toujours pas un exercice !!");
+	ft_printf("|%*s|\n", "Ceci n'est toujours pas un exercice !!");
 	ft_printf("|%5.s|\n", "Hello world!");
 	ft_printf("|%6.1s|\n", "Hello world!");
 	ft_printf("|%.2s|\n", "Hello world!");
