@@ -16,7 +16,7 @@ void	handle_int(t_args *ar)
 {
 	char *tmp;
 
-	tmp = ft_itoa(ar->num);
+	tmp = ft_itoa((int)ar->num);
 	format_prec(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0 && ar->pflag == 0)
 		format_intpadding(ar, tmp);
@@ -41,7 +41,7 @@ void	handle_usint(t_args *ar)
 {
 	char *tmp;
 
-	tmp = ft_uitoa(ar->unum);
+	tmp = ft_uitoa((unsigned int)ar->unum);
 	format_prec(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0 && ar->pflag == 0)
 		format_intpadding(ar, tmp);
