@@ -26,7 +26,7 @@ static unsigned int	num_len(unsigned int nbr)
 	return (i);
 }
 
-char				*ft_uitoa(unsigned int n)
+char				*ft_uitoa(uintmax_t n)
 {
 	char			*str;
 	unsigned int	i;
