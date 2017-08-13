@@ -12,7 +12,7 @@
 
 #include "../includes/libft.h"
 
-static int	num_len(int nbr)
+static int	num_len(intmax_t nbr)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ static int	num_len(int nbr)
 		nbr *= -1;
 		i++;
 	}
-	while ((nbr / 10) != 0)
+	while (nbr >= 10 || nbr <= -10)
 	{
 		i++;
 		nbr /= 10;
@@ -31,29 +31,26 @@ static int	num_len(int nbr)
 	return (i);
 }
 
-char		*ft_itoa(int n)
+char		*ft_itoa(intmax_t n)
 {
 	char	*str;
 	int		i;
 
-	i = num_len(n) - 1;
+	i = num_len(n);
 	if (!(str = (char *)malloc(sizeof(char) * (num_len(n) + 1))))
 		return (NULL);
-	str[i + 1] = '\0';
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	str[i--] = '\0';
 	if (n < 0)
 	{
 		str[0] = '-';
 		n *= -1;
 	}
-	while (n > 9)
+	while (n > 9 || n < -9)
 	{
 		str[i] = (n % 10) + '0';
 		i--;
 		n /= 10;
 	}
-	if (n >= 0 && n <= 9)
-		str[i] = n + '0';
+	str[i] = n + '0';
 	return (str);
 }
