@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/27 14:30:29 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 19:27:14 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 17:15:34 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static unsigned int	num_len(unsigned int nbr)
 char				*ft_uitoa(uintmax_t n)
 {
 	char			*str;
-	unsigned int	i;
+	unsigned	int	i;
 
 	i = num_len(n) - 1;
 	if (!(str = (char *)malloc(sizeof(char) * (num_len(n) + 1))))
