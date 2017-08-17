@@ -6,14 +6,13 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 23:00:05 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/17 15:54:11 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdio.h>
 # include <stdlib.h>
 # include <stdint.h>
 # include <unistd.h>
