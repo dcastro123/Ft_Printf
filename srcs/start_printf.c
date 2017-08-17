@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/08 17:34:59 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 22:51:25 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:53:41 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void			init_args(t_args *ar)
 
 static	void	check_more_type(const char *format, t_args *ar, va_list *ap)
 {
-	// printf(">>>>>>>>>>>>>>>>\n");
 	if (format[ar->index] == 'o')
 	{
 		ar->conv = format[ar->index];
@@ -46,7 +45,6 @@ static	void	check_more_type(const char *format, t_args *ar, va_list *ap)
 	}
 	else if (format[ar->index] == 'u')
 	{
-		// printf("$$$$$$$$$$$$$\n");
 		ar->unum = va_arg(*ap, unsigned long);
 		handle_usint(ar);
 	}
@@ -60,7 +58,6 @@ static	void	check_more_type(const char *format, t_args *ar, va_list *ap)
 
 void			check_type(const char *format, t_args *ar, va_list *ap)
 {
-	// printf("format: %c\n", format[ar->index]);
 	check_more_type(format, ar, ap);
 	if (format[ar->index] == 'c' || format[ar->index] == 'C')
 	{
