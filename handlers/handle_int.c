@@ -6,17 +6,39 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 17:09:05 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 19:04:55 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
+static	*char	check_imod(t_args *ar)
+{
+	char *tmp;
+
+	tmp = NULL;
+	if (ar->mods == none)
+		tmp = ft_itoa((int)ar->num);
+	else if (ar->mods == l)
+		tmp = ft_itoa((long)ar->num);
+	else if (ar->mods == ll)
+		tmp = ft_itoa((long long)ar->num);
+	else if (ar->mods = h)
+		tmp = ft_itoa((short)ar->num);
+	else if (ar->mods == hh)
+		tmp = ft_itoa((char)ar->num);
+	else if (ar->mods == z)
+		tmp = ft_itoa((size_t)ar->num);
+	else
+		tmp = ft_itoa((int)ar->num);
+	return (tmp);
+}
+
 void	handle_int(t_args *ar)
 {
 	char *tmp;
 
-	tmp = ft_itoa((int)ar->num);
+	tmp = check_imod(ar);
 	format_prec(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0 && ar->pflag == 0)
 		format_intpadding(ar, tmp);
