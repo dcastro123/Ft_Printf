@@ -6,13 +6,13 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 19:04:55 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 19:22:29 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static	*char	check_imod(t_args *ar)
+static	char	*check_imod(t_args *ar)
 {
 	char *tmp;
 

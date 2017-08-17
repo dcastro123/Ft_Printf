@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 20:36:35 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/02 19:32:42 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 19:23:54 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
-char				*ft_itoa(int n);
+char				*ft_itoa(intmax_t n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
@@ -95,5 +95,5 @@ char				*ft_itoa_base(int value, int base);
 char				*ft_ultoa_base(unsigned long value, int base);
 char				*ft_uitoa_capbase(int value, int base);
 char				*ft_uitoa_base(int value, int base);
-char				*ft_uitoa(unsigned int n);
+char				*ft_uitoa(uintmax_t n);
 #endif
