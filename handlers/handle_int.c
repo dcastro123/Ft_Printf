@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 19:26:15 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 19:29:01 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static	char	*check_umod(t_args *ar)
 	else if (ar->mods == hh)
 		tmp = ft_uitoa((unsigned char)ar->num);
 	else if (ar->mods == z)
-		tmp = ft_uitoa((unsigned size_t)ar->num);
+		tmp = ft_uitoa((size_t)ar->num);
 	else
 		tmp = ft_uitoa((unsigned int)ar->num);
 	return (tmp);
