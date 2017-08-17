@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/08 17:34:59 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 22:45:35 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:49:11 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static	void	check_more_type(const char *format, t_args *ar, va_list *ap)
 	else if (format[ar->index] == 'u')
 	{
 		// printf("$$$$$$$$$$$$$\n");
-		ar->unum = va_arg(*ap, unsigned int);
+		ar->ulong = va_arg(*ap, unsigned long);
 		handle_usint(ar);
 	}
 	else if (format[ar->index] == 'd' || format[ar->index] == 'i')
