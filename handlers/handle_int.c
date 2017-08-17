@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 19:39:54 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:37:00 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,10 @@ void	handle_int(t_args *ar)
 void	handle_usint(t_args *ar)
 {
 	char *tmp;
+	printf("???????\n");
 
 	tmp = check_umod(ar);
+	printf("tmp after uitoa: %s\n", tmp);
 	format_prec(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0 && ar->pflag == 0)
 		format_intpadding(ar, tmp);

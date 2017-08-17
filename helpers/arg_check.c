@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/01 23:29:23 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/01 20:48:35 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:44:10 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,12 @@ void	check_mod(const char *format, t_args *ar)
 
 void	more_parsing(const char *format, t_args *ar)
 {
+	printf("format in parse: %c\n", format[ar->index]);
 	if (IS_MOD(format[ar->index]))
+	{
+		printf("^^^^^^^^^^^\n");
 		check_mod(format, ar);
+	}
 	if (format[ar->index] == ' ')
 		ar->space = 1;
 	if (format[ar->index] == '-')
@@ -84,7 +88,8 @@ void	more_parsing(const char *format, t_args *ar)
 void	check_flags(const char *format, t_args *ar, va_list *ap)
 {
 	ar->mods = 0;
-	while (IS_FLAG(format[ar->index]) || IS_NFLAG(format[ar->index]))
+	while (IS_FLAG(format[ar->index]) || IS_NFLAG(format[ar->index])
+		|| IS_MOD(format[ar->index]))
 	{
 		more_parsing(format, ar);
 		if (format[ar->index] == '.')
