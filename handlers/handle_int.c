@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 22:53:47 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:57:59 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static	char	*check_imod(t_args *ar)
 		tmp = ft_itoa((char)ar->num);
 	else if (ar->mods == z)
 		tmp = ft_itoa((size_t)ar->num);
+	else if (ar->mods == j)
+		tmp = ft_itoa((intmax_t)ar->num);
 	else
 		tmp = ft_itoa((int)ar->num);
 	return (tmp);
@@ -51,6 +53,8 @@ static	char	*check_umod(t_args *ar)
 		tmp = ft_uitoa((unsigned char)ar->unum);
 	else if (ar->mods == z)
 		tmp = ft_uitoa((size_t)ar->unum);
+	else if (ar->mods == j)
+		tmp = ft_uitoa((uintmax_t)ar->unum);
 	else
 		tmp = ft_uitoa((unsigned int)ar->unum);
 	return (tmp);
