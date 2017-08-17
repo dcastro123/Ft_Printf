@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 19:34:31 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 19:39:54 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	char	*check_imod(t_args *ar)
 		tmp = ft_itoa((long)ar->num);
 	else if (ar->mods == ll)
 		tmp = ft_itoa((long long)ar->num);
-	else if (ar->mods = h)
+	else if (ar->mods == h)
 		tmp = ft_itoa((short)ar->num);
 	else if (ar->mods == hh)
 		tmp = ft_itoa((char)ar->num);
@@ -45,7 +45,7 @@ static	char	*check_umod(t_args *ar)
 		tmp = ft_uitoa((unsigned long)ar->num);
 	else if (ar->mods == ll)
 		tmp = ft_uitoa((unsigned long long)ar->num);
-	else if (ar->mods = h)
+	else if (ar->mods == h)
 		tmp = ft_uitoa((unsigned short)ar->num);
 	else if (ar->mods == hh)
 		tmp = ft_uitoa((unsigned char)ar->num);
