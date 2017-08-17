@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 19:54:08 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:49:35 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,9 @@ typedef	struct		s_args
 	int				zero;
 	int				num;
 	int				pflag;
-	unsigned int	unum;
+	unsigned long	unum;
 	int				precision;
 	int				width;
-	unsigned long	ulong;
 	t_mods			mods;
 }					t_args;
 
