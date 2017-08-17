@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/27 14:30:29 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 22:44:28 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:45:38 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ char				*ft_uitoa(uintmax_t n)
 	}
 	if (n <= 9)
 		str[i] = n + '0';
-	printf("string is : |%s|\n", str);
+	// printf("string is : |%s|\n", str);
 	return (str);
 }
