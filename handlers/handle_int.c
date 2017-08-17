@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 22:45:44 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:52:02 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ static	char	*check_umod(t_args *ar)
 
 	tmp = NULL;
 	if (ar->mods == none)
-		tmp = ft_uitoa((unsigned int)ar->num);
+		tmp = ft_uitoa((unsigned int)ar->unum);
 	else if (ar->mods == l)
-		tmp = ft_uitoa((unsigned long)ar->num);
+		tmp = ft_uitoa((unsigned long)ar->unum);
 	else if (ar->mods == ll)
-		tmp = ft_uitoa((unsigned long long)ar->num);
+		tmp = ft_uitoa((unsigned long long)ar->unum);
 	else if (ar->mods == h)
-		tmp = ft_uitoa((unsigned short)ar->num);
+		tmp = ft_uitoa((unsigned short)ar->unum);
 	else if (ar->mods == hh)
-		tmp = ft_uitoa((unsigned char)ar->num);
+		tmp = ft_uitoa((unsigned char)ar->unum);
 	else if (ar->mods == z)
-		tmp = ft_uitoa((size_t)ar->num);
+		tmp = ft_uitoa((size_t)ar->unum);
 	else
-		tmp = ft_uitoa((unsigned int)ar->num);
+		tmp = ft_uitoa((unsigned int)ar->unum);
 	return (tmp);
 }
 

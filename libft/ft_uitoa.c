@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/27 14:30:29 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 22:50:50 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:52:16 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char				*ft_uitoa(uintmax_t n)
 {
 	char			*str;
 	unsigned	int	i;
-	printf("incoming number: %lu\n", n);
+
 	i = num_len(n) - 1;
 	if (!(str = (char *)malloc(sizeof(char) * (num_len(n) + 1))))
 		return (NULL);
