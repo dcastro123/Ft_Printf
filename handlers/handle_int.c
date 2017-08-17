@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 15:34:33 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 19:22:29 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 19:26:15 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,28 @@ static	char	*check_imod(t_args *ar)
 		tmp = ft_itoa((size_t)ar->num);
 	else
 		tmp = ft_itoa((int)ar->num);
+	return (tmp);
+}
+
+static	char	*check_umod(t_args *ar)
+{
+	char *tmp;
+
+	tmp = NULL;
+	if (ar->mods == none)
+		tmp = ft_uitoa((unsigned int)ar->num);
+	else if (ar->mods == l)
+		tmp = ft_uitoa((unsigned long)ar->num);
+	else if (ar->mods == ll)
+		tmp = ft_uitoa((unsigned long long)ar->num);
+	else if (ar->mods = h)
+		tmp = ft_uitoa((unsigned short)ar->num);
+	else if (ar->mods == hh)
+		tmp = ft_uitoa((unsigned char)ar->num);
+	else if (ar->mods == z)
+		tmp = ft_uitoa((unsigned size_t)ar->num);
+	else
+		tmp = ft_uitoa((unsigned int)ar->num);
 	return (tmp);
 }
 
@@ -63,7 +85,7 @@ void	handle_usint(t_args *ar)
 {
 	char *tmp;
 
-	tmp = ft_uitoa((unsigned int)ar->unum);
+	tmp = check_umod(ar);
 	format_prec(ar, tmp);
 	if (ar->zero == 1 && ar->minus == 0 && ar->pflag == 0)
 		format_intpadding(ar, tmp);
