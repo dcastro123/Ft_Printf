@@ -6,7 +6,7 @@
 /*   By: dcastro- <dcastro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/18 17:58:28 by dcastro-          #+#    #+#             */
-/*   Updated: 2017/08/16 22:51:32 by dcastro-         ###   ########.fr       */
+/*   Updated: 2017/08/16 22:59:08 by dcastro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 # define IS_FLAG(x)		((x == 32 || x == 35 || x == 42 || x == 43) ? 1 : 0)
 # define IS_NFLAG(x)	((x == 45 || x == 46 || (x > 47 && x < 58)) ? 1 : 0)
-# define IS_MOD(x)		((x == 'h' || x == 'l' || x == 'z') ? 1: 0)
+# define IS_MOD(x)		((x == 'h' || x == 'l' ||  || x == 'j' || x == 'z') ? 1: 0)
 # define IS_TRUE(x)		((x == 1) ? 1 : 0)
 
 typedef	enum		e_mods
